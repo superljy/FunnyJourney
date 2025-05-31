@@ -386,7 +386,7 @@
             <!-- Classic Solitaire -->
             <div class="game-card" data-category="card">
                 <div class="game-image-wrapper">
-                    <img src="https://via.placeholder.com/400x250/1e3a8a/ffffff?text=🃏+Solitaire" alt="Classic Solitaire" class="game-image">
+                    <img src="../img/solitaire.jpg" alt="Classic Solitaire" class="game-image">
                     <div class="game-overlay">
                         <a href="solitaire.html" class="play-btn">
                             <i class="fas fa-play"></i> Play Now
@@ -416,7 +416,7 @@
             <!-- Pyramid Solitaire -->
             <div class="game-card" data-category="card">
                 <div class="game-image-wrapper">
-                    <img src="https://via.placeholder.com/400x250/7c3aed/ffffff?text=🔺+Pyramid" alt="Pyramid Solitaire" class="game-image">
+                    <img src="../img/pyramid-solitaire.jpg" alt="Pyramid Solitaire" class="game-image">
                     <div class="game-overlay">
                         <a href="pyramid-solitaire.html" class="play-btn">
                             <i class="fas fa-play"></i> Play Now
@@ -446,7 +446,7 @@
             <!-- Monster Survivors -->
             <div class="game-card" data-category="action">
                 <div class="game-image-wrapper">
-                    <img src="https://via.placeholder.com/400x250/dc2626/ffffff?text=👹+Monster" alt="Monster Survivors" class="game-image">
+                    <img src="../img/Monster-survivors.jpg" alt="Monster Survivors" class="game-image">
                     <div class="game-overlay">
                         <a href="monster-survivors.html" class="play-btn">
                             <i class="fas fa-play"></i> Play Now
@@ -476,7 +476,7 @@
             <!-- Fast Food Rush -->
             <div class="game-card" data-category="arcade">
                 <div class="game-image-wrapper">
-                    <img src="https://via.placeholder.com/400x250/f59e0b/ffffff?text=🍔+Restaurant" alt="Fast Food Rush" class="game-image">
+                    <img src="../img/fast-food-rush.jpg" alt="Fast Food Rush" class="game-image">
                     <div class="game-overlay">
                         <a href="fast-food-rush.html" class="play-btn">
                             <i class="fas fa-play"></i> Play Now
@@ -506,7 +506,7 @@
             <!-- Poop Clicker -->
             <div class="game-card" data-category="clicker">
                 <div class="game-image-wrapper">
-                    <img src="https://via.placeholder.com/400x250/8b5cf6/ffffff?text=💩+Clicker" alt="Poop Clicker" class="game-image">
+                    <img src="../img/Poop-Clicker.jpg" alt="Poop Clicker" class="game-image">
                     <div class="game-overlay">
                         <a href="poop-clicker.html" class="play-btn">
                             <i class="fas fa-play"></i> Play Now
@@ -536,7 +536,7 @@
             <!-- Egg Helix -->
             <div class="game-card" data-category="arcade">
                 <div class="game-image-wrapper">
-                    <img src="https://via.placeholder.com/400x250/10b981/ffffff?text=🥚+Helix" alt="Egg Helix" class="game-image">
+                    <img src="../img/Egg-Helix.jpg" alt="Egg Helix" class="game-image">
                     <div class="game-overlay">
                         <a href="egg-helix.html" class="play-btn">
                             <i class="fas fa-play"></i> Play Now
@@ -566,28 +566,66 @@
     </main>
 
     <script>
-        // Category filtering
-        const categoryBtns = document.querySelectorAll('.category-btn');
-        const gameCards = document.querySelectorAll('.game-card');
-        const searchInput = document.getElementById('gameSearch');
+        // Wait for DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Category filtering
+            const categoryBtns = document.querySelectorAll('.category-btn');
+            const gameCards = document.querySelectorAll('.game-card');
+            const searchInput = document.getElementById('gameSearch');
 
-        categoryBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const category = btn.getAttribute('data-category');
+            // Check if elements exist before adding event listeners
+            if (categoryBtns.length === 0 || gameCards.length === 0 || !searchInput) {
+                console.warn('Games page elements not found. Skipping initialization.');
+                return;
+            }
+
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const category = btn.getAttribute('data-category');
+                    
+                    // Update active button
+                    categoryBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    
+                    // Filter games
+                    gameCards.forEach(card => {
+                        const cardCategory = card.getAttribute('data-category');
+                        if (category === 'all' || cardCategory === category) {
+                            card.style.display = 'block';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'translateY(0)';
+                            }, 50);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'translateY(20px)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+
+            // Search functionality
+            searchInput.addEventListener('input', (e) => {
+                const searchTerm = e.target.value.toLowerCase();
                 
-                // Update active button
-                categoryBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                
-                // Filter games
                 gameCards.forEach(card => {
-                    const cardCategory = card.getAttribute('data-category');
-                    if (category === 'all' || cardCategory === category) {
+                    const titleElement = card.querySelector('.game-title a');
+                    const descriptionElement = card.querySelector('.game-description');
+                    
+                    if (!titleElement || !descriptionElement) {
+                        return; // Skip if elements don't exist
+                    }
+                    
+                    const title = titleElement.textContent.toLowerCase();
+                    const description = descriptionElement.textContent.toLowerCase();
+                    
+                    if (title.includes(searchTerm) || description.includes(searchTerm)) {
                         card.style.display = 'block';
-                        setTimeout(() => {
-                            card.style.opacity = '1';
-                            card.style.transform = 'translateY(0)';
-                        }, 50);
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
                     } else {
                         card.style.opacity = '0';
                         card.style.transform = 'translateY(20px)';
@@ -597,39 +635,26 @@
                     }
                 });
             });
-        });
 
-        // Search functionality
-        searchInput.addEventListener('input', (e) => {
-            const searchTerm = e.target.value.toLowerCase();
-            
+            // Add hover effects
             gameCards.forEach(card => {
-                const title = card.querySelector('.game-title a').textContent.toLowerCase();
-                const description = card.querySelector('.game-description').textContent.toLowerCase();
+                card.addEventListener('mouseenter', () => {
+                    card.style.zIndex = '10';
+                });
                 
-                if (title.includes(searchTerm) || description.includes(searchTerm)) {
-                    card.style.display = 'block';
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                } else {
-                    card.style.opacity = '0';
-                    card.style.transform = 'translateY(20px)';
-                    setTimeout(() => {
-                        card.style.display = 'none';
-                    }, 300);
-                }
+                card.addEventListener('mouseleave', () => {
+                    card.style.zIndex = '1';
+                });
             });
-        });
 
-        // Add hover effects
-        gameCards.forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                card.style.zIndex = '10';
+            // Initialize card states
+            gameCards.forEach(card => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+                card.style.display = 'block';
             });
-            
-            card.addEventListener('mouseleave', () => {
-                card.style.zIndex = '1';
-            });
+
+            console.log('Games page initialized successfully with', gameCards.length, 'games');
         });
     </script>
 </body>
