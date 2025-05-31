@@ -46,6 +46,7 @@
 - **`setup-github.ps1`** - 一次性配置GitHub仓库
 - **`auto-sync.ps1`** - 完整的自动同步（拉取→提交→推送）
 - **`quick-sync.ps1`** - 快速同步（适合频繁的小更改）
+- **`fix-encoding.ps1`** - 修复PowerShell中文显示乱码问题
 
 ### 自动同步流程
 
@@ -93,7 +94,8 @@ git push origin main
 ├── about/              # 关于页面
 ├── auto-sync.ps1       # 自动同步脚本
 ├── quick-sync.ps1      # 快速同步脚本
-└── setup-github.ps1    # GitHub配置脚本
+├── setup-github.ps1    # GitHub配置脚本
+└── fix-encoding.ps1    # 编码修复脚本
 ```
 
 ## 📝 提交规范建议
@@ -108,11 +110,50 @@ git push origin main
 
 ## 🔧 故障排除
 
-### 权限问题
+### PowerShell权限问题
 如果PowerShell脚本无法执行，运行：
 ```powershell
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
+
+### 中文乱码问题解决方案
+
+#### 方案1：运行编码修复脚本
+```powershell
+.\fix-encoding.ps1
+```
+
+#### 方案2：手动设置编码
+在运行脚本前执行：
+```powershell
+chcp 65001
+[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+```
+
+#### 方案3：使用Windows Terminal（推荐）
+1. 安装 Windows Terminal（从Microsoft Store）
+2. 在Windows Terminal中运行PowerShell
+3. Windows Terminal对UTF-8支持更好
+
+#### 方案4：修改PowerShell配置文件
+创建或编辑PowerShell配置文件：
+```powershell
+# 检查配置文件路径
+$PROFILE
+
+# 创建配置文件（如果不存在）
+if (!(Test-Path -Path $PROFILE)) {
+    New-Item -ItemType File -Path $PROFILE -Force
+}
+
+# 编辑配置文件，添加以下内容：
+# chcp 65001 | Out-Null
+# [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+# $OutputEncoding = [Console]::OutputEncoding
+```
+
+#### 方案5：使用英文版脚本
+如果中文显示问题仍然存在，可以创建英文版本的脚本避免乱码。
 
 ### 合并冲突
 如果出现合并冲突：
@@ -120,6 +161,12 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 2. 运行 `git add .`
 3. 运行 `git commit`
 4. 运行 `git push origin main`
+
+### Git认证问题
+如果推送时要求认证：
+1. 使用GitHub Personal Access Token
+2. 或配置SSH密钥
+3. 详见GitHub官方文档
 
 ## 📄 许可证
 

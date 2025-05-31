@@ -1,6 +1,10 @@
 # GitHub配置脚本
 # 使用方法: .\setup-github.ps1
 
+# 设置编码以正确显示中文
+[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+$OutputEncoding = [Console]::OutputEncoding
+
 param(
     [Parameter(Mandatory=$true)]
     [string]$GitHubRepoUrl,

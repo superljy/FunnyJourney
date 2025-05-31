@@ -1,6 +1,10 @@
 # 快速同步脚本 - 适用于日常开发
 # 使用方法: .\quick-sync.ps1
 
+# 设置编码以正确显示中文
+[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+$OutputEncoding = [Console]::OutputEncoding
+
 Write-Host "⚡ 快速同步模式..." -ForegroundColor Cyan
 
 # 拉取最新更改

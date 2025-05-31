@@ -1,6 +1,10 @@
 # 自动同步脚本 - PowerShell版本
 # 使用方法: .\auto-sync.ps1 "提交信息"
 
+# 设置编码以正确显示中文
+[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+$OutputEncoding = [Console]::OutputEncoding
+
 param(
     [string]$CommitMessage = "Auto-sync: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
 )
