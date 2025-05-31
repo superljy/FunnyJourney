@@ -23,4 +23,4 @@ if ($status) {
     Write-Host "✅ 快速同步完成!" -ForegroundColor Green
 } else {
     Write-Host "📋 没有需要同步的更改" -ForegroundColor Yellow
-} 
+}
