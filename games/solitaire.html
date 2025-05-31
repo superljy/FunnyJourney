@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,17 +19,13 @@
             theme: {
                 extend: {
                     colors: {
-                        apple: {
-                            blue: '#007AFF',
-                            darkblue: '#0A84FF',
-                            green: '#34C759',
-                            red: '#FF3B30',
-                            orange: '#FF9500',
-                            gray: {
-                                light: '#F2F2F7',
-                                medium: '#E5E5EA',
-                                dark: '#8E8E93'
-                            }
+                        gaming: {
+                            dark: '#1a1a1a',
+                            darker: '#0a0a0a',
+                            blue: '#00d4ff',
+                            purple: '#9d4edd',
+                            green: '#39ff14',
+                            pink: '#ff10f0'
                         }
                     }
                 }
@@ -38,7 +33,12 @@
         }
     </script>
     <style>
-        /* Replace problematic @apply with regular CSS */
+        /* Dark gaming theme styles */
+        body {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d1b69 50%, #1a1a1a 100%);
+            color: #ffffff;
+        }
+        
         .content-container {
             max-width: 72rem;
             margin-left: auto;
@@ -69,7 +69,7 @@
             margin-right: auto;
             border-radius: 0.5rem;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            height: 500px; /* Explicit height for browsers that don't support aspect-ratio */
+            height: 500px;
         }
         
         @media (max-width: 768px) {
@@ -82,7 +82,7 @@
             font-size: 1.5rem;
             line-height: 2rem;
             font-weight: 700;
-            color: #1f2937;
+            color: #00d4ff;
             margin-bottom: 1rem;
         }
         
@@ -93,13 +93,11 @@
             }
         }
         
-        /* Fix for header text overflow */
         .nav-container {
             width: 100%;
             overflow-x: hidden;
         }
 
-        /* Fullscreen button styles */
         .game-container {
             position: relative;
         }
@@ -131,7 +129,6 @@
             height: 16px;
         }
         
-        /* Style for when in fullscreen mode */
         .fullscreen-active {
             position: fixed;
             top: 0;
@@ -145,13 +142,51 @@
             border-radius: 0;
             max-width: none;
         }
+        
+        .game-content {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        .game-header {
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            color: white;
+            padding: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        .back-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 12px 24px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 1rem;
+        }
+        
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
     </style>
 </head>
-<body class="bg-apple-gray-light min-h-screen">
-    <header class="bg-apple-blue text-white py-4 shadow-md nav-container">
+<body>
+    <header class="game-header nav-container">
         <div class="content-container">
             <div class="flex flex-col sm:flex-row items-center justify-between">
-                <a href="../index.html" class="text-2xl font-bold mb-2 sm:mb-0">FunnyJourney.com</a>
+                <a href="../index.html" class="text-2xl font-bold mb-2 sm:mb-0">🎮 FunnyJourney.com</a>
                 <nav>
                     <ul class="flex space-x-4">
                         <li><a href="../index.html" class="hover:underline">Home</a></li>
@@ -164,9 +199,13 @@
     </header>
 
     <main class="content-container py-8">
+        <a href="index.html" class="back-button">
+            <i class="fas fa-arrow-left"></i> Back to Games
+        </a>
+        
         <section class="mb-12 text-center">
-            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 mb-4">Classic Solitaire</h1>
-            <p class="text-xl sm:text-2xl text-apple-darkblue font-medium mb-8">The timeless card game that's perfect for a quick mental break!</p>
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-4">Classic Solitaire</h1>
+            <p class="text-xl sm:text-2xl text-gaming-blue font-medium mb-8">The timeless card game that's perfect for a quick mental break!</p>
             
             <div class="mb-12">
                 <div class="game-container">
@@ -186,9 +225,9 @@
             </div>
         </section>
 
-        <section class="mb-12 bg-white rounded-xl p-6 shadow-md">
+        <section class="game-content">
             <h2 class="section-heading">Game Description</h2>
-            <div class="prose max-w-none">
+            <div class="prose max-w-none text-white">
                 <p class="mb-4">
                     <strong>Classic Solitaire</strong> is the timeless card game that's been a staple on computers since the early days of personal computing. Sort cards by suit and rank in this engaging patience game that offers a perfect mental break from your daily routine.
                 </p>
@@ -198,453 +237,128 @@
             </div>
         </section>
 
-        <section class="mb-12 bg-white rounded-xl p-6 shadow-md">
+        <section class="game-content">
             <h2 class="section-heading">How to Play</h2>
             <div class="grid md:grid-cols-2 gap-6">
                 <div>
-                    <h3 class="text-xl font-semibold mb-2 text-apple-orange">Rules</h3>
-                    <ul class="list-disc pl-5 mb-4">
-                        <li>Build four foundation piles by suit from Ace to King</li>
-                        <li>Build tableau columns in descending order with alternating colors</li>
-                        <li>Move exposed cards between columns to organize them</li>
-                        <li>Turn over cards from the stock pile when you need new cards</li>
-                        <li>Win by moving all cards to the foundation piles</li>
+                    <h3 class="text-xl font-semibold mb-2 text-gaming-pink">Basic Rules</h3>
+                    <ul class="list-disc pl-5 mb-4 text-white">
+                        <li>Build four foundation piles from Ace to King by suit</li>
+                        <li>Use the tableau to temporarily store cards</li>
+                        <li>Only Kings can go in empty tableau columns</li>
+                        <li>Alternate red and black cards in descending order</li>
                     </ul>
                 </div>
+                
                 <div>
-                    <h3 class="text-xl font-semibold mb-2 text-apple-green">Card Placement</h3>
-                    <ul class="list-disc pl-5">
-                        <li>Foundation piles build up (A, 2, 3, ..., Q, K)</li>
-                        <li>Tableau columns build down (K, Q, J, ..., 3, 2, A)</li>
-                        <li>Tableau requires alternating colors (red, black, red, etc.)</li>
-                        <li>Only Kings can be placed on empty tableau spots</li>
-                        <li>Only Aces can start foundation piles</li>
+                    <h3 class="text-xl font-semibold mb-2 text-gaming-green">Strategy Tips</h3>
+                    <ul class="list-disc pl-5 mb-4 text-white">
+                        <li>Always move Aces and Twos to foundations when possible</li>
+                        <li>Don't automatically play cards to foundations</li>
+                        <li>Try to free up face-down cards early</li>
+                        <li>Build tableau piles evenly when possible</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <section class="mb-12 bg-white rounded-xl p-6 shadow-md">
+        <section class="game-content">
             <h2 class="section-heading">Game Features</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                <div class="text-center p-4 bg-apple-gray-medium rounded-lg">
-                    <div class="text-4xl text-apple-red mb-2">🎮</div>
-                    <h3 class="font-bold mb-2">Classic Gameplay</h3>
-                    <p>Enjoy the timeless rules and mechanics that have made Solitaire a beloved pastime for generations.</p>
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="text-center p-4 bg-gaming-blue bg-opacity-10 rounded-lg border border-gaming-blue border-opacity-30">
+                    <div class="text-3xl mb-2">♠️</div>
+                    <h4 class="font-semibold text-gaming-blue">Classic Rules</h4>
+                    <p class="text-sm text-white">Traditional Klondike Solitaire with authentic gameplay</p>
                 </div>
-                <div class="text-center p-4 bg-apple-gray-medium rounded-lg">
-                    <div class="text-4xl text-apple-green mb-2">🧠</div>
-                    <h3 class="font-bold mb-2">Strategic Thinking</h3>
-                    <p>Exercise your brain with a game that requires planning and foresight to master.</p>
+                
+                <div class="text-center p-4 bg-gaming-purple bg-opacity-10 rounded-lg border border-gaming-purple border-opacity-30">
+                    <div class="text-3xl mb-2">🎯</div>
+                    <h4 class="font-semibold text-gaming-purple">Relaxing Gameplay</h4>
+                    <p class="text-sm text-white">Perfect for stress relief and mental exercise</p>
                 </div>
-                <div class="text-center p-4 bg-apple-gray-medium rounded-lg">
-                    <div class="text-4xl text-apple-blue mb-2">⏱️</div>
-                    <h3 class="font-bold mb-2">Quick Play</h3>
-                    <p>Perfect for short breaks, each game offers a fresh challenge that can be completed in minutes.</p>
+                
+                <div class="text-center p-4 bg-gaming-green bg-opacity-10 rounded-lg border border-gaming-green border-opacity-30">
+                    <div class="text-3xl mb-2">🏆</div>
+                    <h4 class="font-semibold text-gaming-green">Score Tracking</h4>
+                    <p class="text-sm text-white">Keep track of your best times and scores</p>
                 </div>
+            </div>
+        </section>
+
+        <section class="text-center mt-12">
+            <h2 class="section-heading">More Card Games You Might Like</h2>
+            <div class="grid md:grid-cols-3 gap-6 mt-6">
+                <a href="pyramid-solitaire.html" class="game-content hover:bg-opacity-20 transition-all duration-300 text-center block">
+                    <h3 class="font-semibold text-gaming-blue">Pyramid Solitaire</h3>
+                    <p class="text-sm text-white">Remove cards that add up to 13</p>
+                </a>
+                
+                <a href="monster-survivors.html" class="game-content hover:bg-opacity-20 transition-all duration-300 text-center block">
+                    <h3 class="font-semibold text-gaming-purple">Monster Survivors</h3>
+                    <p class="text-sm text-white">Action-packed survival adventure</p>
+                </a>
+                
+                <a href="fast-food-rush.html" class="game-content hover:bg-opacity-20 transition-all duration-300 text-center block">
+                    <h3 class="font-semibold text-gaming-green">Fast Food Rush</h3>
+                    <p class="text-sm text-white">Manage your own restaurant</p>
+                </a>
             </div>
         </section>
     </main>
 
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="content-container">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div>
-                    <h2 class="text-xl font-bold mb-4">FunnyJourney.com</h2>
-                    <p class="text-gray-300">Your destination for fun and engaging online games.</p>
-                </div>
-                <div>
-                    <h2 class="text-xl font-bold mb-4">Quick Links</h2>
-                    <ul class="space-y-2">
-                        <li><a href="../index.html" class="text-gray-300 hover:text-white">Home</a></li>
-                        <li><a href="index.html" class="text-gray-300 hover:text-white">Games</a></li>
-                        <li><a href="../about/index.html" class="text-gray-300 hover:text-white">About</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h2 class="text-xl font-bold mb-4">Legal</h2>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-300 hover:text-white">Privacy Policy</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white">Terms of Service</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white">Cookie Policy</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2025 FunnyJourney.com. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Fullscreen functionality
-        const gameFrame = document.getElementById('game-frame');
-        const fullscreenBtn = document.getElementById('fullscreen-btn');
-        
-        fullscreenBtn.addEventListener('click', () => {
-            if (!document.fullscreenElement) {
-                if (gameFrame.requestFullscreen) {
-                    gameFrame.requestFullscreen();
-                } else if (gameFrame.webkitRequestFullscreen) {
-                    gameFrame.webkitRequestFullscreen();
-                } else if (gameFrame.msRequestFullscreen) {
-                    gameFrame.msRequestFullscreen();
-                }
-                gameFrame.classList.add('fullscreen-active');
-            } else {
-                if (document.exitFullscreen) {
-                    document.exitFullscreen();
-                } else if (document.webkitExitFullscreen) {
-                    document.webkitExitFullscreen();
-                } else if (document.msExitFullscreen) {
-                    document.msExitFullscreen();
-                }
-                gameFrame.classList.remove('fullscreen-active');
-            }
-        });
-        
-        // Handle fullscreen change
-        document.addEventListener('fullscreenchange', handleFullscreenChange);
-        document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
-        document.addEventListener('mozfullscreenchange', handleFullscreenChange);
-        document.addEventListener('MSFullscreenChange', handleFullscreenChange);
-        
-        function handleFullscreenChange() {
-            if (!document.fullscreenElement && !document.webkitFullscreenElement && 
-                !document.mozFullScreenElement && !document.msFullscreenElement) {
-                gameFrame.classList.remove('fullscreen-active');
-            }
-        }
-    </script>
-</body>
-</html> 
-=======
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TGVJVCTQBE"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-      gtag('config', 'G-TGVJVCTQBE');
-    </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Play Classic Solitaire Free Online - Card Game | FunnyJourney.com</title>
-    <meta name="description" content="Play Classic Solitaire online for free - the timeless card game perfect for a mental break. Sort cards by suit and rank in this addictive patience game. No download required!">
-    <meta name="keywords" content="solitaire, classic solitaire, free solitaire, card game, online solitaire, patience game, klondike solitaire, browser game, no download">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://funnyjourney.com/solitaire">
-    <!-- Open Graph tags for social sharing -->
-    <meta property="og:title" content="Play Classic Solitaire Free Online - Card Game">
-    <meta property="og:description" content="The timeless card game that's perfect for a quick mental break. Sort cards by suit and rank to clear the table!">
-    <meta property="og:url" content="https://funnyjourney.com/solitaire">
-    <meta property="og:type" content="website">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        apple: {
-                            blue: '#007AFF',
-                            darkblue: '#0A84FF',
-                            green: '#34C759',
-                            red: '#FF3B30',
-                            orange: '#FF9500',
-                            gray: {
-                                light: '#F2F2F7',
-                                medium: '#E5E5EA',
-                                dark: '#8E8E93'
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        /* Replace problematic @apply with regular CSS */
-        .content-container {
-            max-width: 72rem;
-            margin-left: auto;
-            margin-right: auto;
-            padding-left: 1rem;
-            padding-right: 1rem;
-        }
-        
-        @media (min-width: 640px) {
-            .content-container {
-                padding-left: 1.5rem;
-                padding-right: 1.5rem;
-            }
-        }
-        
-        @media (min-width: 1024px) {
-            .content-container {
-                padding-left: 2rem;
-                padding-right: 2rem;
-            }
-        }
-        
-        .game-iframe {
-            width: 100%;
-            aspect-ratio: 16/9;
-            max-width: 56rem;
-            margin-left: auto;
-            margin-right: auto;
-            border-radius: 0.5rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            height: 500px; /* Explicit height for browsers that don't support aspect-ratio */
-        }
-        
-        @media (max-width: 768px) {
-            .game-iframe {
-                height: 300px;
-            }
-        }
-        
-        .section-heading {
-            font-size: 1.5rem;
-            line-height: 2rem;
-            font-weight: 700;
-            color: #1f2937;
-            margin-bottom: 1rem;
-        }
-        
-        @media (min-width: 640px) {
-            .section-heading {
-                font-size: 1.875rem;
-                line-height: 2.25rem;
-            }
-        }
-        
-        /* Fix for header text overflow */
-        .nav-container {
-            width: 100%;
-            overflow-x: hidden;
-        }
-
-        /* Fullscreen button styles */
-        .game-container {
-            position: relative;
-        }
-        
-        .fullscreen-btn {
-            position: absolute;
-            bottom: 15px;
-            right: 15px;
-            background-color: rgba(0, 0, 0, 0.6);
-            color: white;
-            border: none;
-            border-radius: 4px;
-            padding: 8px 12px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            z-index: 10;
-            font-size: 14px;
-            transition: background-color 0.3s;
-        }
-        
-        .fullscreen-btn:hover {
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-        
-        .fullscreen-btn svg {
-            width: 16px;
-            height: 16px;
-        }
-        
-        /* Style for when in fullscreen mode */
-        .fullscreen-active {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 9999;
-            margin: 0;
-            padding: 0;
-            border: none;
-            border-radius: 0;
-            max-width: none;
-        }
-    </style>
-</head>
-<body class="bg-apple-gray-light min-h-screen">
-    <header class="bg-apple-blue text-white py-4 shadow-md nav-container">
-        <div class="content-container">
-            <div class="flex flex-col sm:flex-row items-center justify-between">
-                <a href="../index.html" class="text-2xl font-bold mb-2 sm:mb-0">FunnyJourney.com</a>
-                <nav>
-                    <ul class="flex space-x-4">
-                        <li><a href="../index.html" class="hover:underline">Home</a></li>
-                        <li><a href="index.html" class="hover:underline">Games</a></li>
-                        <li><a href="../about/index.html" class="hover:underline">About</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </header>
-
-    <main class="content-container py-8">
-        <section class="mb-12 text-center">
-            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 mb-4">Classic Solitaire</h1>
-            <p class="text-xl sm:text-2xl text-apple-darkblue font-medium mb-8">The timeless card game that's perfect for a quick mental break!</p>
-            
-            <div class="mb-12">
-                <div class="game-container">
-                    <iframe src="https://cloud.onlinegames.io/games/2025/html/solitaire/index-og.html" 
-                            id="game-frame"
-                            class="game-iframe" 
-                            frameborder="0" 
-                            allow="fullscreen" 
-                            allowfullscreen></iframe>
-                    <button id="fullscreen-btn" class="fullscreen-btn" aria-label="Toggle fullscreen">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
-                        </svg>
-                        <span>Fullscreen</span>
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <section class="mb-12 bg-white rounded-xl p-6 shadow-md">
-            <h2 class="section-heading">Game Description</h2>
-            <div class="prose max-w-none">
-                <p class="mb-4">
-                    <strong>Classic Solitaire</strong> is the timeless card game that's been a staple on computers since the early days of personal computing. Sort cards by suit and rank in this engaging patience game that offers a perfect mental break from your daily routine.
-                </p>
-                <p>
-                    With its simple yet strategic gameplay, Classic Solitaire provides a relaxing experience that can be both meditative and mentally stimulating.
-                </p>
-            </div>
-        </section>
-
-        <section class="mb-12 bg-white rounded-xl p-6 shadow-md">
-            <h2 class="section-heading">How to Play</h2>
-            <div class="grid md:grid-cols-2 gap-6">
-                <div>
-                    <h3 class="text-xl font-semibold mb-2 text-apple-orange">Rules</h3>
-                    <ul class="list-disc pl-5 mb-4">
-                        <li>Build four foundation piles by suit from Ace to King</li>
-                        <li>Build tableau columns in descending order with alternating colors</li>
-                        <li>Move exposed cards between columns to organize them</li>
-                        <li>Turn over cards from the stock pile when you need new cards</li>
-                        <li>Win by moving all cards to the foundation piles</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-xl font-semibold mb-2 text-apple-green">Card Placement</h3>
-                    <ul class="list-disc pl-5">
-                        <li>Foundation piles build up (A, 2, 3, ..., Q, K)</li>
-                        <li>Tableau columns build down (K, Q, J, ..., 3, 2, A)</li>
-                        <li>Tableau requires alternating colors (red, black, red, etc.)</li>
-                        <li>Only Kings can be placed on empty tableau spots</li>
-                        <li>Only Aces can start foundation piles</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section class="mb-12 bg-white rounded-xl p-6 shadow-md">
-            <h2 class="section-heading">Game Features</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                <div class="text-center p-4 bg-apple-gray-medium rounded-lg">
-                    <div class="text-4xl text-apple-red mb-2">🎮</div>
-                    <h3 class="font-bold mb-2">Classic Gameplay</h3>
-                    <p>Enjoy the timeless rules and mechanics that have made Solitaire a beloved pastime for generations.</p>
-                </div>
-                <div class="text-center p-4 bg-apple-gray-medium rounded-lg">
-                    <div class="text-4xl text-apple-green mb-2">🧠</div>
-                    <h3 class="font-bold mb-2">Strategic Thinking</h3>
-                    <p>Exercise your brain with a game that requires planning and foresight to master.</p>
-                </div>
-                <div class="text-center p-4 bg-apple-gray-medium rounded-lg">
-                    <div class="text-4xl text-apple-blue mb-2">⏱️</div>
-                    <h3 class="font-bold mb-2">Quick Play</h3>
-                    <p>Perfect for short breaks, each game offers a fresh challenge that can be completed in minutes.</p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="content-container">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div>
-                    <h2 class="text-xl font-bold mb-4">FunnyJourney.com</h2>
-                    <p class="text-gray-300">Your destination for fun and engaging online games.</p>
-                </div>
-                <div>
-                    <h2 class="text-xl font-bold mb-4">Quick Links</h2>
-                    <ul class="space-y-2">
-                        <li><a href="../index.html" class="text-gray-300 hover:text-white">Home</a></li>
-                        <li><a href="index.html" class="text-gray-300 hover:text-white">Games</a></li>
-                        <li><a href="../about/index.html" class="text-gray-300 hover:text-white">About</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h2 class="text-xl font-bold mb-4">Legal</h2>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-300 hover:text-white">Privacy Policy</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white">Terms of Service</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white">Cookie Policy</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2025 FunnyJourney.com. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
     <script>
         // Fullscreen functionality
-        const gameFrame = document.getElementById('game-frame');
         const fullscreenBtn = document.getElementById('fullscreen-btn');
+        const gameFrame = document.getElementById('game-frame');
         
         fullscreenBtn.addEventListener('click', () => {
-            if (!document.fullscreenElement) {
-                if (gameFrame.requestFullscreen) {
-                    gameFrame.requestFullscreen();
-                } else if (gameFrame.webkitRequestFullscreen) {
-                    gameFrame.webkitRequestFullscreen();
-                } else if (gameFrame.msRequestFullscreen) {
-                    gameFrame.msRequestFullscreen();
-                }
-                gameFrame.classList.add('fullscreen-active');
+            if (gameFrame.classList.contains('fullscreen-active')) {
+                exitFullscreen();
             } else {
-                if (document.exitFullscreen) {
-                    document.exitFullscreen();
-                } else if (document.webkitExitFullscreen) {
-                    document.webkitExitFullscreen();
-                } else if (document.msExitFullscreen) {
-                    document.msExitFullscreen();
-                }
-                gameFrame.classList.remove('fullscreen-active');
+                enterFullscreen();
             }
         });
         
-        // Handle fullscreen change
+        function enterFullscreen() {
+            gameFrame.classList.add('fullscreen-active');
+            fullscreenBtn.querySelector('span').textContent = 'Exit Fullscreen';
+            
+            if (gameFrame.requestFullscreen) {
+                gameFrame.requestFullscreen();
+            } else if (gameFrame.webkitRequestFullscreen) {
+                gameFrame.webkitRequestFullscreen();
+            } else if (gameFrame.msRequestFullscreen) {
+                gameFrame.msRequestFullscreen();
+            }
+        }
+        
+        function exitFullscreen() {
+            gameFrame.classList.remove('fullscreen-active');
+            fullscreenBtn.querySelector('span').textContent = 'Fullscreen';
+            
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+            } else if (document.msExitFullscreen) {
+                document.msExitFullscreen();
+            }
+        }
+        
+        // Listen for fullscreen change events
         document.addEventListener('fullscreenchange', handleFullscreenChange);
         document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
-        document.addEventListener('mozfullscreenchange', handleFullscreenChange);
-        document.addEventListener('MSFullscreenChange', handleFullscreenChange);
+        document.addEventListener('msfullscreenchange', handleFullscreenChange);
         
         function handleFullscreenChange() {
-            if (!document.fullscreenElement && !document.webkitFullscreenElement && 
-                !document.mozFullScreenElement && !document.msFullscreenElement) {
+            if (!document.fullscreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {
                 gameFrame.classList.remove('fullscreen-active');
+                fullscreenBtn.querySelector('span').textContent = 'Fullscreen';
             }
         }
     </script>
 </body>
-</html> 
->>>>>>> d053e0aaf5e6abaa6ca66c55c34a3a97f81b457f
+</html>
