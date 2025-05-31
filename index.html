@@ -12,154 +12,519 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Best Free Online Browser Games to Play Now | FunnyJourney</title>
-    <meta name="description" content="Play the best collection of free online games at FunnyJourney.com. Enjoy card games like Solitaire, arcade games, clicker games and more. No downloads required, play instantly in your browser!">
-    <meta name="keywords" content="free online games, browser games, solitaire, card games, clicker games, arcade games, poop clicker, egg helix, no download games">
+    <title>🎮 Play FREE Games Now - No Download Required! | FunnyJourney</title>
+    <meta name="description" content="🔥 Play amazing FREE games instantly! Monster Survivors, Solitaire, Clicker Games & more. No downloads, no ads, just pure fun! Start playing in 1 click!">
+    <meta name="keywords" content="free online games, browser games, solitaire, card games, clicker games, arcade games, poop clicker, egg helix, no download games, instant play">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://funnyjourney.com/">
     <link rel="stylesheet" href="css/styles.css">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Open Graph tags for social sharing -->
-    <meta property="og:title" content="Free Online Games to Play Now | FunnyJourney">
-    <meta property="og:description" content="Play free online games instantly in your browser. No downloads required!">
+    <meta property="og:title" content="🎮 Play FREE Games Now - No Download Required!">
+    <meta property="og:description" content="🔥 Amazing FREE games! Play Monster Survivors, Solitaire, Clicker Games instantly!">
     <meta property="og:url" content="https://funnyjourney.com/">
     <meta property="og:type" content="website">
+    <meta property="og:image" content="https://funnyjourney.com/img/Monster-survivors.jpg">
+    
+    <!-- Preload critical images -->
+    <link rel="preload" href="img/Monster-survivors.jpg" as="image">
+    <link rel="preload" href="img/solitaire.jpg" as="image">
 </head>
 <body>
+    <!-- Sticky Play Button -->
+    <div class="sticky-play-button" id="stickyPlay">
+        <button class="pulse-button" onclick="scrollToGames()">
+            <i class="fas fa-play"></i> PLAY NOW!
+        </button>
+    </div>
+
     <!-- Header -->
     <header class="site-header">
         <div class="container header-container">
-            <a href="index.html" class="site-logo">FunnyJourney.com</a>
+            <a href="index.html" class="site-logo">🎮 FunnyJourney</a>
             <nav class="main-nav">
                 <ul>
                     <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="games/index.html">Games</a></li>
+                    <li><a href="games/index.html">All Games</a></li>
                     <li><a href="about/index.html">About</a></li>
                 </ul>
             </nav>
+            <button class="play-now-btn" onclick="scrollToGames()">
+                <i class="fas fa-gamepad"></i> PLAY NOW
+            </button>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- Hero Section with Instant Play -->
+    <section class="hero hero-enhanced">
+        <div class="hero-background"></div>
         <div class="container">
-            <h1 class="hero-title">Play Amazing Games Online</h1>
-            <p class="hero-subtitle">Free browser games for everyone. No downloads, no installations - just instant fun!</p>
-            <a href="#games" class="btn btn-primary">Explore Games</a>
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-hot">🔥 HOT</span>
+                    <span class="badge-free">100% FREE</span>
+                    <span class="badge-instant">⚡ INSTANT PLAY</span>
+                </div>
+                <h1 class="hero-title">
+                    Play <span class="gradient-text">Amazing Games</span><br>
+                    <span class="typewriter" id="typewriter">Right Now!</span>
+                </h1>
+                <p class="hero-subtitle">
+                    <strong>No Downloads • No Sign-up • No Waiting</strong><br>
+                    Over <span class="highlight-number">1000+</span> players online right now!
+                </p>
+                
+                <!-- Quick Play Section -->
+                <div class="quick-play-section">
+                    <h3 class="quick-play-title">🎯 Most Popular Right Now:</h3>
+                    <div class="quick-play-games">
+                        <div class="quick-game-card" onclick="window.location.href='games/monster-survivors.html'">
+                            <img src="img/Monster-survivors.jpg" alt="Monster Survivors" class="quick-game-img">
+                            <div class="quick-game-info">
+                                <h4>Monster Survivors</h4>
+                                <div class="game-stats">
+                                    <span class="stat">⭐ 4.8</span>
+                                    <span class="stat">👥 523 playing</span>
+                                </div>
+                                <button class="quick-play-btn">
+                                    <i class="fas fa-play"></i> PLAY
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="quick-game-card" onclick="window.location.href='games/solitaire.html'">
+                            <img src="img/solitaire.jpg" alt="Classic Solitaire" class="quick-game-img">
+                            <div class="quick-game-info">
+                                <h4>Classic Solitaire</h4>
+                                <div class="game-stats">
+                                    <span class="stat">⭐ 4.9</span>
+                                    <span class="stat">👥 312 playing</span>
+                                </div>
+                                <button class="quick-play-btn">
+                                    <i class="fas fa-play"></i> PLAY
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="quick-game-card" onclick="window.location.href='games/poop-clicker.html'">
+                            <img src="img/Poop-Clicker.jpg" alt="Poop Clicker" class="quick-game-img">
+                            <div class="quick-game-info">
+                                <h4>Poop Clicker</h4>
+                                <div class="game-stats">
+                                    <span class="stat">⭐ 4.7</span>
+                                    <span class="stat">👥 287 playing</span>
+                                </div>
+                                <button class="quick-play-btn">
+                                    <i class="fas fa-play"></i> PLAY
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-actions">
+                    <button class="btn btn-primary btn-lg pulse" onclick="scrollToGames()">
+                        <i class="fas fa-rocket"></i> EXPLORE ALL GAMES
+                    </button>
+                    <button class="btn btn-secondary btn-lg" onclick="playRandomGame()">
+                        <i class="fas fa-random"></i> SURPRISE ME!
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Floating Game Previews -->
+        <div class="floating-previews">
+            <div class="preview-card preview-1">
+                <img src="img/pyramid-solitaire.jpg" alt="Pyramid Solitaire">
+                <span class="preview-label">Pyramid Solitaire</span>
+            </div>
+            <div class="preview-card preview-2">
+                <img src="img/fast-food-rush.jpg" alt="Fast Food Rush">
+                <span class="preview-label">Fast Food Rush</span>
+            </div>
+            <div class="preview-card preview-3">
+                <img src="img/Egg-Helix.jpg" alt="Egg Helix">
+                <span class="preview-label">Egg Helix</span>
+            </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="section">
+    <!-- Game Counter Section -->
+    <section class="game-counter">
         <div class="container">
-            <h2 class="section-title">Why Choose FunnyJourney?</h2>
-            <p class="section-subtitle">We offer a premium gaming experience that's completely free and accessible anywhere.</p>
-            
-            <div class="features">
-                <div class="feature">
-                    <span class="feature-icon" style="color: var(--apple-blue);">
-                        <i class="fas fa-gamepad"></i>
-                    </span>
-                    <h3 class="feature-title">Instant Play</h3>
-                    <p>Play directly in your browser without any downloads or installations required.</p>
+            <div class="counter-stats">
+                <div class="stat-item">
+                    <div class="stat-number" data-count="6">0</div>
+                    <div class="stat-label">Free Games</div>
                 </div>
-                
-                <div class="feature">
-                    <span class="feature-icon" style="color: var(--apple-green);">
-                        <i class="fas fa-mobile-alt"></i>
-                    </span>
-                    <h3 class="feature-title">Mobile Compatible</h3>
-                    <p>All our games are optimized for both desktop and mobile devices for gaming on the go.</p>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="1000">0</div>
+                    <div class="stat-label">Players Online</div>
                 </div>
-                
-                <div class="feature">
-                    <span class="feature-icon" style="color: var(--apple-red);">
-                        <i class="fas fa-bolt"></i>
-                    </span>
-                    <h3 class="feature-title">New Games Added</h3>
-                    <p>We regularly update our collection with new and exciting games for you to enjoy.</p>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="24">0</div>
+                    <div class="stat-label">Hours of Fun</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="0">0</div>
+                    <div class="stat-label">Download Required</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Games Section -->
-    <section id="games" class="section" style="background-color: var(--bg-tertiary);">
+    <!-- Features Section with Interactive Elements -->
+    <section class="section features-enhanced">
         <div class="container">
-            <h2 class="section-title">Featured Games</h2>
-            <p class="section-subtitle">Check out our collection of free online games. Find your favorite and start playing!</p>
+            <h2 class="section-title">Why Gamers <span class="highlight">❤️ Love</span> FunnyJourney?</h2>
+            <p class="section-subtitle">Join thousands of players who chose us as their favorite gaming destination!</p>
             
-            <div class="games-grid">
+            <div class="features">
+                <div class="feature feature-interactive" data-feature="instant">
+                    <div class="feature-icon-wrapper">
+                        <span class="feature-icon">
+                            <i class="fas fa-bolt"></i>
+                        </span>
+                        <div class="feature-particles"></div>
+                    </div>
+                    <h3 class="feature-title">⚡ Instant Play</h3>
+                    <p>Click and play! No downloads, no installations, no waiting. Your games start in under 2 seconds!</p>
+                    <div class="feature-demo">
+                        <button class="demo-btn" onclick="showInstantDemo()">Try It Now!</button>
+                    </div>
+                </div>
+                
+                <div class="feature feature-interactive" data-feature="mobile">
+                    <div class="feature-icon-wrapper">
+                        <span class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </span>
+                        <div class="feature-particles"></div>
+                    </div>
+                    <h3 class="feature-title">📱 Any Device</h3>
+                    <p>Play on phone, tablet, laptop, or desktop. Our games work perfectly everywhere!</p>
+                    <div class="device-preview">
+                        <i class="fas fa-laptop"></i>
+                        <i class="fas fa-tablet-alt"></i>
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                </div>
+                
+                <div class="feature feature-interactive" data-feature="new">
+                    <div class="feature-icon-wrapper">
+                        <span class="feature-icon">
+                            <i class="fas fa-star"></i>
+                        </span>
+                        <div class="feature-particles"></div>
+                    </div>
+                    <h3 class="feature-title">🎮 New Games Weekly</h3>
+                    <p>Fresh content every week! Be the first to play our latest additions.</p>
+                    <div class="new-game-notification">
+                        <span class="notification-badge">NEW!</span>
+                        <span>Monster Survivors just added!</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Games Section -->
+    <section id="games" class="section games-enhanced">
+        <div class="container">
+            <div class="games-header">
+                <h2 class="section-title">🎯 Choose Your <span class="gradient-text">Adventure</span></h2>
+                <p class="section-subtitle">Pick your mood and start playing instantly!</p>
+                
+                <!-- Game Categories Filter -->
+                <div class="game-filters">
+                    <button class="filter-btn active" data-filter="all">
+                        <i class="fas fa-th"></i> All Games
+                    </button>
+                    <button class="filter-btn" data-filter="action">
+                        <i class="fas fa-rocket"></i> Action
+                    </button>
+                    <button class="filter-btn" data-filter="puzzle">
+                        <i class="fas fa-puzzle-piece"></i> Puzzle
+                    </button>
+                    <button class="filter-btn" data-filter="casual">
+                        <i class="fas fa-smile"></i> Casual
+                    </button>
+                </div>
+            </div>
+            
+            <div class="games-grid enhanced-grid">
                 <!-- Game 1: Monster Survivors -->
-                <div class="card">
-                    <img src="./img/Monster-survivors.jpg" alt="Monster Survivors Game" class="card-img">
+                <div class="card enhanced-card" data-category="action">
+                    <div class="card-header">
+                        <span class="game-badge hot">🔥 HOT</span>
+                        <span class="play-count">523 playing</span>
+                    </div>
+                    <div class="card-img-wrapper">
+                        <img src="./img/Monster-survivors.jpg" alt="Monster Survivors Game" class="card-img">
+                        <div class="card-overlay">
+                            <button class="instant-play-btn" onclick="window.location.href='games/monster-survivors.html'">
+                                <i class="fas fa-play"></i>
+                                <span>PLAY NOW</span>
+                            </button>
+                        </div>
+                        <div class="game-duration">⏱️ 15-30 min</div>
+                    </div>
                     <div class="card-body">
                         <h3 class="card-title">Monster Survivors</h3>
-                        <p class="card-text">A thrilling survival adventure where you battle waves of monsters while upgrading your character!</p>
-                        <a href="games/monster-survivors.html" class="btn btn-primary">Play Now</a>
+                        <div class="game-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-text">4.8 (234 reviews)</span>
+                        </div>
+                        <p class="card-text">🎯 Battle waves of monsters while upgrading your character! Epic survival adventure awaits.</p>
+                        <div class="game-tags">
+                            <span class="tag">Action</span>
+                            <span class="tag">Survival</span>
+                            <span class="tag">RPG</span>
+                        </div>
                     </div>
                 </div>
                 
                 <!-- Game 2: Pyramid Solitaire -->
-                <div class="card">
-                    <img src="img/pyramid-solitaire.jpg" alt="Pyramid Solitaire Game" class="card-img">
+                <div class="card enhanced-card" data-category="puzzle">
+                    <div class="card-header">
+                        <span class="game-badge trending">📈 TRENDING</span>
+                        <span class="play-count">312 playing</span>
+                    </div>
+                    <div class="card-img-wrapper">
+                        <img src="img/pyramid-solitaire.jpg" alt="Pyramid Solitaire Game" class="card-img">
+                        <div class="card-overlay">
+                            <button class="instant-play-btn" onclick="window.location.href='games/pyramid-solitaire.html'">
+                                <i class="fas fa-play"></i>
+                                <span>PLAY NOW</span>
+                            </button>
+                        </div>
+                        <div class="game-duration">⏱️ 5-10 min</div>
+                    </div>
                     <div class="card-body">
                         <h3 class="card-title">Pyramid Solitaire</h3>
-                        <p class="card-text">Remove a pyramid of cards by selecting pairs that add up to 13. A simple but fun card puzzle to enjoy.</p>
-                        <a href="games/pyramid-solitaire.html" class="btn btn-primary">Play Now</a>
+                        <div class="game-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-text">4.9 (567 reviews)</span>
+                        </div>
+                        <p class="card-text">🧩 Remove pyramid cards by pairing them to 13. Perfect brain teaser for quick breaks!</p>
+                        <div class="game-tags">
+                            <span class="tag">Puzzle</span>
+                            <span class="tag">Cards</span>
+                            <span class="tag">Brain</span>
+                        </div>
                     </div>
                 </div>
                 
                 <!-- Game 3: Classic Solitaire -->
-                <div class="card">
-                    <img src="img/solitaire.jpg" alt="Classic Solitaire Game" class="card-img">
+                <div class="card enhanced-card" data-category="puzzle">
+                    <div class="card-header">
+                        <span class="game-badge classic">👑 CLASSIC</span>
+                        <span class="play-count">445 playing</span>
+                    </div>
+                    <div class="card-img-wrapper">
+                        <img src="img/solitaire.jpg" alt="Classic Solitaire Game" class="card-img">
+                        <div class="card-overlay">
+                            <button class="instant-play-btn" onclick="window.location.href='games/solitaire.html'">
+                                <i class="fas fa-play"></i>
+                                <span>PLAY NOW</span>
+                            </button>
+                        </div>
+                        <div class="game-duration">⏱️ 10-15 min</div>
+                    </div>
                     <div class="card-body">
                         <h3 class="card-title">Classic Solitaire</h3>
-                        <p class="card-text">The timeless card game that's perfect for a quick mental break. Sort the cards and clear the table!</p>
-                        <a href="games/solitaire.html" class="btn btn-primary">Play Now</a>
+                        <div class="game-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-text">4.9 (892 reviews)</span>
+                        </div>
+                        <p class="card-text">♠️ The timeless card game everyone loves. Perfect for relaxation and mental exercise!</p>
+                        <div class="game-tags">
+                            <span class="tag">Cards</span>
+                            <span class="tag">Classic</span>
+                            <span class="tag">Relax</span>
+                        </div>
                     </div>
                 </div>
                 
                 <!-- Game 4: Fast Food Rush -->
-                <div class="card">
-                    <img src="img/fast-food-rush.jpg" alt="Fast Food Rush Game" class="card-img">
+                <div class="card enhanced-card" data-category="casual">
+                    <div class="card-header">
+                        <span class="game-badge new">✨ NEW</span>
+                        <span class="play-count">198 playing</span>
+                    </div>
+                    <div class="card-img-wrapper">
+                        <img src="img/fast-food-rush.jpg" alt="Fast Food Rush Game" class="card-img">
+                        <div class="card-overlay">
+                            <button class="instant-play-btn" onclick="window.location.href='games/fast-food-rush.html'">
+                                <i class="fas fa-play"></i>
+                                <span>PLAY NOW</span>
+                            </button>
+                        </div>
+                        <div class="game-duration">⏱️ 20-40 min</div>
+                    </div>
                     <div class="card-body">
                         <h3 class="card-title">Fast Food Rush</h3>
-                        <p class="card-text">Run your own burger joint in this fast-paced restaurant simulator. Cook, serve, and manage your business!</p>
-                        <a href="games/fast-food-rush.html" class="btn btn-primary">Play Now</a>
+                        <div class="game-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-text">4.7 (156 reviews)</span>
+                        </div>
+                        <p class="card-text">🍔 Run your burger empire! Cook, serve, and manage in this fast-paced restaurant sim.</p>
+                        <div class="game-tags">
+                            <span class="tag">Strategy</span>
+                            <span class="tag">Management</span>
+                            <span class="tag">Fun</span>
+                        </div>
                     </div>
                 </div>
                 
                 <!-- Game 5: Egg Helix -->
-                <div class="card">
-                    <img src="img/Egg-Helix.jpg" alt="Egg Helix" class="card-img">
+                <div class="card enhanced-card" data-category="action">
+                    <div class="card-header">
+                        <span class="game-badge trending">📈 TRENDING</span>
+                        <span class="play-count">267 playing</span>
+                    </div>
+                    <div class="card-img-wrapper">
+                        <img src="img/Egg-Helix.jpg" alt="Egg Helix" class="card-img">
+                        <div class="card-overlay">
+                            <button class="instant-play-btn" onclick="window.location.href='games/egg-helix.html'">
+                                <i class="fas fa-play"></i>
+                                <span>PLAY NOW</span>
+                            </button>
+                        </div>
+                        <div class="game-duration">⏱️ 5-15 min</div>
+                    </div>
                     <div class="card-body">
                         <h3 class="card-title">Egg Helix</h3>
-                        <p class="card-text">Guide bouncing Easter eggs to the top in this exciting arcade challenge. Steer a trunk with tennis rackets to control the path of the eggs.</p>
-                        <a href="games/egg-helix.html" class="btn btn-primary">Play Now</a>
+                        <div class="game-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-text">4.6 (289 reviews)</span>
+                        </div>
+                        <p class="card-text">🥚 Guide bouncing Easter eggs in this exciting arcade challenge! Addictive physics fun.</p>
+                        <div class="game-tags">
+                            <span class="tag">Arcade</span>
+                            <span class="tag">Physics</span>
+                            <span class="tag">Easter</span>
+                        </div>
                     </div>
                 </div>
                 
-                <!-- Poop Clicker (Replacing Puzzle Master) -->
-                <div class="card">
-                    <img src="img/Poop-Clicker.jpg" alt="Poop Clicker Game" class="card-img">
+                <!-- Game 6: Poop Clicker -->
+                <div class="card enhanced-card" data-category="casual">
+                    <div class="card-header">
+                        <span class="game-badge funny">😂 FUNNY</span>
+                        <span class="play-count">356 playing</span>
+                    </div>
+                    <div class="card-img-wrapper">
+                        <img src="img/Poop-Clicker.jpg" alt="Poop Clicker Game" class="card-img">
+                        <div class="card-overlay">
+                            <button class="instant-play-btn" onclick="window.location.href='games/poop-clicker.html'">
+                                <i class="fas fa-play"></i>
+                                <span>PLAY NOW</span>
+                            </button>
+                        </div>
+                        <div class="game-duration">⏱️ 10-30 min</div>
+                    </div>
                     <div class="card-body">
                         <h3 class="card-title">Poop Clicker</h3>
-                        <p class="card-text">A hilarious clicker game where you tap to create as much poop as possible! Unlock upgrades and achievements as you play.</p>
-                        <a href="games/poop-clicker.html" class="btn btn-primary">Play Now</a>
+                        <div class="game-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-text">4.7 (423 reviews)</span>
+                        </div>
+                        <p class="card-text">💩 Hilarious clicker madness! Tap to create chaos and unlock crazy upgrades!</p>
+                        <div class="game-tags">
+                            <span class="tag">Clicker</span>
+                            <span class="tag">Funny</span>
+                            <span class="tag">Addictive</span>
+                        </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="social-proof">
+        <div class="container">
+            <h2 class="section-title">What Players Are Saying 💬</h2>
+            <div class="reviews-slider">
+                <div class="review-card">
+                    <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Best free games site ever! No ads, no downloads, just pure fun!"</p>
+                    <div class="reviewer">- Alex, Gamer</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                    <p>"I've been playing Monster Survivors for hours. So addictive!"</p>
+                    <div class="reviewer">- Sarah, Student</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Perfect for lunch breaks. Quick, fun, and works on my phone!"</p>
+                    <div class="reviewer">- Mike, Professional</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Call to Action Section -->
-    <section class="section" style="background-color: var(--apple-blue); color: white; text-align: center;">
+    <section class="section cta-enhanced">
         <div class="container">
-            <h2 style="font-size: 2rem; margin-bottom: 1rem;">Ready to Start Playing?</h2>
-            <p style="font-size: 1.125rem; margin-bottom: 2rem; opacity: 0.9;">Jump into our collection of free online games and start having fun today!</p>
-            <a href="./games/index.html" class="btn" style="background-color: white; color: var(--apple-blue);">Explore All Games</a>
+            <div class="cta-content">
+                <h2>🚀 Ready for Epic Gaming Fun?</h2>
+                <p>Join <strong>1000+ active players</strong> and start your adventure today!</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary btn-xl pulse" onclick="scrollToGames()">
+                        <i class="fas fa-rocket"></i> START PLAYING NOW
+                    </button>
+                    <button class="btn btn-secondary btn-xl" onclick="playRandomGame()">
+                        <i class="fas fa-surprise"></i> SURPRISE ME!
+                    </button>
+                </div>
+                <div class="cta-features">
+                    <span class="cta-feature">✅ 100% Free</span>
+                    <span class="cta-feature">✅ No Download</span>
+                    <span class="cta-feature">✅ Instant Play</span>
+                    <span class="cta-feature">✅ All Devices</span>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -167,8 +532,8 @@
     <footer class="site-footer">
         <div class="container footer-container">
             <div>
-                <h4 class="footer-heading">FunnyJourney.com</h4>
-                <p>Your destination for free, fun online games that you can play anytime, anywhere.</p>
+                <h4 class="footer-heading">🎮 FunnyJourney.com</h4>
+                <p>The ultimate destination for free, instant browser games. No downloads, no limits, just pure gaming fun!</p>
                 <div class="social-links" style="margin-top: 1rem;">
                     <a href="#" class="social-icon" aria-label="Facebook">
                         <i class="fab fa-facebook-f"></i>
@@ -202,7 +567,7 @@
         </div>
         
         <div class="container footer-bottom">
-            <p>&copy; 2025 FunnyJourney.com. All rights reserved.</p>
+            <p>&copy; 2025 FunnyJourney.com. All rights reserved. | 🎮 Play more, stress less!</p>
         </div>
     </footer>
 
