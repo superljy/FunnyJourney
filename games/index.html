@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TGVJVCTQBE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-TGVJVCTQBE');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Online Games to Play Now - Browser Games | FunnyJourney</title>
+    <meta name="description" content="Play the best free online games at FunnyJourney.com! Our collection includes card games, arcade games, clicker games, and more. No downloads required, play instantly in your browser.">
+    <meta name="keywords" content="free online games, browser games, card games, solitaire, arcade games, clicker games, poop clicker, egg helix, no download games">
+    <link rel="canonical" href="https://funnyjourney.com/games">
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Games page specific styles */
+        body {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d1b69 50%, #1a1a1a 100%);
+            color: #ffffff;
+            min-height: 100vh;
+        }
+        
+        .games-page-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .page-title {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #00d4ff, #9d4edd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+        
+        .page-subtitle {
+            font-size: 1.2rem;
+            color: #cccccc;
+            margin-bottom: 2rem;
+        }
+        
+        .back-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 12px 24px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 2rem;
+        }
+        
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .game-categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-bottom: 2rem;
+            justify-content: center;
+        }
+        
+        .category-btn {
+            padding: 0.6rem 1.2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            color: #cccccc;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .category-btn:hover, 
+        .category-btn.active {
+            background: linear-gradient(135deg, #00d4ff, #9d4edd);
+            border-color: transparent;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .game-search {
+            max-width: 500px;
+            margin: 0 auto 3rem;
+            position: relative;
+        }
+        
+        .game-search input {
+            width: 100%;
+            padding: 0.8rem 1rem 0.8rem 3rem;
+            border-radius: 25px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .game-search input:focus {
+            outline: none;
+            border-color: #00d4ff;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .game-search input::placeholder {
+            color: #888888;
+        }
+        
+        .game-search i {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #888888;
+        }
+        
+        /* Compact games grid with better image display */
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .games-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 1.5rem;
+            }
+        }
+        
+        .game-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            position: relative;
+            backdrop-filter: blur(10px);
+        }
+        
+        .game-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(0, 212, 255, 0.3);
+        }
+        
+        .game-image-wrapper {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 16/10;
+            background: linear-gradient(135deg, #2d1b69, #1a1a1a);
+        }
+        
+        .game-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .game-card:hover .game-image {
+            transform: scale(1.05);
+        }
+        
+        .game-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(157, 78, 221, 0.4));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .game-card:hover .game-overlay {
+            opacity: 1;
+        }
+        
+        .play-btn {
+            background: linear-gradient(135deg, #00d4ff, #9d4edd);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 12px 24px;
+            font-weight: 600;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .play-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.4);
+        }
+        
+        .game-content {
+            padding: 1.5rem;
+        }
+        
+        .game-title {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+        
+        .game-title a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .game-title a:hover {
+            color: #00d4ff;
+        }
+        
+        .game-description {
+            color: #cccccc;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+        
+        .game-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .game-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .game-tag {
+            background: rgba(0, 212, 255, 0.2);
+            color: #00d4ff;
+            padding: 0.25rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        
+        .game-rating {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            color: #ffd700;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .section-heading {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <main class="games-page-container">
+        <div class="page-header">
+            <a href="../index.html" class="back-button">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+            
+            <h1 class="page-title">Free Online Games</h1>
+            <p class="page-subtitle">Play the best collection of browser games - no downloads required!</p>
+            
+            <!-- Category Filter -->
+            <div class="game-categories">
+                <button class="category-btn active" data-category="all">All Games</button>
+                <button class="category-btn" data-category="card">Card</button>
+                <button class="category-btn" data-category="arcade">Arcade</button>
+                <button class="category-btn" data-category="racing">Racing</button>
+                <button class="category-btn" data-category="action">Action</button>
+                <button class="category-btn" data-category="puzzle">Puzzle</button>
+                <button class="category-btn" data-category="clicker">Clicker</button>
+                <button class="category-btn" data-category="simulation">Simulation</button>
+            </div>
+            
+            <!-- Search -->
+            <div class="game-search">
+                <i class="fas fa-search"></i>
+                <input type="text" id="gameSearch" placeholder="Search games...">
+            </div>
+        </div>
+
+        <!-- Games Grid -->
+        <div class="games-grid">
+            <!-- Classic Solitaire -->
+            <div class="game-card" data-category="card">
+                <div class="game-image-wrapper">
+                    <img src="../img/solitaire.jpg" alt="Classic Solitaire" class="game-image">
+                    <div class="game-overlay">
+                        <a href="solitaire.html" class="play-btn">
+                            <i class="fas fa-play"></i> Play Now
+                        </a>
+                    </div>
+                </div>
+                <div class="game-content">
+                    <h3 class="game-title">
+                        <a href="solitaire.html">Classic Solitaire</a>
+                    </h3>
+                    <p class="game-description">
+                        The timeless card game that's perfect for a quick mental break. Sort cards by suit and rank!
+                    </p>
+                    <div class="game-footer">
+                        <div class="game-tags">
+                            <span class="game-tag">Card</span>
+                            <span class="game-tag">Classic</span>
+                        </div>
+                        <div class="game-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.8</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pyramid Solitaire -->
+            <div class="game-card" data-category="card">
+                <div class="game-image-wrapper">
+                    <img src="../img/pyramid-solitaire.jpg" alt="Pyramid Solitaire" class="game-image">
+                    <div class="game-overlay">
+                        <a href="pyramid-solitaire.html" class="play-btn">
+                            <i class="fas fa-play"></i> Play Now
+                        </a>
+                    </div>
+                </div>
+                <div class="game-content">
+                    <h3 class="game-title">
+                        <a href="pyramid-solitaire.html">Pyramid Solitaire</a>
+                    </h3>
+                    <p class="game-description">
+                        Remove cards that add up to 13 in this challenging pyramid-based solitaire variant.
+                    </p>
+                    <div class="game-footer">
+                        <div class="game-tags">
+                            <span class="game-tag">Card</span>
+                            <span class="game-tag">Puzzle</span>
+                        </div>
+                        <div class="game-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.6</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Monster Survivors -->
+            <div class="game-card" data-category="action">
+                <div class="game-image-wrapper">
+                    <img src="../img/Monster-survivors.jpg" alt="Monster Survivors" class="game-image">
+                    <div class="game-overlay">
+                        <a href="monster-survivors.html" class="play-btn">
+                            <i class="fas fa-play"></i> Play Now
+                        </a>
+                    </div>
+                </div>
+                <div class="game-content">
+                    <h3 class="game-title">
+                        <a href="monster-survivors.html">Monster Survivors</a>
+                    </h3>
+                    <p class="game-description">
+                        Survive waves of monsters in this action-packed survival game with upgrades and power-ups.
+                    </p>
+                    <div class="game-footer">
+                        <div class="game-tags">
+                            <span class="game-tag">Action</span>
+                            <span class="game-tag">Survival</span>
+                        </div>
+                        <div class="game-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.9</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fast Food Rush -->
+            <div class="game-card" data-category="simulation">
+                <div class="game-image-wrapper">
+                    <img src="../img/fast-food-rush.jpg" alt="Fast Food Rush" class="game-image">
+                    <div class="game-overlay">
+                        <a href="fast-food-rush.html" class="play-btn">
+                            <i class="fas fa-play"></i> Play Now
+                        </a>
+                    </div>
+                </div>
+                <div class="game-content">
+                    <h3 class="game-title">
+                        <a href="fast-food-rush.html">Fast Food Rush</a>
+                    </h3>
+                    <p class="game-description">
+                        Manage your own restaurant and serve customers quickly to earn high scores!
+                    </p>
+                    <div class="game-footer">
+                        <div class="game-tags">
+                            <span class="game-tag">Simulation</span>
+                            <span class="game-tag">Management</span>
+                        </div>
+                        <div class="game-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.7</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Poop Clicker -->
+            <div class="game-card" data-category="clicker">
+                <div class="game-image-wrapper">
+                    <img src="../img/Poop-Clicker.jpg" alt="Poop Clicker" class="game-image">
+                    <div class="game-overlay">
+                        <a href="poop-clicker.html" class="play-btn">
+                            <i class="fas fa-play"></i> Play Now
+                        </a>
+                    </div>
+                </div>
+                <div class="game-content">
+                    <h3 class="game-title">
+                        <a href="poop-clicker.html">Poop Clicker</a>
+                    </h3>
+                    <p class="game-description">
+                        The most addictive clicker game ever! Click to earn points and unlock crazy upgrades.
+                    </p>
+                    <div class="game-footer">
+                        <div class="game-tags">
+                            <span class="game-tag">Clicker</span>
+                            <span class="game-tag">Funny</span>
+                        </div>
+                        <div class="game-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.5</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Egg Helix -->
+            <div class="game-card" data-category="arcade">
+                <div class="game-image-wrapper">
+                    <img src="../img/Egg-Helix.jpg" alt="Egg Helix" class="game-image">
+                    <div class="game-overlay">
+                        <a href="egg-helix.html" class="play-btn">
+                            <i class="fas fa-play"></i> Play Now
+                        </a>
+                    </div>
+                </div>
+                <div class="game-content">
+                    <h3 class="game-title">
+                        <a href="egg-helix.html">Egg Helix</a>
+                    </h3>
+                    <p class="game-description">
+                        Guide the bouncing egg through the twisting helix tower in this addictive physics game.
+                    </p>
+                    <div class="game-footer">
+                        <div class="game-tags">
+                            <span class="game-tag">Arcade</span>
+                            <span class="game-tag">Physics</span>
+                        </div>
+                        <div class="game-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.4</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Highway Traffic -->
+            <div class="game-card" data-category="racing">
+                <div class="game-image-wrapper">
+                    <img src="../img/highway-traffic.jpg" alt="Highway Traffic" class="game-image">
+                    <div class="game-overlay">
+                        <a href="highway-traffic.html" class="play-btn">
+                            <i class="fas fa-play"></i> Play Now
+                        </a>
+                    </div>
+                </div>
+                <div class="game-content">
+                    <h3 class="game-title">
+                        <a href="highway-traffic.html">Highway Traffic</a>
+                    </h3>
+                    <p class="game-description">
+                        Drive down the highway, dodge other cars, and avoid accidents in this thrilling racing game!
+                    </p>
+                    <div class="game-footer">
+                        <div class="game-tags">
+                            <span class="game-tag">Racing</span>
+                            <span class="game-tag">Driving</span>
+                        </div>
+                        <div class="game-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.8</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Drift King -->
+            <div class="game-card" data-category="racing">
+                <div class="game-image-wrapper">
+                    <img src="../img/drift-king.jpg" alt="Drift King" class="game-image">
+                    <div class="game-overlay">
+                        <a href="drift-king.html" class="play-btn">
+                            <i class="fas fa-play"></i> Play Now
+                        </a>
+                    </div>
+                </div>
+                <div class="game-content">
+                    <h3 class="game-title">
+                        <a href="drift-king.html">Drift King</a>
+                    </h3>
+                    <p class="game-description">
+                        Master the art of drifting with premium 3D visuals, 10 sports cars, and 6 unique maps.
+                    </p>
+                    <div class="game-footer">
+                        <div class="game-tags">
+                            <span class="game-tag">Racing</span>
+                            <span class="game-tag">3D</span>
+                        </div>
+                        <div class="game-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.9</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stack Fire Ball -->
+            <div class="game-card" data-category="arcade">
+                <div class="game-image-wrapper">
+                    <img src="../img/stack-fire-ball.jpg" alt="Stack Fire Ball" class="game-image">
+                    <div class="game-overlay">
+                        <a href="stack-fire-ball.html" class="play-btn">
+                            <i class="fas fa-play"></i> Play Now
+                        </a>
+                    </div>
+                </div>
+                <div class="game-content">
+                    <h3 class="game-title">
+                        <a href="stack-fire-ball.html">Stack Fire Ball</a>
+                    </h3>
+                    <p class="game-description">
+                        Guide the ball through each stage, avoiding dark tiles in this relaxing yet challenging game.
+                    </p>
+                    <div class="game-footer">
+                        <div class="game-tags">
+                            <span class="game-tag">Arcade</span>
+                            <span class="game-tag">Skill</span>
+                        </div>
+                        <div class="game-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.6</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Apocalypse Truck -->
+            <div class="game-card" data-category="action">
+                <div class="game-image-wrapper">
+                    <img src="../img/apocalypse-truck.jpg" alt="Apocalypse Truck" class="game-image">
+                    <div class="game-overlay">
+                        <a href="apocalypse-truck.html" class="play-btn">
+                            <i class="fas fa-play"></i> Play Now
+                        </a>
+                    </div>
+                </div>
+                <div class="game-content">
+                    <h3 class="game-title">
+                        <a href="apocalypse-truck.html">Apocalypse Truck</a>
+                    </h3>
+                    <p class="game-description">
+                        Survive the zombie apocalypse with your monster truck! Push through chaos and reach safety.
+                    </p>
+                    <div class="game-footer">
+                        <div class="game-tags">
+                            <span class="game-tag">Action</span>
+                            <span class="game-tag">Zombie</span>
+                        </div>
+                        <div class="game-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.7</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mini Cars Racing -->
+            <div class="game-card" data-category="racing">
+                <div class="game-image-wrapper">
+                    <img src="../img/mini-cars-racing.jpg" alt="Mini Cars Racing" class="game-image">
+                    <div class="game-overlay">
+                        <a href="mini-cars-racing.html" class="play-btn">
+                            <i class="fas fa-play"></i> Play Now
+                        </a>
+                    </div>
+                </div>
+                <div class="game-content">
+                    <h3 class="game-title">
+                        <a href="mini-cars-racing.html">Mini Cars Racing</a>
+                    </h3>
+                    <p class="game-description">
+                        Fast-paced 2-player car racing! Race against the clock or battle a friend on the same device.
+                    </p>
+                    <div class="game-footer">
+                        <div class="game-tags">
+                            <span class="game-tag">Racing</span>
+                            <span class="game-tag">2-Player</span>
+                        </div>
+                        <div class="game-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.8</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Love Tester -->
+            <div class="game-card" data-category="puzzle">
+                <div class="game-image-wrapper">
+                    <img src="../img/love-tester.jpg" alt="Love Tester" class="game-image">
+                    <div class="game-overlay">
+                        <a href="love-tester.html" class="play-btn">
+                            <i class="fas fa-play"></i> Play Now
+                        </a>
+                    </div>
+                </div>
+                <div class="game-content">
+                    <h3 class="game-title">
+                        <a href="love-tester.html">Love Tester</a>
+                    </h3>
+                    <p class="game-description">
+                        Test the love between you and your crush! Enter names and discover your compatibility score.
+                    </p>
+                    <div class="game-footer">
+                        <div class="game-tags">
+                            <span class="game-tag">Puzzle</span>
+                            <span class="game-tag">Fun</span>
+                        </div>
+                        <div class="game-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.3</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Game Statistics -->
+        <div class="text-center mt-12 mb-8">
+            <h2 class="section-heading">🎮 12 Amazing Games & Growing!</h2>
+            <p style="color: #cccccc; font-size: 1.1rem; margin-bottom: 2rem;">
+                All games are free to play, no downloads required. New games added regularly!
+            </p>
+        </div>
+    </main>
+
+    <script>
+        // Wait for DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Category filtering
+            const categoryBtns = document.querySelectorAll('.category-btn');
+            const gameCards = document.querySelectorAll('.game-card');
+            const searchInput = document.getElementById('gameSearch');
+
+            // Check if elements exist before adding event listeners
+            if (categoryBtns.length === 0 || gameCards.length === 0 || !searchInput) {
+                console.warn('Games page elements not found. Skipping initialization.');
+                return;
+            }
+
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const category = btn.getAttribute('data-category');
+                    
+                    // Update active button
+                    categoryBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    
+                    // Filter games
+                    gameCards.forEach(card => {
+                        const cardCategory = card.getAttribute('data-category');
+                        if (category === 'all' || cardCategory === category) {
+                            card.style.display = 'block';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'translateY(0)';
+                            }, 50);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'translateY(20px)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+
+            // Search functionality
+            searchInput.addEventListener('input', (e) => {
+                const searchTerm = e.target.value.toLowerCase();
+                
+                gameCards.forEach(card => {
+                    const titleElement = card.querySelector('.game-title a');
+                    const descriptionElement = card.querySelector('.game-description');
+                    
+                    if (!titleElement || !descriptionElement) {
+                        return; // Skip if elements don't exist
+                    }
+                    
+                    const title = titleElement.textContent.toLowerCase();
+                    const description = descriptionElement.textContent.toLowerCase();
+                    
+                    if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                        card.style.display = 'block';
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+
+            // Add hover effects
+            gameCards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.style.zIndex = '10';
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.zIndex = '1';
+                });
+            });
+
+            // Initialize card states
+            gameCards.forEach(card => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+                card.style.display = 'block';
+            });
+
+            console.log('Games page initialized successfully with', gameCards.length, 'games');
+        });
+    </script>
+</body>
+</html>

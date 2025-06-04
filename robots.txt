@@ -1,0 +1,32 @@
+User-agent: *
+Allow: /
+
+# 允许重要页面被抓取
+Allow: /games/
+Allow: /about/
+Allow: /css/
+Allow: /img/
+
+# 禁止抓取这些不重要的目录
+Disallow: /admin/
+Disallow: /temp/
+Disallow: /.git/
+
+# 网站地图位置
+Sitemap: https://funnyjourney.com/sitemap.xml
+
+# 抓取延迟（毫秒）
+Crawl-delay: 1
+
+# 特定搜索引擎优化
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 2 

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TGVJVCTQBE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-TGVJVCTQBE');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pyramid Solitaire - Classic Card Game | FunnyJourney.com</title>
+    <meta name="description" content="Play Pyramid Solitaire online for free! Remove cards from the pyramid by finding pairs that add up to 13 in this classic patience card game.">
+    <meta name="keywords" content="pyramid solitaire, card game, solitaire, pyramid cards, free solitaire, online card game">
+    <link rel="canonical" href="https://funnyjourney.com/pyramid-solitaire">
+    <!-- Add main stylesheet for consistent styling -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gaming: {
+                            dark: '#1a1a1a',
+                            darker: '#0a0a0a',
+                            blue: '#00d4ff',
+                            purple: '#9d4edd',
+                            green: '#39ff14',
+                            pink: '#ff10f0'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Game-specific styles */
+        body {
+            padding-top: 80px; /* Add padding to account for fixed header */
+        }
+        
+        .content-container {
+            max-width: 72rem;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        
+        @media (min-width: 640px) {
+            .content-container {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .content-container {
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+        }
+        
+        .game-iframe {
+            width: 100%;
+            aspect-ratio: 16/9;
+            max-width: 56rem;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            height: 500px;
+        }
+        
+        @media (max-width: 768px) {
+            .game-iframe {
+                height: 300px;
+            }
+        }
+        
+        .section-heading {
+            font-size: 1.5rem;
+            line-height: 2rem;
+            font-weight: 700;
+            color: #00d4ff;
+            margin-bottom: 1rem;
+        }
+        
+        @media (min-width: 640px) {
+            .section-heading {
+                font-size: 1.875rem;
+                line-height: 2.25rem;
+            }
+        }
+
+        .game-container {
+            position: relative;
+        }
+        
+        .fullscreen-btn {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 8px 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            z-index: 10;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+        
+        .fullscreen-btn:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        
+        .fullscreen-btn svg {
+            width: 16px;
+            height: 16px;
+        }
+        
+        .fullscreen-active {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            margin: 0;
+            padding: 0;
+            border: none;
+            border-radius: 0;
+            max-width: none;
+        }
+        
+        .game-content {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        .back-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 12px 24px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 1rem;
+        }
+        
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <!-- Use the main header from index.html -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="../index.html" class="site-logo">🎮 FunnyJourney</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="index.html" class="active">All Games</a></li>
+                    <li><a href="../about/index.html">About</a></li>
+                </ul>
+            </nav>
+            <button class="play-now-btn" onclick="window.location.href='index.html'">
+                <i class="fas fa-gamepad"></i> MORE GAMES
+            </button>
+        </div>
+    </header>
+
+    <main class="content-container py-8">
+        <a href="index.html" class="back-button">
+            <i class="fas fa-arrow-left"></i> Back to Games
+        </a>
+        
+        <section class="mb-12 text-center">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-4">Pyramid Solitaire</h1>
+            <p class="text-xl sm:text-2xl text-gaming-blue font-medium mb-8">Remove cards that add up to 13 in this challenging brain teaser!</p>
+            
+            <div class="mb-12">
+                <div class="game-container">
+                    <iframe src="https://cloud.onlinegames.io/games/2025/html/pyramid-solitaire/index-og.html" 
+                            id="game-frame"
+                            class="game-iframe" 
+                            frameborder="0" 
+                            allow="fullscreen" 
+                            allowfullscreen></iframe>
+                    <button id="fullscreen-btn" class="fullscreen-btn" aria-label="Toggle fullscreen">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+                        </svg>
+                        <span>Fullscreen</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="game-content">
+            <h2 class="section-heading">Game Description</h2>
+            <div class="prose max-w-none text-white">
+                <p class="mb-4">
+                    <strong>Pyramid Solitaire</strong> is a challenging card game where you must remove all cards from the pyramid by pairing them to add up to 13. This strategic variant of solitaire requires planning and careful thinking to succeed.
+                </p>
+                <p>
+                    With its unique pyramid layout and mathematical challenge, Pyramid Solitaire offers a perfect brain teaser that combines luck and strategy in an engaging card game experience.
+                </p>
+            </div>
+        </section>
+
+        <section class="game-content">
+            <h2 class="section-heading">How to Play</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-xl font-semibold mb-2 text-gaming-pink">Basic Rules</h3>
+                    <ul class="list-disc pl-5 mb-4 text-white">
+                        <li>Remove pairs of cards that add up to <strong>13</strong></li>
+                        <li><strong>Kings</strong> can be removed alone (worth 13)</li>
+                        <li>Only <strong>exposed cards</strong> can be selected</li>
+                        <li>Clear the entire pyramid to win</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold mb-2 text-gaming-green">Card Values</h3>
+                    <ul class="list-disc pl-5 mb-4 text-white">
+                        <li>Ace = 1, Numbers = face value</li>
+                        <li>Jack = 11, Queen = 12, King = 13</li>
+                        <li>Examples: Queen + Ace, Jack + 2, 6 + 7</li>
+                        <li>Use the stock pile when pyramid is blocked</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="game-content">
+            <h2 class="section-heading">Game Features</h2>
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="text-center p-4 bg-gaming-blue bg-opacity-10 rounded-lg border border-gaming-blue border-opacity-30">
+                    <div class="text-3xl mb-2">🔺</div>
+                    <h4 class="font-semibold text-gaming-blue">Pyramid Layout</h4>
+                    <p class="text-sm text-white">Unique triangular card arrangement</p>
+                </div>
+                
+                <div class="text-center p-4 bg-gaming-purple bg-opacity-10 rounded-lg border border-gaming-purple border-opacity-30">
+                    <div class="text-3xl mb-2">🧮</div>
+                    <h4 class="font-semibold text-gaming-purple">Math Challenge</h4>
+                    <p class="text-sm text-white">Add cards to 13 for strategic thinking</p>
+                </div>
+                
+                <div class="text-center p-4 bg-gaming-green bg-opacity-10 rounded-lg border border-gaming-green border-opacity-30">
+                    <div class="text-3xl mb-2">🧠</div>
+                    <h4 class="font-semibold text-gaming-green">Brain Teaser</h4>
+                    <p class="text-sm text-white">Perfect mental exercise and relaxation</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="text-center mt-12">
+            <h2 class="section-heading">More Card Games You Might Like</h2>
+            <div class="grid md:grid-cols-3 gap-6 mt-6">
+                <a href="solitaire.html" class="game-content hover:bg-opacity-20 transition-all duration-300 text-center block">
+                    <h3 class="font-semibold text-gaming-blue">Classic Solitaire</h3>
+                    <p class="text-sm text-white">The timeless Klondike solitaire</p>
+                </a>
+                
+                <a href="monster-survivors.html" class="game-content hover:bg-opacity-20 transition-all duration-300 text-center block">
+                    <h3 class="font-semibold text-gaming-purple">Monster Survivors</h3>
+                    <p class="text-sm text-white">Action-packed survival adventure</p>
+                </a>
+                
+                <a href="fast-food-rush.html" class="game-content hover:bg-opacity-20 transition-all duration-300 text-center block">
+                    <h3 class="font-semibold text-gaming-green">Fast Food Rush</h3>
+                    <p class="text-sm text-white">Restaurant management game</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Fullscreen functionality
+        const fullscreenBtn = document.getElementById('fullscreen-btn');
+        const gameFrame = document.getElementById('game-frame');
+        
+        fullscreenBtn.addEventListener('click', () => {
+            if (gameFrame.classList.contains('fullscreen-active')) {
+                exitFullscreen();
+            } else {
+                enterFullscreen();
+            }
+        });
+        
+        function enterFullscreen() {
+            gameFrame.classList.add('fullscreen-active');
+            fullscreenBtn.querySelector('span').textContent = 'Exit Fullscreen';
+            
+            if (gameFrame.requestFullscreen) {
+                gameFrame.requestFullscreen();
+            } else if (gameFrame.webkitRequestFullscreen) {
+                gameFrame.webkitRequestFullscreen();
+            } else if (gameFrame.msRequestFullscreen) {
+                gameFrame.msRequestFullscreen();
+            }
+        }
+        
+        function exitFullscreen() {
+            gameFrame.classList.remove('fullscreen-active');
+            fullscreenBtn.querySelector('span').textContent = 'Fullscreen';
+            
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+            } else if (document.msExitFullscreen) {
+                document.msExitFullscreen();
+            }
+        }
+        
+        // Listen for fullscreen change events
+        document.addEventListener('fullscreenchange', handleFullscreenChange);
+        document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+        document.addEventListener('msfullscreenchange', handleFullscreenChange);
+        
+        function handleFullscreenChange() {
+            if (!document.fullscreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {
+                gameFrame.classList.remove('fullscreen-active');
+                fullscreenBtn.querySelector('span').textContent = 'Fullscreen';
+            }
+        }
+    </script>
+</body>
+</html>
