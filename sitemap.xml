@@ -115,6 +115,39 @@
         <priority>0.7</priority>
     </url>
     
+    <url>
+        <loc>https://funnyjourney.com/games/loot-island-treasure-digger.html</loc>
+        <lastmod>2024-01-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://funnyjourney.com/img/loot-island-treasure-digger.jpg</image:loc>
+            <image:title>Loot Island Treasure Digger - Adventure Game</image:title>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://funnyjourney.com/games/little-shop.html</loc>
+        <lastmod>2024-01-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://funnyjourney.com/img/little-shop.jpg</image:loc>
+            <image:title>Little Shop - Shop Management Game</image:title>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://funnyjourney.com/games/rolling-balls-space-race.html</loc>
+        <lastmod>2024-01-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://funnyjourney.com/img/rolling-balls-space-race.jpg</image:loc>
+            <image:title>Rolling Balls Space Race - 3D Racing Game</image:title>
+        </image:image>
+    </url>
+    
     <!-- About Page -->
     <url>
         <loc>https://funnyjourney.com/about/</loc>
