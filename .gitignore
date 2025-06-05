@@ -153,4 +153,11 @@ ehthumbs_vista.db
 [Dd]esktop.ini
 
 # Recycle Bin used on file shares
-$RECYCLE.BIN/ 
+$RECYCLE.BIN/
+
+# PowerShell scripts
+*.ps1
+
+# Text files (exclude robots.txt)
+*.txt
+!robots.txt 
