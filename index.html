@@ -1,14 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TGVJVCTQBE"></script>
+    <!-- Google tag (gtag.js) with error handling -->
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+    // 创建一个空的gtag函数作为后备
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
     
-      gtag('config', 'G-TGVJVCTQBE');
+    // 异步加载Google Analytics with error handling
+    (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-TGVJVCTQBE';
+        
+        // 错误处理
+        ga.onerror = function() {
+            console.warn('Google Analytics failed to load - this may be due to network restrictions');
+            // GA加载失败时的后备处理，页面正常运行
+        };
+        
+        ga.onload = function() {
+            console.log('Google Analytics loaded successfully');
+            gtag('js', new Date());
+            gtag('config', 'G-TGVJVCTQBE', {
+                // 添加一些配置来提高加载成功率
+                transport_type: 'beacon',
+                anonymize_ip: true
+            });
+        };
+        
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
     </script>
     
     <!-- Basic Meta Tags -->
