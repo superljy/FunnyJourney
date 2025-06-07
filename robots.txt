@@ -1,32 +1,62 @@
 User-agent: *
 Allow: /
 
-# 允许重要页面被抓取
+# Important pages for indexing
+Allow: /index.html
 Allow: /games/
 Allow: /about/
+
+# Static assets
 Allow: /css/
+Allow: /js/
 Allow: /img/
 
-# 禁止抓取这些不重要的目录
+# Block development and testing files
+Disallow: /games-backup/
+Disallow: /manual-update.js
+Disallow: /update-games-style.js
+Disallow: /update-games-style.bat
+Disallow: /update-games-style.ps1
+Disallow: /seo-game-optimizer.js
+Disallow: /*.md$
+
+# Block common administrative paths (if they exist)
 Disallow: /admin/
+Disallow: /private/
 Disallow: /temp/
 Disallow: /.git/
 
-# 网站地图位置
-Sitemap: https://funnyjourney.com/sitemap.xml
+# Allow all images for better SEO
+Allow: /img/*.jpg
+Allow: /img/*.png
+Allow: /img/*.gif
+Allow: /img/*.webp
 
-# 抓取延迟（毫秒）
+# Sitemap location
+Sitemap: https://funnyjourneys.github.io/sitemap.xml
+
+# Crawl-delay for respectful crawling
 Crawl-delay: 1
 
-# 特定搜索引擎优化
+# Special instructions for major search engines
 User-agent: Googlebot
 Allow: /
-Crawl-delay: 0
+Crawl-delay: 1
 
 User-agent: Bingbot
 Allow: /
-Crawl-delay: 1
+Crawl-delay: 2
 
-User-agent: Baiduspider
+User-agent: Slurp
 Allow: /
-Crawl-delay: 2 
+Crawl-delay: 2
+
+# Block aggressive crawlers
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: / 

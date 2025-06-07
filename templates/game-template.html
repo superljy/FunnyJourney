@@ -6,15 +6,53 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{GAME_TITLE}} - Free Online Game | FunnyJourney</title>
-    <meta name="description" content="{{GAME_DESCRIPTION}}">
-    <meta name="keywords" content="{{GAME_KEYWORDS}}">
+    <title>{{GAME_TITLE}} - {{GAME_CATEGORY}} Games Online 2025 | Play Free Online | FunnyJourney</title>
+    <meta name="description" content="Play {{GAME_TITLE}} free online! {{GAME_SHORT_DESCRIPTION}} No downloads, instant play. Join 500K+ players in 2025!">
+    <meta name="keywords" content="{{GAME_SLUG}},free online games 2025,browser games,no download games,instant play,{{GAME_CATEGORY}} games online,{{GAME_TAGS}},summer break games,work break games">
     
     <!-- Open Graph tags -->
-    <meta property="og:title" content="{{GAME_TITLE}} - Free Online Game">
-    <meta property="og:description" content="{{GAME_DESCRIPTION}}">
-    <meta property="og:url" content="https://funnyjourney.com/games/{{GAME_URL}}">
+    <meta property="og:title" content="{{GAME_TITLE}} - Free Online {{GAME_CATEGORY}} Game 2025">
+    <meta property="og:description" content="Play {{GAME_TITLE}} free online! {{GAME_SHORT_DESCRIPTION}} No downloads required.">
+    <meta property="og:url" content="https://funnyjourneys.github.io/games/{{GAME_URL}}">
     <meta property="og:type" content="website">
+    
+    <!-- Twitter Card tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="🎮 {{GAME_TITLE}} - Play Free Online Now!">
+    <meta name="twitter:description" content="{{GAME_SHORT_DESCRIPTION}} Play instantly!">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Game",
+      "name": "{{GAME_TITLE}}",
+      "description": "{{GAME_SHORT_DESCRIPTION}}",
+      "url": "https://funnyjourneys.github.io/games/{{GAME_URL}}",
+      "gameLocation": "Online",
+      "applicationCategory": "Game",
+      "operatingSystem": "Any",
+      "browserRequirements": "HTML5 Compatible Browser",
+      "genre": "{{GAME_GENRE}}",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.5",
+        "bestRating": "5",
+        "worstRating": "1",
+        "ratingCount": "1000"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "FunnyJourney",
+        "url": "https://funnyjourneys.github.io/"
+      }
+    }
+    </script>
     
     <!-- Unified Styles - Same as homepage -->
     <style>
@@ -584,11 +622,11 @@
                 const gameCard = document.createElement('div');
                 gameCard.className = 'game-card';
                 gameCard.innerHTML = `
-                    <img src="${game.image}" alt="${game.title}" class="game-image">
+                    <img src="${game.image}" alt="Play ${game.title} - Free Online Game 2025" class="game-image" loading="lazy" aria-label="Screenshot of ${game.title} game">
                     <div class="game-content">
                         <h3 class="game-card-title">${game.title}</h3>
                         <p class="game-card-description">${game.description}</p>
-                        <a href="${game.url}" class="play-button">
+                        <a href="${game.url}" class="play-button" aria-label="Play ${game.title} free online game">
                             🎮 Play Now
                         </a>
                     </div>

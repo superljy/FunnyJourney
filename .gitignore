@@ -171,3 +171,15 @@ manual-update.js
 update-games-style.bat
 update-games-style.js
 update-games-style.ps1
+
+# SEO tools and analysis (development only)
+seo-game-optimizer.js
+Keyword_Opportunities_Analysis_June_2025.md
+
+# Additional temporary files
+*.bak
+*.backup
+
+
+#tools
+tools*/
