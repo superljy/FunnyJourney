@@ -1,399 +1,479 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <!-- Google tag (gtag.js) with error handling -->
-    <script>
-    // 创建一个空的gtag函数作为后备
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    <!-- Analytics -->
+    <script src="../js/analytics.js"></script>
     
-    // 异步加载Google Analytics with error handling
-    (function() {
-        var ga = document.createElement('script');
-        ga.type = 'text/javascript';
-        ga.async = true;
-        ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-TGVJVCTQBE';
-        
-        // 错误处理
-        ga.onerror = function() {
-            console.warn('Google Analytics failed to load - this may be due to network restrictions');
-            // GA加载失败时的后备处理，页面正常运行
-        };
-        
-        ga.onload = function() {
-            console.log('Google Analytics loaded successfully');
-            gtag('js', new Date());
-            gtag('config', 'G-TGVJVCTQBE', {
-                // 添加一些配置来提高加载成功率
-                transport_type: 'beacon',
-                anonymize_ip: true
-            });
-        };
-        
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(ga, s);
-    })();
-    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About FunnyJourney - Free Online Browser Games for Everyone</title>
     <meta name="description" content="Learn about FunnyJourney.com, our mission to provide the best free online games collection that's accessible to everyone, and our diverse game categories.">
     <meta name="keywords" content="free online games, browser games, game collection, card games, arcade games, clicker games, no download games, about funnyjourney">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://funnyjourney.com/about">
-    <!-- Open Graph tags for social sharing -->
+    
+    <!-- Open Graph tags -->
     <meta property="og:title" content="About FunnyJourney - Free Online Browser Games">
     <meta property="og:description" content="Learn about FunnyJourney.com, our mission to provide the best free online games collection.">
     <meta property="og:url" content="https://funnyjourney.com/about">
     <meta property="og:type" content="website">
-    <link rel="stylesheet" href="../css/styles.css">
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        /* About page specific styles */
-        .about-page-container {
-            padding-top: 100px; /* Account for fixed header */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         
-        /* Ensure readable text on all backgrounds */
-        .about-content {
-            color: var(--text-primary);
-            line-height: 1.8;
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8fafc;
         }
         
-        .legal-section {
-            background: var(--bg-secondary);
-            padding: 4rem 0;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
         
-        .legal-card {
-            background: var(--bg-card);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 2rem;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-md);
+        /* Header */
+        .header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #4a5568;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #667eea;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            background: white;
+            color: #667eea;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        /* Content Sections */
+        .content-section {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .content-section:nth-child(even) {
+            background: #f8fafc;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
             margin-bottom: 3rem;
+            color: #2d3748;
         }
         
-        .legal-card h3 {
-            color: var(--neon-blue);
-            font-size: 1.25rem;
-            margin: 1.5rem 0 0.75rem;
+        .content-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
         }
         
-        .legal-card p,
-        .legal-card li {
-            color: var(--text-secondary);
+        .content-card h3 {
+            color: #667eea;
+            font-size: 1.5rem;
             margin-bottom: 1rem;
         }
         
-        .legal-card ul {
+        .content-card p {
+            color: #718096;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        
+        .content-card ul {
             margin-left: 1.5rem;
             margin-bottom: 1rem;
         }
         
-        .legal-card ul li {
-            list-style-type: disc;
+        .content-card li {
+            color: #718096;
+            margin-bottom: 0.5rem;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+        
+        .feature-card h3 {
+            color: #2d3748;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card p {
+            color: #718096;
         }
         
         .mission-highlight {
-            background: var(--primary-gradient);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 2rem;
-            border-radius: var(--radius-lg);
+            padding: 3rem;
+            border-radius: 15px;
             text-align: center;
-            margin: 2rem 0;
-            box-shadow: var(--shadow-glow);
+            margin: 3rem 0;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
         }
         
         .mission-highlight p {
-            font-size: 1.25rem;
+            font-size: 1.5rem;
             font-style: italic;
             margin: 0;
         }
         
-        .about-features .feature {
-            background: var(--bg-card);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: var(--radius-lg);
-            padding: 2rem;
-            transition: all 0.3s ease;
+        /* Footer */
+        .footer {
+            background: #2d3748;
+            color: white;
+            padding: 40px 0 20px;
+            text-align: center;
         }
         
-        .about-features .feature:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-glow);
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
         }
         
-        .about-features .feature-title {
-            color: var(--text-primary);
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #667eea;
         }
         
-        .about-features .feature p {
-            color: var(--text-secondary);
+        .footer-section a {
+            color: #a0aec0;
+            text-decoration: none;
+            transition: color 0.3s ease;
         }
         
-        .game-categories-list {
-            background: var(--bg-card);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: var(--radius-lg);
-            padding: 2rem;
-            margin: 2rem 0;
+        .footer-section a:hover {
+            color: white;
         }
         
-        .game-categories-list ul {
-            margin-left: 1.5rem;
-            margin-bottom: 1.5rem;
-            list-style-type: disc;
+        .footer-bottom {
+            border-top: 1px solid #4a5568;
+            padding-top: 1rem;
+            color: #a0aec0;
         }
         
-        .game-categories-list li {
-            color: var(--text-secondary);
-            margin-bottom: 0.5rem;
-        }
-        
-        .game-categories-list strong {
-            color: var(--neon-blue);
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
-<body class="about-page-container">
-    <!-- Header -->
-    <header class="site-header">
-        <div class="container header-container">
-            <a href="../index.html" class="site-logo">🎮 FunnyJourney</a>
-            <nav class="main-nav">
-                <ul>
+<body>
+    <!-- Modern Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="../index.html" class="logo">🎮 FunnyJourney</a>
+                <ul class="nav-links">
                     <li><a href="../index.html">Home</a></li>
                     <li><a href="../games/index.html">Games</a></li>
                     <li><a href="index.html" class="active">About</a></li>
                 </ul>
             </nav>
-            <a href="../index.html" class="play-now-btn">
-                <i class="fas fa-home"></i> Back to Home
-            </a>
         </div>
     </header>
 
-    <!-- Page Header -->
-    <section class="hero hero-enhanced" style="min-height: 60vh; padding: 4rem 0;">
+    <!-- Hero Section -->
+    <section class="hero">
         <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">About <span class="gradient-text">FunnyJourney</span></h1>
-                <p class="hero-subtitle">Get to know us and our mission to bring fun and accessible games to everyone.</p>
+            <h1>🎮 About FunnyJourney</h1>
+            <p>Get to know us and our mission to bring fun and accessible games to everyone.</p>
+            <a href="../index.html" class="cta-button">Back to Home</a>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Our Story</h2>
+            <div class="content-card">
+                <p>
+                    FunnyJourney began with a simple idea: make great games accessible to everyone, everywhere, without any barriers.
+                </p>
+                <p>
+                    Our platform allows anyone to instantly enjoy high-quality games directly in their browser. We believe that gaming should be accessible to all, regardless of what device they're using or their technical expertise.
+                </p>
+                <p>
+                    Our carefully curated collection of games spans various genres, ensuring there's something for everyone. From action-packed adventures to brain-teasing puzzles, we're committed to delivering entertaining experiences that can be enjoyed at home, at school, or on the go.
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="section">
+    <!-- Mission Section -->
+    <section class="content-section">
         <div class="container">
-            <div style="max-width: 800px; margin: 0 auto;">
-                <h2 class="section-title">Our Story</h2>
-                
-                <div class="about-content" style="margin-bottom: 3rem;">
-                    <p style="margin-bottom: 1.5rem;">
-                        FunnyJourney began with a simple idea: make great games accessible to everyone, everywhere, without any barriers.
-                    </p>
-                    
-                    <p style="margin-bottom: 1.5rem;">
-                        Our platform allows anyone to instantly enjoy high-quality games directly in their browser. We believe that gaming should be accessible to all, regardless of what device they're using or their technical expertise.
-                    </p>
-                    
-                    <p>
-                        Our carefully curated collection of games spans various genres, ensuring there's something for everyone. From action-packed adventures to brain-teasing puzzles, we're committed to delivering entertaining experiences that can be enjoyed at home, at school, or on the go.
-                    </p>
+            <h2 class="section-title">Our Mission</h2>
+            <div class="mission-highlight">
+                <p>
+                    "To make high-quality gaming experiences accessible to everyone, anywhere, without downloads or installations."
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">What Makes Us Different</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">✅</div>
+                    <h3>Quality First</h3>
+                    <p>We carefully select and test every game to ensure it meets our high standards for fun and quality.</p>
                 </div>
                 
-                <h2 class="section-title">Our Mission</h2>
-                <div class="mission-highlight">
-                    <p>
-                        "To make high-quality gaming experiences accessible to everyone, anywhere, without downloads or installations."
-                    </p>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Community Focused</h3>
+                    <p>We listen to our players and continuously improve our platform based on your feedback.</p>
                 </div>
                 
-                <h2 class="section-title">What Makes Us Different</h2>
-                
-                <div class="features about-features" style="margin-bottom: 3rem;">
-                    <div class="feature">
-                        <span class="feature-icon" style="color: var(--neon-purple);">
-                            <i class="fas fa-check-circle"></i>
-                        </span>
-                        <h3 class="feature-title">Quality First</h3>
-                        <p>We carefully select and test every game to ensure it meets our high standards for fun and quality.</p>
-                    </div>
-                    
-                    <div class="feature">
-                        <span class="feature-icon" style="color: var(--neon-green);">
-                            <i class="fas fa-users"></i>
-                        </span>
-                        <h3 class="feature-title">Community Focused</h3>
-                        <p>We listen to our players and continuously improve our platform based on your feedback.</p>
-                    </div>
-                    
-                    <div class="feature">
-                        <span class="feature-icon" style="color: var(--neon-blue);">
-                            <i class="fas fa-shield-alt"></i>
-                        </span>
-                        <h3 class="feature-title">Safe & Secure</h3>
-                        <p>All our games are family-friendly and our platform is designed with your privacy and security in mind.</p>
-                    </div>
-                </div>
-                
-                <h2 class="section-title">Our Games Collection</h2>
-                
-                <div class="about-content" style="margin-bottom: 2rem;">
-                    <p style="margin-bottom: 1.5rem;">
-                        We offer a diverse collection of games to suit all preferences and interests:
-                    </p>
-                </div>
-                
-                <div class="game-categories-list">
-                    <ul>
-                        <li><strong>Card Games</strong> - Classic Solitaire, Pyramid Solitaire, and more for card game enthusiasts</li>
-                        <li><strong>Action Games</strong> - Exciting adventures with fast-paced gameplay</li>
-                        <li><strong>Puzzle Games</strong> - Brain teasers and logic challenges for mental exercise</li>
-                        <li><strong>Simulation Games</strong> - Experience running a restaurant or other real-world scenarios</li>
-                        <li><strong>Strategy Games</strong> - Test your decision-making and planning skills</li>
-                    </ul>
-                    
-                    <p class="about-content">
-                        All our games are carefully selected to ensure they provide an enjoyable experience with intuitive controls and engaging gameplay. We regularly add new titles to keep our collection fresh and exciting.
-                    </p>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Safe & Secure</h3>
+                    <p>All our games are family-friendly and our platform is designed with your privacy and security in mind.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Legal Policies Section -->
-    <section class="legal-section">
+    <!-- Games Collection Section -->
+    <section class="content-section">
         <div class="container">
-            <div style="max-width: 800px; margin: 0 auto;">
-                <!-- Privacy Policy -->
-                <div id="privacy">
-                    <h2 class="section-title">Privacy Policy</h2>
-                    <div class="legal-card">
-                        <p style="margin-bottom: 1rem; color: var(--text-muted);">Last updated: January 1, 2025</p>
-                        
-                        <p style="margin-bottom: 1rem;">At FunnyJourney, we take your privacy seriously. This Privacy Policy explains how we collect, use, and protect your personal information when you use our website.</p>
-                        
-                        <h3>Information We Collect</h3>
-                        <p style="margin-bottom: 1rem;">We collect minimal information necessary to provide our services. This may include:</p>
-                        <ul>
-                            <li>Browser type and device information</li>
-                            <li>IP address and location data</li>
-                            <li>Game preferences and usage statistics</li>
-                            <li>Cookies and similar technologies</li>
-                        </ul>
-                        
-                        <h3>How We Use Your Information</h3>
-                        <p style="margin-bottom: 1rem;">We use your information to:</p>
-                        <ul>
-                            <li>Provide and improve our services</li>
-                            <li>Customize your gaming experience</li>
-                            <li>Analyze website traffic and usage patterns</li>
-                            <li>Ensure website security</li>
-                        </ul>
-                        
-                        <h3>Data Security</h3>
-                        <p>We implement appropriate security measures to protect your personal information from unauthorized access, alteration, or disclosure.</p>
-                    </div>
-                </div>
-                
-                <!-- Terms of Service -->
-                <div id="terms">
-                    <h2 class="section-title">Terms of Service</h2>
-                    <div class="legal-card">
-                        <p style="margin-bottom: 1rem; color: var(--text-muted);">Last updated: January 1, 2025</p>
-                        
-                        <p style="margin-bottom: 1rem;">Welcome to FunnyJourney. By accessing or using our website, you agree to be bound by these Terms of Service.</p>
-                        
-                        <h3>User Conduct</h3>
-                        <p style="margin-bottom: 1rem;">When using our website, you agree not to:</p>
-                        <ul>
-                            <li>Use our services for any illegal purpose</li>
-                            <li>Attempt to gain unauthorized access to our systems</li>
-                            <li>Interfere with or disrupt the integrity of our website</li>
-                            <li>Reproduce, duplicate, or copy any content from our website without permission</li>
-                        </ul>
-                        
-                        <h3>Intellectual Property</h3>
-                        <p style="margin-bottom: 1rem;">The content, organization, graphics, design, and other elements of our website are protected by copyright, trademark, and other laws and are the property of FunnyJourney or its licensors.</p>
-                        
-                        <h3>Limitation of Liability</h3>
-                        <p>In no event shall FunnyJourney be liable for any indirect, incidental, special, consequential, or punitive damages arising out of or related to your use of our website.</p>
-                    </div>
-                </div>
-                
-                <!-- Cookie Policy -->
-                <div id="cookies">
-                    <h2 class="section-title">Cookie Policy</h2>
-                    <div class="legal-card">
-                        <p style="margin-bottom: 1rem; color: var(--text-muted);">Last updated: January 1, 2025</p>
-                        
-                        <p style="margin-bottom: 1rem;">This Cookie Policy explains how FunnyJourney uses cookies and similar technologies to provide, customize, and improve your experience on our website.</p>
-                        
-                        <h3>What Are Cookies?</h3>
-                        <p style="margin-bottom: 1rem;">Cookies are small text files that are stored on your device when you visit a website. They are widely used to make websites work more efficiently and provide information to the website owners.</p>
-                        
-                        <h3>How We Use Cookies</h3>
-                        <p style="margin-bottom: 1rem;">We use cookies for the following purposes:</p>
-                        <ul>
-                            <li>Essential cookies: Required for the website to function properly</li>
-                            <li>Analytical cookies: Help us understand how visitors interact with our website</li>
-                            <li>Preference cookies: Remember your settings and preferences</li>
-                        </ul>
-                        
-                        <h3>Managing Cookies</h3>
-                        <p>You can control and manage cookies through your browser settings. Please note that disabling certain cookies may affect the functionality of our website.</p>
-                    </div>
-                </div>
+            <h2 class="section-title">Our Games Collection</h2>
+            <div class="content-card">
+                <p>We offer a diverse collection of games to suit all preferences and interests:</p>
+                <ul>
+                    <li><strong>Card Games</strong> - Classic Solitaire, Pyramid Solitaire, and more for card game enthusiasts</li>
+                    <li><strong>Action Games</strong> - Exciting adventures with fast-paced gameplay</li>
+                    <li><strong>Puzzle Games</strong> - Brain teasers and logic challenges for mental exercise</li>
+                    <li><strong>Simulation Games</strong> - Experience running a restaurant or other real-world scenarios</li>
+                    <li><strong>Strategy Games</strong> - Test your decision-making and planning skills</li>
+                </ul>
+                <p>
+                    All our games are carefully selected to ensure they provide an enjoyable experience with intuitive controls and engaging gameplay. We regularly add new titles to keep our collection fresh and exciting.
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- Call to Action -->
-    <section class="section cta-enhanced">
+    <!-- Privacy Policy Section -->
+    <section class="content-section" id="privacy">
         <div class="container">
-            <div class="cta-content">
-                <h2>🚀 Ready to Start Playing?</h2>
-                <p>Join thousands of players who chose us as their favorite gaming destination!</p>
-                <div class="cta-buttons">
-                    <a href="../index.html" class="btn btn-primary btn-lg">
-                        <i class="fas fa-home"></i> Back to Home
-                    </a>
-                    <a href="../games/index.html" class="btn btn-secondary btn-lg">
-                        <i class="fas fa-gamepad"></i> Browse Games
-                    </a>
-                </div>
+            <h2 class="section-title">Privacy Policy</h2>
+            <div class="content-card">
+                <p style="color: #a0aec0; margin-bottom: 1rem;">Last updated: January 1, 2025</p>
+                
+                <p>At FunnyJourney, we take your privacy seriously. This Privacy Policy explains how we collect, use, and protect your personal information when you use our website.</p>
+                
+                <h3>Information We Collect</h3>
+                <p>We collect minimal information necessary to provide our services. This may include:</p>
+                <ul>
+                    <li>Browser type and device information</li>
+                    <li>IP address and location data</li>
+                    <li>Game preferences and usage statistics</li>
+                    <li>Cookies and similar technologies</li>
+                </ul>
+                
+                <h3>How We Use Your Information</h3>
+                <p>We use your information to:</p>
+                <ul>
+                    <li>Provide and improve our services</li>
+                    <li>Customize your gaming experience</li>
+                    <li>Analyze website traffic and usage patterns</li>
+                    <li>Ensure website security</li>
+                </ul>
+                
+                <h3>Data Security</h3>
+                <p>We implement appropriate security measures to protect your personal information from unauthorized access, alteration, or disclosure.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Terms of Service Section -->
+    <section class="content-section" id="terms">
+        <div class="container">
+            <h2 class="section-title">Terms of Service</h2>
+            <div class="content-card">
+                <p style="color: #a0aec0; margin-bottom: 1rem;">Last updated: January 1, 2025</p>
+                
+                <p>Welcome to FunnyJourney. By accessing or using our website, you agree to be bound by these Terms of Service.</p>
+                
+                <h3>User Conduct</h3>
+                <p>When using our website, you agree not to:</p>
+                <ul>
+                    <li>Use our services for any illegal purpose</li>
+                    <li>Attempt to gain unauthorized access to our systems</li>
+                    <li>Interfere with or disrupt the integrity of our website</li>
+                    <li>Reproduce, duplicate, or copy any content from our website without permission</li>
+                </ul>
+                
+                <h3>Intellectual Property</h3>
+                <p>The content, organization, graphics, design, and other elements of our website are protected by copyright, trademark, and other laws and are the property of FunnyJourney or its licensors.</p>
+                
+                <h3>Limitation of Liability</h3>
+                <p>In no event shall FunnyJourney be liable for any indirect, incidental, special, consequential, or punitive damages arising out of or related to your use of our website.</p>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="site-footer">
-        <div class="container footer-container">
-            <div>
-                <h4 class="footer-heading">🎮 FunnyJourney.com</h4>
-                <p>The ultimate destination for free, instant browser games. No downloads, no limits, just pure gaming fun!</p>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🎮 FunnyJourney</h3>
+                    <p>The ultimate destination for free, instant browser games. No downloads, no limits, just pure gaming fun!</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul style="list-style: none;">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../games/index.html">All Games</a></li>
+                        <li><a href="index.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul style="list-style: none;">
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                    </ul>
+                </div>
             </div>
-            
-            <div class="footer-nav">
-                <h4 class="footer-heading">Quick Links</h4>
-                <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="../games/index.html">All Games</a></li>
-                    <li><a href="index.html">About Us</a></li>
-                </ul>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FunnyJourney.com. All rights reserved. | 🎮 Play more, stress less!</p>
             </div>
-        </div>
-        
-        <div class="container footer-bottom">
-            <p>&copy; 2025 FunnyJourney.com. All rights reserved. | 🎮 Play more, stress less!</p>
         </div>
     </footer>
 
     <!-- JavaScript -->
-    <script src="../js/main.js"></script>
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html> 

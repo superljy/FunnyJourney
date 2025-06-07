@@ -161,3 +161,6 @@ $RECYCLE.BIN/
 # Text files (exclude robots.txt)
 *.txt
 !robots.txt 
+
+#old index.html
+index_old.html

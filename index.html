@@ -1,736 +1,525 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) with error handling -->
-    <script>
-    // 创建一个空的gtag函数作为后备
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    <!-- Analytics -->
+    <script src="js/analytics.js"></script>
     
-    // 异步加载Google Analytics with error handling
-    (function() {
-        var ga = document.createElement('script');
-        ga.type = 'text/javascript';
-        ga.async = true;
-        ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-TGVJVCTQBE';
-        
-        // 错误处理
-        ga.onerror = function() {
-            console.warn('Google Analytics failed to load - this may be due to network restrictions');
-            // GA加载失败时的后备处理，页面正常运行
-        };
-        
-        ga.onload = function() {
-            console.log('Google Analytics loaded successfully');
-            gtag('js', new Date());
-            gtag('config', 'G-TGVJVCTQBE', {
-                // 添加一些配置来提高加载成功率
-                transport_type: 'beacon',
-                anonymize_ip: true
-            });
-        };
-        
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(ga, s);
-    })();
-    </script>
-    
-    <!-- Basic Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎮 Free Online Games - 1000+ Games to Play Now! No Download | FunnyJourney</title>
-    <meta name="description" content="🔥 Play 1000+ free online games instantly! No downloads, no ads, no waiting. Card games, arcade games, puzzle games & more. Join 500K+ players worldwide!">
-    <meta name="keywords" content="free online games,browser games,card games,arcade games,puzzle games,no download games,instant play games,free web games">
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <meta name="author" content="FunnyJourney">
-    <meta name="theme-color" content="#00d4ff">
+    <title>🎮 Free Online Games - Play Now! No Download | FunnyJourney</title>
+    <meta name="description" content="Play amazing free online games instantly! No downloads, no ads, just pure gaming fun. Card games, arcade games, puzzle games & more!">
+    <meta name="keywords" content="free online games,browser games,card games,arcade games,puzzle games,no download games">
     
-    <!-- Canonical and Language -->
-    <link rel="canonical" href="https://funnyjourney.com/">
-    <link rel="alternate" hreflang="en" href="https://funnyjourney.com/">
-    <link rel="alternate" hreflang="x-default" href="https://funnyjourney.com/">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    
-    <!-- Open Graph tags for social sharing -->
-    <meta property="og:title" content="🎮 Free Online Games - 1000+ Games to Play Now! No Download">
-    <meta property="og:description" content="🔥 Play 1000+ free online games instantly! Card games, arcade games, puzzle games & more. No downloads, no ads, just pure gaming fun!">
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="🎮 Free Online Games - Play Now! No Download">
+    <meta property="og:description" content="Play amazing free online games instantly! No downloads, no ads, just pure gaming fun!">
     <meta property="og:url" content="https://funnyjourney.com/">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://funnyjourney.com/img/funnyjourney-social.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:site_name" content="FunnyJourney">
-    <meta property="og:locale" content="en_US">
     
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="🎮 Free Online Games - 1000+ Games to Play Now!">
-    <meta name="twitter:description" content="Play 1000+ free online games instantly! No downloads, no ads, just pure gaming fun!">
-    <meta name="twitter:image" content="https://funnyjourney.com/img/funnyjourney-social.jpg">
-    
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "FunnyJourney",
-      "url": "https://funnyjourney.com",
-      "description": "Free online gaming platform offering 1000+ premium games including card games, arcade games, puzzle games and more.",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": "https://funnyjourney.com/search?q={search_term_string}"
-        },
-        "query-input": "required name=search_term_string"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "FunnyJourney",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://funnyjourney.com/img/logo.png"
-        }
-      }
-    }
-    </script>
-    
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "GameServer",
-      "name": "FunnyJourney Gaming Platform",
-      "description": "Premium free online gaming platform for instant browser games",
-      "url": "https://funnyjourney.com",
-      "game": [
-        {
-          "@type": "VideoGame",
-          "name": "Monster Survivors",
-          "url": "https://funnyjourney.com/games/monster-survivors.html",
-          "genre": "Action",
-          "playMode": "SinglePlayer"
-        },
-        {
-          "@type": "VideoGame", 
-          "name": "Classic Solitaire",
-          "url": "https://funnyjourney.com/games/solitaire.html",
-          "genre": "Card Game",
-          "playMode": "SinglePlayer"
-        },
-        {
-          "@type": "VideoGame",
-          "name": "Loot Island - Treasure Digger",
-          "url": "https://funnyjourney.com/games/loot-island-treasure-digger.html",
-          "genre": "Adventure",
-          "playMode": "SinglePlayer"
-        },
-        {
-          "@type": "VideoGame",
-          "name": "Little Shop",
-          "url": "https://funnyjourney.com/games/little-shop.html",
-          "genre": "Simulation",
-          "playMode": "SinglePlayer"
-        },
-        {
-          "@type": "VideoGame",
-          "name": "Rolling Balls Space Race",
-          "url": "https://funnyjourney.com/games/rolling-balls-space-race.html",
-          "genre": "Racing",
-          "playMode": "SinglePlayer"
-        }
-      ]
-    }
-    </script>
-    
-    <!-- Preload critical resources -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-    
-    <link rel="stylesheet" href="css/styles.css">
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Preload critical images -->
-    <link rel="preload" href="img/Monster-survivors.jpg" as="image">
-    <link rel="preload" href="img/solitaire.jpg" as="image">
-    
-    <!-- Add excitement animations -->
+    <!-- Modern Clean Styles -->
     <style>
-        @keyframes neonGlow {
-            0%, 100% { box-shadow: 0 0 5px #00d4ff, 0 0 10px #00d4ff, 0 0 15px #00d4ff; }
-            50% { box-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff, 0 0 30px #00d4ff; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-10px); }
-            60% { transform: translateY(-5px); }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8fafc;
         }
         
-        @keyframes shake {
-            0%, 100% { transform: translateX(0); }
-            25% { transform: translateX(-5px); }
-            75% { transform: translateX(5px); }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
         
-        .mega-play-btn {
-            background: linear-gradient(45deg, #ff006e, #fb5607, #ffbe0b, #8338ec);
-            background-size: 400% 400%;
-            animation: gradient 3s ease infinite, neonGlow 2s ease-in-out infinite alternate, bounce 2s infinite;
-            border: none;
-            border-radius: 25px;
-            color: white;
-            font-size: 1.5rem;
-            font-weight: bold;
-            padding: 20px 40px;
-            cursor: pointer;
-            margin: 20px 10px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            transition: transform 0.3s ease;
-        }
-        
-        .mega-play-btn:hover {
-            transform: scale(1.1);
-            animation: shake 0.5s ease infinite;
-        }
-        
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        
-        .instant-counter {
-            background: rgba(255, 0, 110, 0.9);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: bold;
-            display: inline-block;
-            margin: 10px 5px;
-            animation: bounce 1s infinite;
-        }
-        
-        .live-players {
-            background: linear-gradient(45deg, #ff006e, #8338ec);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-weight: bold;
-            animation: neonGlow 2s ease-in-out infinite alternate;
-            margin: 10px 0;
-            display: inline-block;
-        }
-        
-        .game-preview-mini {
-            width: 120px;
-            height: 80px;
-            border-radius: 10px;
-            overflow: hidden;
-            cursor: pointer;
-            margin: 5px;
-            display: inline-block;
-            transition: transform 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        }
-        
-        .game-preview-mini:hover {
-            transform: scale(1.1) rotate(2deg);
-            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.5);
-        }
-        
-        .game-preview-mini img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .scroll-hint {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: bounce 2s infinite;
-            color: #00d4ff;
-            font-size: 2rem;
-        }
-        
-        .hero-enhanced {
-            min-height: 100vh;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .excitement-banner {
-            background: linear-gradient(45deg, #ff006e, #fb5607);
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            font-weight: bold;
-            animation: gradient 3s ease infinite;
-            position: relative;
+        /* Header */
+        .header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
             z-index: 1000;
         }
         
-        .quick-game-strip {
+        .nav {
             display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin: 20px 0;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.3);
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #4a5568;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: #667eea;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            background: white;
+            color: #667eea;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        /* Stats Section */
+        .stats {
+            background: white;
+            padding: 60px 0;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+        
+        .stat-item {
+            padding: 2rem;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: #718096;
+            font-size: 1.1rem;
+        }
+        
+        /* Games Section */
+        .games-section {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2d3748;
+        }
+        
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .game-card {
+            background: white;
             border-radius: 15px;
-            backdrop-filter: blur(10px);
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        
+        .game-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .game-content {
+            padding: 1.5rem;
+        }
+        
+        .game-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #2d3748;
+        }
+        
+        .game-description {
+            color: #718096;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+        
+        .play-button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            width: 100%;
+        }
+        
+        .play-button:hover {
+            background: #5a67d8;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #2d3748;
+            color: white;
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+        
+        .footer-section a {
+            color: #a0aec0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-section a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #4a5568;
+            padding-top: 1rem;
+            color: #a0aec0;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .games-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Excitement Banner -->
-    <div class="excitement-banner">
-        🔥 <strong>EPIC GAMES ALERT!</strong> 🔥 Join 500,000+ players online RIGHT NOW! 🎮 New games added DAILY!
-    </div>
-
-    <!-- Sticky Play Button (Enhanced) -->
-    <div class="sticky-play-button" id="stickyPlay">
-        <button class="pulse-button" onclick="scrollToGames()" style="background: linear-gradient(45deg, #ff006e, #8338ec); animation: neonGlow 2s ease-in-out infinite alternate;">
-            <i class="fas fa-rocket"></i> PLAY NOW! 🚀
-        </button>
-    </div>
-
-    <!-- Header -->
-    <header class="site-header">
-        <div class="container header-container">
-            <a href="index.html" class="site-logo">🎮 FunnyJourney</a>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="games/index.html">All Games</a></li>
+    <!-- Modern Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">🎮 FunnyJourney</div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="games/index.html">Games</a></li>
                     <li><a href="about/index.html">About</a></li>
                 </ul>
             </nav>
-            <button class="play-now-btn" onclick="scrollToGames()" style="background: linear-gradient(45deg, #ff006e, #8338ec); animation: bounce 1s infinite;">
-                <i class="fas fa-gamepad"></i> PLAY FREE!
-            </button>
         </div>
     </header>
 
-    <!-- Hero Section (Redesigned for Maximum Impact) -->
-    <section class="hero hero-enhanced">
-        <div class="hero-background"></div>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
         <div class="container">
-            <div class="hero-content" style="text-align: center;">
-                
-                <!-- Mega Impact Title -->
-                <div style="margin-bottom: 30px;">
-                    <h1 style="font-size: 4rem; color: #fff; text-shadow: 3px 3px 6px rgba(0,0,0,0.7); margin-bottom: 20px; line-height: 1.2;">
-                        🎮 <span style="background: linear-gradient(45deg, #ff006e, #ffbe0b, #00d4ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">1000+ FREE GAMES</span>
-                    </h1>
-                    <h2 style="font-size: 2.5rem; color: #00d4ff; margin-bottom: 15px; animation: bounce 2s infinite;">
-                        PLAY INSTANTLY! 🚀
-                    </h2>
-                    <div style="font-size: 1.5rem; color: #fff; margin-bottom: 20px;">
-                        ✅ NO DOWNLOADS ✅ NO ADS ✅ NO WAITING
-                    </div>
-                </div>
+            <h1>🎮 Play Amazing Games Instantly</h1>
+            <p>Discover our collection of high-quality browser games. No downloads required, just pure gaming fun!</p>
+            <a href="games/index.html" class="cta-button">Start Playing Now</a>
+        </div>
+    </section>
 
-                <!-- Live Stats -->
-                <div style="margin-bottom: 40px;">
-                    <div class="live-players">
-                        🔴 LIVE: <span id="liveCounter">473,329</span> players online worldwide!
-                    </div>
-                    <div style="margin-top: 15px;">
-                        <span class="instant-counter">🎯 15 Amazing Games</span>
-                        <span class="instant-counter">⚡ 0 Second Load Time</span>
-                        <span class="instant-counter">📱 Works on ALL Devices</span>
-                    </div>
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" id="gameCount">0</div>
+                    <div class="stat-label">Amazing Games</div>
                 </div>
-
-                <!-- Mega Play Button -->
-                <div style="margin-bottom: 40px;">
-                    <button class="mega-play-btn" onclick="window.location.href='games/monster-survivors.html'">
-                        🔥 PLAY MONSTER SURVIVORS NOW! 🔥
-                    </button>
-                    <button class="mega-play-btn" onclick="window.location.href='games/solitaire.html'">
-                        🃏 PLAY SOLITAIRE NOW! 🃏
-                    </button>
+                <div class="stat-item">
+                    <div class="stat-number">500K+</div>
+                    <div class="stat-label">Happy Players</div>
                 </div>
-
-                <!-- Quick Game Previews Strip -->
-                <div class="quick-game-strip">
-                    <div style="text-align: center; width: 100%; margin-bottom: 20px;">
-                        <h3 style="color: #00d4ff; font-size: 1.8rem; margin-bottom: 15px;">
-                            🎯 CLICK ANY GAME TO PLAY INSTANTLY! 🎯
-                        </h3>
-                    </div>
-                    
-                    <div class="game-preview-mini" onclick="window.location.href='games/monster-survivors.html'" title="Monster Survivors - Most Popular!">
-                        <img src="img/Monster-survivors.jpg" alt="Monster Survivors">
-                    </div>
-                    <div class="game-preview-mini" onclick="window.location.href='games/solitaire.html'" title="Classic Solitaire - Timeless Fun!">
-                        <img src="img/solitaire.jpg" alt="Solitaire">
-                    </div>
-                    <div class="game-preview-mini" onclick="window.location.href='games/pyramid-solitaire.html'" title="Pyramid Solitaire - Brain Teaser!">
-                        <img src="img/pyramid-solitaire.jpg" alt="Pyramid Solitaire">
-                    </div>
-                    <div class="game-preview-mini" onclick="window.location.href='games/poop-clicker.html'" title="Poop Clicker - Hilarious!">
-                        <img src="img/Poop-Clicker.jpg" alt="Poop Clicker">
-                    </div>
-                    <div class="game-preview-mini" onclick="window.location.href='games/fast-food-rush.html'" title="Fast Food Rush - Management Fun!">
-                        <img src="img/fast-food-rush.jpg" alt="Fast Food Rush">
-                    </div>
-                    <div class="game-preview-mini" onclick="window.location.href='games/egg-helix.html'" title="Egg Helix - Arcade Action!">
-                        <img src="img/Egg-Helix.jpg" alt="Egg Helix">
-                    </div>
-                    <div class="game-preview-mini" onclick="window.location.href='games/highway-traffic.html'" title="Highway Traffic - Racing Thrills!">
-                        <img src="img/highway-traffic.jpg" alt="Highway Traffic">
-                    </div>
-                    <div class="game-preview-mini" onclick="window.location.href='games/drift-king.html'" title="Drift King - 3D Racing!">
-                        <img src="img/drift-king.jpg" alt="Drift King">
-                    </div>
+                <div class="stat-item">
+                    <div class="stat-number">0</div>
+                    <div class="stat-label">Downloads Needed</div>
                 </div>
-
-                <!-- Urgency Message -->
-                <div style="background: rgba(255, 0, 110, 0.9); color: white; padding: 20px; border-radius: 15px; margin: 30px 0; animation: neonGlow 2s ease-in-out infinite alternate;">
-                    <h3 style="margin: 0 0 10px 0; font-size: 1.5rem;">⏰ EXCLUSIVE FEATURES:</h3>
-                    <p style="margin: 0; font-size: 1.2rem;">
-                        🎁 All games are 100% FREE forever! 🎁<br>
-                        🚀 Zero loading time - games start in 1 second! 🚀<br>
-                        📱 Works perfectly on phone, tablet & computer! 📱
-                    </p>
-                </div>
-
-                <!-- Scroll Hint -->
-                <div class="scroll-hint">
-                    <i class="fas fa-chevron-down"></i>
-                    <div style="font-size: 0.9rem; margin-top: 5px;">More Games Below!</div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Free Forever</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Enhanced Game Counter Section -->
-    <section class="game-counter" style="background: linear-gradient(45deg, #ff006e, #8338ec); padding: 60px 0;">
+    <!-- Games Section -->
+    <section id="games" class="games-section">
         <div class="container">
-            <div style="text-align: center; margin-bottom: 40px;">
-                <h2 style="color: white; font-size: 2.5rem; margin-bottom: 20px;">🎮 EPIC GAMING STATS! 🎮</h2>
+            <h2 class="section-title">🎯 Featured Games</h2>
+            <div class="games-grid" id="gamesGrid">
+                <!-- Games will be loaded dynamically -->
             </div>
-            <div class="counter-stats">
-                <div class="stat-item" style="animation: bounce 1s infinite;">
-                    <div class="stat-number" data-count="15" style="color: #ffbe0b;">0</div>
-                    <div class="stat-label" style="color: white;">Amazing Games</div>
-                </div>
-                <div class="stat-item" style="animation: bounce 1s infinite 0.2s;">
-                    <div class="stat-number" data-count="500000" style="color: #00d4ff;">0</div>
-                    <div class="stat-label" style="color: white;">Daily Players</div>
-                </div>
-                <div class="stat-item" style="animation: bounce 1s infinite 0.4s;">
-                    <div class="stat-number" data-count="1" style="color: #39ff14;">0</div>
-                    <div class="stat-label" style="color: white;">Second Load Time</div>
-                </div>
-                <div class="stat-item" style="animation: bounce 1s infinite 0.6s;">
-                    <div class="stat-number" data-count="0" style="color: #ff006e;">0</div>
-                    <div class="stat-label" style="color: white;">Downloads Needed</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section (Simplified & More Exciting) -->
-    <section class="section features-enhanced" style="background: linear-gradient(135deg, #1a1a1a 0%, #2d1b69 50%, #1a1a1a 100%); padding: 80px 0;">
-        <div class="container">
-            <h2 class="section-title" style="font-size: 3rem; text-align: center; margin-bottom: 60px;">
-                🌟 Why 500,000+ Gamers Choose Us DAILY! 🌟
-            </h2>
-            
-            <div class="features">
-                <div class="feature feature-interactive" data-feature="instant" style="background: rgba(255, 0, 110, 0.1); border: 2px solid #ff006e; animation: neonGlow 3s ease-in-out infinite alternate;">
-                    <div class="feature-icon-wrapper">
-                        <span class="feature-icon" style="background: linear-gradient(45deg, #ff006e, #8338ec); color: white; border-radius: 50%; padding: 20px; font-size: 2rem;">
-                            <i class="fas fa-rocket"></i>
-                        </span>
-                    </div>
-                    <h3 class="feature-title" style="color: #ff006e; font-size: 1.8rem;">⚡ INSTANT PLAY</h3>
-                    <p style="color: white; font-size: 1.2rem;">Games load in 1 second! No downloads, no installations, no waiting. Just pure gaming fun!</p>
-                </div>
-                
-                <div class="feature feature-interactive" data-feature="mobile" style="background: rgba(0, 212, 255, 0.1); border: 2px solid #00d4ff; animation: neonGlow 3s ease-in-out infinite alternate 1s;">
-                    <div class="feature-icon-wrapper">
-                        <span class="feature-icon" style="background: linear-gradient(45deg, #00d4ff, #39ff14); color: white; border-radius: 50%; padding: 20px; font-size: 2rem;">
-                            <i class="fas fa-mobile-alt"></i>
-                        </span>
-                    </div>
-                    <h3 class="feature-title" style="color: #00d4ff; font-size: 1.8rem;">📱 ALL DEVICES</h3>
-                    <p style="color: white; font-size: 1.2rem;">Perfect on phone, tablet, laptop, desktop. Our games work flawlessly everywhere!</p>
-                </div>
-                
-                <div class="feature feature-interactive" data-feature="new" style="background: rgba(57, 255, 20, 0.1); border: 2px solid #39ff14; animation: neonGlow 3s ease-in-out infinite alternate 2s;">
-                    <div class="feature-icon-wrapper">
-                        <span class="feature-icon" style="background: linear-gradient(45deg, #39ff14, #ffbe0b); color: white; border-radius: 50%; padding: 20px; font-size: 2rem;">
-                            <i class="fas fa-star"></i>
-                        </span>
-                    </div>
-                    <h3 class="feature-title" style="color: #39ff14; font-size: 1.8rem;">🎮 NEW GAMES WEEKLY</h3>
-                    <p style="color: white; font-size: 1.2rem;">Fresh content every week! Be the first to play our latest awesome additions!</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Enhanced Games Section -->
-    <section id="games" class="section games-enhanced" style="background: #0a0a0a; padding: 80px 0;">
-        <div class="container">
-            <div class="games-header" style="text-align: center; margin-bottom: 60px;">
-                <h2 class="section-title" style="font-size: 3.5rem; background: linear-gradient(45deg, #ff006e, #00d4ff, #39ff14); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
-                    🎯 CHOOSE YOUR EPIC ADVENTURE! 🎯
-                </h2>
-                <p class="section-subtitle" style="font-size: 1.5rem; color: #00d4ff; margin-bottom: 40px;">
-                    Click any game below to start playing INSTANTLY! 🚀
-                </p>
-                
-                <!-- Game Categories Filter -->
-                <div class="game-filters">
-                    <button class="filter-btn active" data-filter="all" style="background: linear-gradient(45deg, #ff006e, #8338ec); color: white; border: none; padding: 15px 25px; margin: 10px; border-radius: 25px; font-weight: bold;">
-                        <i class="fas fa-th"></i> ALL GAMES
-                    </button>
-                    <button class="filter-btn" data-filter="action" style="background: linear-gradient(45deg, #ff006e, #fb5607); color: white; border: none; padding: 15px 25px; margin: 10px; border-radius: 25px; font-weight: bold;">
-                        <i class="fas fa-rocket"></i> ACTION
-                    </button>
-                    <button class="filter-btn" data-filter="puzzle" style="background: linear-gradient(45deg, #8338ec, #00d4ff); color: white; border: none; padding: 15px 25px; margin: 10px; border-radius: 25px; font-weight: bold;">
-                        <i class="fas fa-puzzle-piece"></i> PUZZLE
-                    </button>
-                    <button class="filter-btn" data-filter="casual" style="background: linear-gradient(45deg, #39ff14, #ffbe0b); color: white; border: none; padding: 15px 25px; margin: 10px; border-radius: 25px; font-weight: bold;">
-                        <i class="fas fa-smile"></i> CASUAL
-                    </button>
-                </div>
-            </div>
-            
-            <div class="games-grid enhanced-grid">
-                <!-- Game 1: Monster Survivors (Enhanced) -->
-                <div class="card enhanced-card" data-category="action" style="background: linear-gradient(135deg, #ff006e20, #8338ec20); border: 2px solid #ff006e; animation: neonGlow 4s ease-in-out infinite alternate;">
-                    <div class="card-header">
-                        <span class="game-badge hot" style="background: linear-gradient(45deg, #ff006e, #fb5607); animation: bounce 1s infinite;">🔥 #1 MOST PLAYED</span>
-                        <span class="play-count" style="background: rgba(255, 0, 110, 0.9); color: white; padding: 5px 10px; border-radius: 15px;">125,523 playing NOW!</span>
-                    </div>
-                    <div class="card-img-wrapper">
-                        <img src="./img/Monster-survivors.jpg" alt="Monster Survivors Game" class="card-img">
-                        <div class="card-overlay">
-                            <button class="instant-play-btn" onclick="window.location.href='games/monster-survivors.html'" style="background: linear-gradient(45deg, #ff006e, #8338ec); font-size: 1.2rem; padding: 15px 25px; animation: bounce 1s infinite;">
-                                <i class="fas fa-play"></i>
-                                <span>PLAY NOW!</span>
-                            </button>
-                        </div>
-                        <div class="game-duration" style="background: rgba(255, 0, 110, 0.9); color: white;">⏱️ 15-30 min</div>
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title" style="color: #ff006e; font-size: 1.5rem;">Monster Survivors</h3>
-                        <div class="game-rating">
-                            <div class="stars" style="color: #ffbe0b;">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <span class="rating-text" style="color: #00d4ff;">4.9 (152,234 reviews)</span>
-                        </div>
-                        <p class="card-text" style="color: white; font-size: 1.1rem;">🎯 Epic monster battles! Upgrade your hero and survive endless waves. Most addictive game ever!</p>
-                        <div class="game-tags">
-                            <span class="tag" style="background: #ff006e; color: white;">Action</span>
-                            <span class="tag" style="background: #8338ec; color: white;">Survival</span>
-                            <span class="tag" style="background: #00d4ff; color: white;">RPG</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Game 2: Classic Solitaire (Enhanced) -->
-                <div class="card enhanced-card" data-category="puzzle" style="background: linear-gradient(135deg, #8338ec20, #00d4ff20); border: 2px solid #00d4ff; animation: neonGlow 4s ease-in-out infinite alternate 1s;">
-                    <div class="card-header">
-                        <span class="game-badge classic" style="background: linear-gradient(45deg, #8338ec, #00d4ff); animation: bounce 1s infinite;">👑 CLASSIC FAVORITE</span>
-                        <span class="play-count" style="background: rgba(0, 212, 255, 0.9); color: white; padding: 5px 10px; border-radius: 15px;">84,445 playing NOW!</span>
-                    </div>
-                    <div class="card-img-wrapper">
-                        <img src="img/solitaire.jpg" alt="Classic Solitaire Game" class="card-img">
-                        <div class="card-overlay">
-                            <button class="instant-play-btn" onclick="window.location.href='games/solitaire.html'" style="background: linear-gradient(45deg, #8338ec, #00d4ff); font-size: 1.2rem; padding: 15px 25px; animation: bounce 1s infinite;">
-                                <i class="fas fa-play"></i>
-                                <span>PLAY NOW!</span>
-                            </button>
-                        </div>
-                        <div class="game-duration" style="background: rgba(0, 212, 255, 0.9); color: white;">⏱️ 5-15 min</div>
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title" style="color: #00d4ff; font-size: 1.5rem;">Classic Solitaire</h3>
-                        <div class="game-rating">
-                            <div class="stars" style="color: #ffbe0b;">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <span class="rating-text" style="color: #00d4ff;">4.9 (238,892 reviews)</span>
-                        </div>
-                        <p class="card-text" style="color: white; font-size: 1.1rem;">♠️ The ultimate card game! Perfect for relaxation and brain training. Play anytime, anywhere!</p>
-                        <div class="game-tags">
-                            <span class="tag" style="background: #8338ec; color: white;">Cards</span>
-                            <span class="tag" style="background: #00d4ff; color: white;">Classic</span>
-                            <span class="tag" style="background: #39ff14; color: white;">Relax</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Continue with other games... -->
-                
-            </div>
-            
-            <!-- View All Games CTA -->
-            <div style="text-align: center; margin-top: 60px;">
-                <button class="mega-play-btn" onclick="window.location.href='games/index.html'">
-                    🎮 VIEW ALL 15 AMAZING GAMES! 🎮
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Social Proof Section (Enhanced) -->
-    <section class="social-proof" style="background: linear-gradient(45deg, #ff006e, #8338ec); padding: 80px 0;">
-        <div class="container">
-            <h2 class="section-title" style="color: white; font-size: 3rem; text-align: center; margin-bottom: 60px;">💬 What 500,000+ Players Say About Us! 💬</h2>
-            <div class="reviews-slider">
-                <div class="review-card" style="background: white; padding: 30px; border-radius: 15px; margin: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); animation: bounce 2s infinite;">
-                    <div class="review-stars" style="font-size: 1.5rem; margin-bottom: 15px;">⭐⭐⭐⭐⭐</div>
-                    <p style="font-size: 1.2rem; margin-bottom: 15px; font-style: italic;">"OMG! Best gaming site EVER! I've been playing for 6 hours straight! 🎮"</p>
-                    <div class="reviewer" style="font-weight: bold; color: #ff006e;">- Alex, Gaming Enthusiast ❤️</div>
-                </div>
-                <div class="review-card" style="background: white; padding: 30px; border-radius: 15px; margin: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); animation: bounce 2s infinite 0.5s;">
-                    <div class="review-stars" style="font-size: 1.5rem; margin-bottom: 15px;">⭐⭐⭐⭐⭐</div>
-                    <p style="font-size: 1.2rem; margin-bottom: 15px; font-style: italic;">"Monster Survivors is SO addictive! I can't stop playing! 🔥"</p>
-                    <div class="reviewer" style="font-weight: bold; color: #ff006e;">- Sarah, College Student 🎓</div>
-                </div>
-                <div class="review-card" style="background: white; padding: 30px; border-radius: 15px; margin: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); animation: bounce 2s infinite 1s;">
-                    <div class="review-stars" style="font-size: 1.5rem; margin-bottom: 15px;">⭐⭐⭐⭐⭐</div>
-                    <p style="font-size: 1.2rem; margin-bottom: 15px; font-style: italic;">"Perfect for work breaks! No downloads needed! Amazing! 🚀"</p>
-                    <div class="reviewer" style="font-weight: bold; color: #ff006e;">- Mike, Busy Professional 💼</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Call to Action Section (Super Enhanced) -->
-    <section class="section cta-enhanced" style="background: linear-gradient(135deg, #0a0a0a, #1a1a1a); padding: 100px 0; text-align: center;">
-        <div class="container">
-            <div class="cta-content">
-                <h2 style="font-size: 4rem; color: white; margin-bottom: 30px; animation: bounce 2s infinite;">
-                    🚀 READY FOR THE ULTIMATE GAMING EXPERIENCE? 🚀
-                </h2>
-                <p style="font-size: 2rem; color: #00d4ff; margin-bottom: 40px;">
-                    Join <strong style="color: #ff006e; animation: neonGlow 2s ease-in-out infinite alternate;">500,000+ ACTIVE PLAYERS</strong> and start your epic adventure TODAY!
-                </p>
-                <div class="cta-buttons" style="margin-bottom: 40px;">
-                    <button class="mega-play-btn" onclick="scrollToGames()" style="font-size: 1.8rem; padding: 25px 50px;">
-                        <i class="fas fa-rocket"></i> START PLAYING NOW! 🎮
-                    </button>
-                    <button class="mega-play-btn" onclick="playRandomGame()" style="font-size: 1.8rem; padding: 25px 50px;">
-                        <i class="fas fa-surprise"></i> SURPRISE ME! 🎲
-                    </button>
-                </div>
-                <div class="cta-features" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 30px;">
-                    <span class="cta-feature" style="background: linear-gradient(45deg, #39ff14, #00d4ff); color: white; padding: 15px 25px; border-radius: 25px; font-weight: bold; font-size: 1.2rem;">✅ 100% FREE FOREVER</span>
-                    <span class="cta-feature" style="background: linear-gradient(45deg, #ff006e, #8338ec); color: white; padding: 15px 25px; border-radius: 25px; font-weight: bold; font-size: 1.2rem;">✅ NO DOWNLOADS EVER</span>
-                    <span class="cta-feature" style="background: linear-gradient(45deg, #ffbe0b, #fb5607); color: white; padding: 15px 25px; border-radius: 25px; font-weight: bold; font-size: 1.2rem;">✅ INSTANT PLAY</span>
-                    <span class="cta-feature" style="background: linear-gradient(45deg, #8338ec, #ff006e); color: white; padding: 15px 25px; border-radius: 25px; font-weight: bold; font-size: 1.2rem;">✅ ALL DEVICES</span>
-                </div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="games/index.html" class="cta-button">View All Games</a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="site-footer">
-        <div class="container footer-container">
-            <div>
-                <h4 class="footer-heading">🎮 FunnyJourney.com</h4>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🎮 FunnyJourney</h3>
                 <p>The ultimate destination for free, instant browser games. No downloads, no limits, just pure gaming fun!</p>
-                <div class="social-links" style="margin-top: 1rem;">
-                    <a href="#" class="social-icon" aria-label="Facebook">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="#" class="social-icon" aria-label="Twitter">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="#" class="social-icon" aria-label="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
                 </div>
-            </div>
-            
-            <div class="footer-nav">
-                <h4 class="footer-heading">Quick Links</h4>
-                <ul>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul style="list-style: none;">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="games/index.html">All Games</a></li>
                     <li><a href="about/index.html">About Us</a></li>
                 </ul>
             </div>
-            
-            <div class="footer-nav">
-                <h4 class="footer-heading">Legal</h4>
-                <ul>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul style="list-style: none;">
                     <li><a href="about/index.html#privacy">Privacy Policy</a></li>
                     <li><a href="about/index.html#terms">Terms of Service</a></li>
-                    <li><a href="about/index.html#cookies">Cookie Policy</a></li>
                 </ul>
             </div>
         </div>
-        
-        <div class="container footer-bottom">
+            <div class="footer-bottom">
             <p>&copy; 2025 FunnyJourney.com. All rights reserved. | 🎮 Play more, stress less!</p>
+            </div>
         </div>
     </footer>
 
-    <!-- Enhanced JavaScript -->
-    <script src="js/main.js"></script>
+    <!-- JavaScript -->
     <script>
-        // Live counter animation
-        function updateLiveCounter() {
-            const counter = document.getElementById('liveCounter');
-            const baseCount = 470000;
-            const variation = Math.floor(Math.random() * 10000);
-            counter.textContent = (baseCount + variation).toLocaleString();
+        // Game data with new games
+        const games = [
+            {
+                title: "Monster Survivors",
+                description: "Epic monster battles! Upgrade your hero and survive endless waves.",
+                image: "img/Monster-survivors.jpg",
+                url: "games/monster-survivors.html"
+            },
+            {
+                title: "Classic Solitaire", 
+                description: "The ultimate card game! Perfect for relaxation and brain training.",
+                image: "img/solitaire.jpg",
+                url: "games/solitaire.html"
+            },
+
+            {
+                title: "Loot Island - Treasure Digger",
+                description: "Dig for treasure and discover amazing rewards on this mysterious island!",
+                image: "img/loot-island-treasure-digger.jpg",
+                url: "games/loot-island-treasure-digger.html"
+            },
+            {
+                title: "Little Shop",
+                description: "Manage your own shop and serve customers in this fun simulation game!",
+                image: "img/little-shop.jpg",
+                url: "games/little-shop.html"
+            },
+            {
+                title: "Rolling Balls Space Race",
+                description: "Race through space with rolling balls in this exciting arcade game!",
+                image: "img/rolling-balls-space-race.jpg",
+                url: "games/rolling-balls-space-race.html"
+            },
+            {
+                title: "Love Tester",
+                description: "Test your compatibility and find your perfect match!",
+                image: "img/love-tester.jpg",
+                url: "games/love-tester.html"
+            },
+            {
+                title: "Highway Traffic",
+                description: "Navigate through busy highway traffic in this thrilling driving game!",
+                image: "img/highway-traffic.jpg",
+                url: "games/highway-traffic.html"
+            },
+            {
+                title: "Stack Fire Ball",
+                description: "Stack and smash through colorful platforms in this addictive game!",
+                image: "img/stack-fire-ball.jpg",
+                url: "games/stack-fire-ball.html"
+            },
+            {
+                title: "Apocalypse Truck",
+                description: "Drive through the apocalypse and survive the zombie invasion!",
+                image: "img/apocalypse-truck.jpg",
+                url: "games/apocalypse-truck.html"
+            },
+            {
+                title: "Egg Helix",
+                description: "Guide the egg through the helix tower in this challenging arcade game!",
+                image: "img/Egg-Helix.jpg",
+                url: "games/egg-helix.html"
+            },
+            {
+                title: "Diamant Match 3 Sky Story",
+                description: "Match sparkling diamonds in this magical sky adventure!",
+                image: "img/diamant-match-3-sky-story.jpg",
+                url: "games/diamant-match-3-sky-story.html"
+            },
+            {
+                title: "Grass Land CEI",
+                description: "Explore beautiful grass lands in this exciting nature adventure!",
+                image: "img/grass-land-cei.jpg",
+                url: "games/grass-land-cei.html"
+            },
+            {
+                title: "Paper Boy Race Running Game",
+                description: "Race through streets as a paper boy delivering newspapers!",
+                image: "img/paper-boy-race-running-game.jpg",
+                url: "games/paper-boy-race-running-game.html"
+            },
+            {
+                title: "Leap and Avoid 2",
+                description: "Master the art of leaping and avoiding in this thrilling sequel!",
+                image: "img/leap-and-avoid-2.jpg",
+                url: "games/leap-and-avoid-2.html"
+            },
+            {
+                title: "Color Music Hop Ball Games",
+                description: "Hop to the beat in this colorful music adventure!",
+                image: "img/color-music-hop-ball-games.jpg",
+                url: "games/color-music-hop-ball-games.html"
+            }
+        ];
+
+        // Shuffle array function
+        function shuffleArray(array) {
+            const shuffled = [...array];
+            for (let i = shuffled.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            }
+            return shuffled;
         }
-        
-        // Update counter every 3 seconds
-        setInterval(updateLiveCounter, 3000);
-        
-        // Add excitement on scroll
-        window.addEventListener('scroll', function() {
-            const scrolled = window.pageYOffset;
-            const rate = scrolled * -0.5;
-            document.querySelector('.hero-background').style.transform = `translateY(${rate}px)`;
+
+        // Load games randomly
+        function loadGames() {
+            const gamesGrid = document.getElementById('gamesGrid');
+            const shuffledGames = shuffleArray(games);
+            const featuredGames = shuffledGames.slice(0, 6); // Show 6 random games
+            
+            gamesGrid.innerHTML = '';
+            
+            featuredGames.forEach(game => {
+                const gameCard = document.createElement('div');
+                gameCard.className = 'game-card';
+                gameCard.innerHTML = `
+                    <img src="${game.image}" alt="${game.title}" class="game-image">
+                    <div class="game-content">
+                        <h3 class="game-title">${game.title}</h3>
+                        <p class="game-description">${game.description}</p>
+                        <button class="play-button" onclick="window.location.href='${game.url}'">
+                            🎮 Play Now
+                        </button>
+                    </div>
+                `;
+                gamesGrid.appendChild(gameCard);
+            });
+        }
+
+        // Update game count automatically
+        function updateGameCount() {
+            document.getElementById('gameCount').textContent = games.length;
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
         });
-        
-        // Random game function
-        function playRandomGame() {
-            const games = [
-                'games/monster-survivors.html',
-                'games/solitaire.html',
-                'games/pyramid-solitaire.html',
-                'games/poop-clicker.html',
-                'games/fast-food-rush.html',
-                'games/egg-helix.html',
-                'games/highway-traffic.html',
-                'games/drift-king.html',
-                'games/loot-island-treasure-digger.html',
-                'games/little-shop.html',
-                'games/rolling-balls-space-race.html'
-            ];
-            const randomGame = games[Math.floor(Math.random() * games.length)];
-            window.location.href = randomGame;
-        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            updateGameCount();
+            loadGames();
+            
+            // Refresh games every 30 seconds for variety
+            setInterval(loadGames, 30000);
+        });
     </script>
 </body>
 </html>
