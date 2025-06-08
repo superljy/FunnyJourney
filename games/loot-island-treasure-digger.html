@@ -1,34 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Analytics -->
-    <script src="../js/analytics.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TGVJVCTQBE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
     
+      gtag('config', 'G-TGVJVCTQBE');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loot Island Treasure Digger - Adventure Games Online 2025 | Play Free Online | FunnyJourney</title>
-    <meta name="description" content="Play Loot Island Treasure Digger free online! Amazing adventure game with treasure hunting and island exploration. No downloads, instant play. Join 500K+ players in 2025!">
-    <meta name="keywords" content="loot island,treasure digger,free online games 2025,browser games,no download games,instant play,adventure games online,treasure games,exploration games,summer break games,work break games">
+    <title>Treasure Digger - Adventure Games Online 2025 | Play Free Online | FunnyJourney</title>
+    <meta name="description" content="Play Treasure Digger free online! Dig for treasure and explore mysterious islands in this exciting adventure game. No downloads, instant play. Join 500K+ players in 2025!">
+    <meta name="keywords" content="treasure digger,adventure games,treasure hunt,free online games 2025,browser games,no download games,instant play,digging games online,exploration games,island games,summer break games,work break games">
+    <link rel="canonical" href="https://funnyjourney.com/games/loot-island-treasure-digger">
     
-    <!-- Open Graph tags -->
-    <meta property="og:title" content="Loot Island Treasure Digger - Free Online Adventure Game 2025">
-    <meta property="og:description" content="Play Loot Island Treasure Digger free online! Amazing adventure game with treasure hunting and island exploration. No downloads required.">
-    <meta property="og:url" content="https://funnyjourneys.github.io/games/loot-island-treasure-digger.html">
+    <!-- Open Graph tags for social sharing -->
+    <meta property="og:title" content="Treasure Digger - Free Online Adventure Game 2025">
+    <meta property="og:description" content="Play Treasure Digger free online! Dig for treasure and explore mysterious islands in this exciting adventure game. No downloads required.">
+    <meta property="og:url" content="https://funnyjourney.com/games/loot-island-treasure-digger">
     <meta property="og:type" content="website">
+    <meta property="og:image" content="https://funnyjourney.com/img/loot-island-treasure-digger.jpg">
+    <meta property="og:site_name" content="FunnyJourney">
     
-    <!-- Twitter Card tags -->
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="🎮 Loot Island Treasure Digger - Play Free Online Now!">
-    <meta name="twitter:description" content="Amazing adventure game with treasure hunting and island exploration. Play instantly!">
+    <meta name="twitter:title" content="🏴‍☠️ Treasure Digger - Play Free Online Now!">
+    <meta name="twitter:description" content="Dig for treasure and explore mysterious islands in this exciting adventure game. Play instantly!">
+    <meta name="twitter:image" content="https://funnyjourney.com/img/loot-island-treasure-digger.jpg">
     
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Game",
-      "name": "Loot Island Treasure Digger",
-      "description": "Amazing adventure game with treasure hunting and island exploration",
-      "url": "https://funnyjourneys.github.io/games/loot-island-treasure-digger.html",
+      "name": "Treasure Digger",
+      "description": "Dig for treasure and explore mysterious islands in this exciting adventure game",
+      "url": "https://funnyjourney.com/games/loot-island-treasure-digger",
       "gameLocation": "Online",
       "applicationCategory": "Game",
       "operatingSystem": "Any",
@@ -41,7 +51,7 @@
       },
       "aggregateRating": {
         "@type": "AggregateRating",
-        "ratingValue": "4.5",
+        "ratingValue": "4.4",
         "bestRating": "5",
         "worstRating": "1",
         "ratingCount": "1000"
@@ -49,588 +59,289 @@
       "publisher": {
         "@type": "Organization",
         "name": "FunnyJourney",
-        "url": "https://funnyjourneys.github.io/"
+        "url": "https://funnyjourney.com/"
       }
     }
     </script>
     
-    <!-- Unified Styles - Same as homepage -->
+    <!-- Add main stylesheet for consistent styling -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- Light theme override for game pages -->
+    <link rel="stylesheet" href="../css/light-theme.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gaming: {
+                            dark: '#1a1a1a',
+                            darker: '#0a0a0a',
+                            blue: '#00d4ff',
+                            purple: '#9d4edd',
+                            green: '#39ff14',
+                            pink: '#ff10f0'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
+        /* Game-specific styles */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f8fafc;
+            padding-top: 80px; /* Add padding to account for fixed header */
         }
         
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        .content-container {
+            max-width: 72rem;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
         }
         
-        /* Header */
-        .header {
-            background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
+        @media (min-width: 640px) {
+            .content-container {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
         }
         
-        .nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
+        @media (min-width: 1024px) {
+            .content-container {
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
         }
         
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #667eea;
-            text-decoration: none;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-        
-        .nav-links a {
-            text-decoration: none;
-            color: #4a5568;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: #667eea;
-        }
-        
-        .more-games-btn {
-            background: #667eea;
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border: none;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-        }
-        
-        .more-games-btn:hover {
-            background: #5a67d8;
-        }
-        
-        /* Game Section */
-        .game-section {
-            padding: 120px 0 40px;
-            background: white;
-        }
-        
-        .game-header {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        
-        .game-title {
-            font-size: 2.5rem;
-            color: #2d3748;
-            margin-bottom: 1rem;
-        }
-        
-        .game-description {
-            font-size: 1.2rem;
-            color: #718096;
-            max-width: 600px;
-            margin: 0 auto 2rem;
-        }
-        
-        .back-button {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border: none;
-            border-radius: 25px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 2rem;
-        }
-        
-        .back-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-        
-        /* Game Container */
         .game-container {
-            background: white;
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 3rem;
             position: relative;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
         
         .game-iframe {
             width: 100%;
             height: 600px;
             border: none;
-            border-radius: 10px;
-            background: #f8fafc;
+            display: block;
+        }
+        
+        @media (max-width: 768px) {
+            .game-iframe {
+                height: 400px;
+            }
         }
         
         .fullscreen-btn {
             position: absolute;
-            bottom: 30px;
-            right: 30px;
-            background: rgba(102, 126, 234, 0.9);
+            bottom: 15px;
+            right: 15px;
+            background-color: rgba(0, 0, 0, 0.6);
             color: white;
             border: none;
-            border-radius: 8px;
-            padding: 10px 15px;
+            border-radius: 4px;
+            padding: 8px 12px;
             cursor: pointer;
             display: flex;
             align-items: center;
-            gap: 8px;
-            font-weight: 600;
-            transition: all 0.3s ease;
+            gap: 5px;
             z-index: 10;
+            font-size: 14px;
+            transition: background-color 0.3s;
         }
         
         .fullscreen-btn:hover {
-            background: rgba(102, 126, 234, 1);
-            transform: translateY(-2px);
-        }
-        
-        /* Game Info Section */
-        .game-info {
-            background: #f8fafc;
-            padding: 60px 0;
-        }
-        
-        .info-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .info-card {
-            background: white;
-            border-radius: 15px;
-            padding: 2.5rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            width: 100%;
-        }
-        
-        .info-card h3 {
-            color: #667eea;
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            font-weight: 600;
-        }
-        
-        .info-card p {
-            color: #4a5568;
-            line-height: 1.8;
-            font-size: 1.1rem;
-        }
-        
-        .info-card ul {
-            color: #4a5568;
-            margin-left: 1.5rem;
-            font-size: 1.1rem;
-        }
-        
-        .info-card li {
-            margin-bottom: 0.8rem;
-            line-height: 1.6;
-        }
-        
-        /* Related Games Section */
-        .related-games {
-            padding: 60px 0;
-            background: white;
-        }
-        
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #2d3748;
-        }
-        
-        .games-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .game-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .game-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-        }
-        
-        .game-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
+            background-color: rgba(0, 0, 0, 0.8);
         }
         
         .game-content {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
             padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(10px);
         }
         
-        .game-card-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: #2d3748;
-        }
-        
-        .game-card-description {
-            color: #718096;
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
-        }
-        
-        .play-button {
-            background: #667eea;
+        .back-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             border: none;
-            padding: 0.8rem 1.5rem;
-            border-radius: 8px;
+            border-radius: 25px;
+            padding: 12px 24px;
             font-weight: 600;
             cursor: pointer;
-            transition: background 0.3s ease;
-            width: 100%;
+            transition: all 0.3s ease;
             text-decoration: none;
-            display: inline-block;
-            text-align: center;
-        }
-        
-        .play-button:hover {
-            background: #5a67d8;
-        }
-        
-        /* Footer */
-        .footer {
-            background: #2d3748;
-            color: white;
-            padding: 40px 0 20px;
-            text-align: center;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-        
-        .footer-section h3 {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             margin-bottom: 1rem;
-            color: #667eea;
         }
         
-        .footer-section a {
-            color: #a0aec0;
-            text-decoration: none;
-            transition: color 0.3s ease;
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .section-heading {
+            font-size: 1.5rem;
+            line-height: 2rem;
+            font-weight: 700;
+            color: #00d4ff;
+            margin-bottom: 1rem;
         }
         
-        .footer-section a:hover {
-            color: white;
-        }
-        
-        .footer-bottom {
-            border-top: 1px solid #4a5568;
-            padding-top: 1rem;
-            color: #a0aec0;
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .game-title {
-                font-size: 2rem;
+        @media (min-width: 640px) {
+            .section-heading {
+                font-size: 1.875rem;
+                line-height: 2.25rem;
             }
-            
-            .nav-links {
-                display: none;
-            }
-            
-            .game-iframe {
-                height: 400px;
-            }
-            
-            .games-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .fullscreen-btn {
-                bottom: 15px;
-                right: 15px;
-                padding: 8px 12px;
-                font-size: 14px;
-            }
-        }
-        
-        /* Fullscreen styles */
-        .fullscreen-active {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: 9999;
-            border-radius: 0;
-        }
-        
-        .fullscreen-active .game-iframe {
-            width: 100%;
-            height: 100%;
-            border-radius: 0;
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <nav class="nav">
-                <a href="../index.html" class="logo">🎮 FunnyJourney</a>
-                <ul class="nav-links">
+    <!-- Use the main header from index.html -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="../index.html" class="site-logo">🎮 FunnyJourney</a>
+            <nav class="main-nav">
+                <ul>
                     <li><a href="../index.html">Home</a></li>
-                    <li><a href="index.html" class="active">Games</a></li>
+                    <li><a href="index.html" class="active">All Games</a></li>
                     <li><a href="../about/index.html">About</a></li>
                 </ul>
-                <a href="index.html" class="more-games-btn">🎮 More Games</a>
             </nav>
+            <button class="play-now-btn" onclick="window.location.href='index.html'">
+                <i class="fas fa-gamepad"></i> MORE GAMES
+            </button>
         </div>
     </header>
 
-    <!-- Game Section -->
-    <section class="game-section">
-        <div class="container">
-            <a href="../index.html" class="back-button">
-                ← Back to Home
-            </a>
+    <main class="content-container py-8">
+        <a href="index.html" class="back-button">
+            <i class="fas fa-arrow-left"></i> Back to Games
+        </a>
+        
+        <section class="mb-12 text-center">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-4">Loot Island - Treasure Digger</h1>
+            <p class="text-xl sm:text-2xl text-gaming-blue font-medium mb-8">Embark on an epic treasure hunting adventure and discover hidden loot!</p>
             
-            <div class="game-header">
-                <h1 class="game-title">🏝️ Loot Island - Treasure Digger</h1>
-                <p class="game-description">Dig for treasure and discover amazing rewards on this mysterious island! Explore underground caves and find hidden gems.</p>
+            <div class="mb-12">
+                <div class="game-container">
+                    <iframe src="https://www.crazygames.com/embed/loot-island---treasure-digger" 
+                            id="game-frame"
+                            class="game-iframe" 
+                            frameborder="0" 
+                            allow="gamepad *;"></iframe>
+                    <button id="fullscreen-btn" class="fullscreen-btn" aria-label="Toggle fullscreen">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+                        </svg>
+                        <span>Fullscreen</span>
+                    </button>
+                </div>
             </div>
-            
-            <div class="game-container" id="gameContainer">
-                <iframe 
-                    src="https://cloud.onlinegames.io/games/2025/html/loot-island-treasure-digger/index-og.html" 
-                    class="game-iframe"
-                    allowfullscreen
-                    allow="gamepad; microphone; camera">
-                </iframe>
-                <button class="fullscreen-btn" onclick="toggleFullscreen()">
-                    ⛶ Fullscreen
-                </button>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Game Info Section -->
-    <section class="game-info">
-        <div class="container">
-            <div class="info-grid">
-                <div class="info-card">
-                    <h3>🎮 How to Play</h3>
-                    <p>Click to dig and explore the island. Find treasures, gems, and special items hidden underground. Manage your energy and tools wisely.</p>
+        <section class="game-content">
+            <h2 class="section-heading">Game Description</h2>
+            <div class="prose max-w-none text-white">
+                <p class="mb-4">
+                    <strong>Loot Island - Treasure Digger</strong> is an exciting adventure game where you explore mysterious islands in search of hidden treasures. Dig deep into the ground, uncover ancient artifacts, and build your treasure collection in this captivating treasure hunting experience.
+                </p>
+                <p>
+                    Navigate through different islands, each with unique challenges and valuable loot waiting to be discovered. Upgrade your digging tools and become the ultimate treasure hunter!
+                </p>
+            </div>
+        </section>
+
+        <section class="game-content">
+            <h2 class="section-heading">How to Play</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-xl font-semibold mb-2 text-gaming-pink">Controls</h3>
+                    <ul class="list-disc pl-5 mb-4 text-white">
+                        <li>Mouse - Navigate and interact</li>
+                        <li>Click - Dig for treasures</li>
+                        <li>Arrow Keys - Move character</li>
+                        <li>Space - Use special abilities</li>
+                    </ul>
                 </div>
                 
-                <div class="info-card">
-                    <h3>🎯 Game Features</h3>
-                    <ul>
-                        <li>Treasure hunting adventure</li>
-                        <li>Multiple dig sites to explore</li>
-                        <li>Collectible gems and artifacts</li>
-                        <li>Tool upgrades and management</li>
-                        <li>Hidden bonus areas</li>
+                <div>
+                    <h3 class="text-xl font-semibold mb-2 text-gaming-green">Tips</h3>
+                    <ul class="list-disc pl-5 mb-4 text-white">
+                        <li>Explore every corner of the island</li>
+                        <li>Upgrade your digging tools regularly</li>
+                        <li>Look for rare treasure chests</li>
+                        <li>Manage your resources wisely</li>
+                        <li>Complete quests for bonus rewards</li>
+                        <li>Discover secret areas for rare loot</li>
                     </ul>
                 </div>
+            </div>
+        </section>
+
+        <section class="text-center mt-12">
+            <h2 class="section-heading">More Adventure Games You Might Like</h2>
+            <div class="grid md:grid-cols-3 gap-6 mt-6">
+                <a href="monster-survivors.html" class="game-content hover:bg-opacity-20 transition-all duration-300 text-center block">
+                    <h3 class="font-semibold text-gaming-blue">Monster Survivors</h3>
+                    <p class="text-sm text-white">Survive waves of monsters</p>
+                </a>
                 
-                <div class="info-card">
-                    <h3>💡 Tips & Tricks</h3>
-                    <p>Explore systematically to avoid missing treasures. Upgrade your tools for better efficiency. Save energy for deeper excavations where better rewards await.</p>
-                </div>
+                <a href="fast-food-rush.html" class="game-content hover:bg-opacity-20 transition-all duration-300 text-center block">
+                    <h3 class="font-semibold text-gaming-purple">Fast Food Rush</h3>
+                    <p class="text-sm text-white">Manage your restaurant</p>
+                </a>
+                
+                <a href="highway-traffic.html" class="game-content hover:bg-opacity-20 transition-all duration-300 text-center block">
+                    <h3 class="font-semibold text-gaming-green">Highway Traffic</h3>
+                    <p class="text-sm text-white">Race through traffic</p>
+                </a>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Related Games Section -->
-    <section class="related-games">
-        <div class="container">
-            <h2 class="section-title">🎯 More Amazing Games</h2>
-            <div class="games-grid" id="relatedGames">
-                <!-- Related games will be loaded dynamically -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>🎮 FunnyJourney</h3>
-                    <p>The ultimate destination for free, instant browser games. No downloads, no limits, just pure gaming fun!</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul style="list-style: none;">
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="index.html">All Games</a></li>
-                        <li><a href="../about/index.html">About Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Legal</h3>
-                    <ul style="list-style: none;">
-                        <li><a href="../about/index.html#privacy">Privacy Policy</a></li>
-                        <li><a href="../about/index.html#terms">Terms of Service</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 FunnyJourney.com. All rights reserved. | 🎮 Play more, stress less!</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- JavaScript -->
     <script>
-        // Related games data (same as homepage)
-        const allGames = [
-            {
-                title: "Monster Survivors",
-                description: "Epic monster battles! Upgrade your hero and survive endless waves.",
-                image: "../img/Monster-survivors.jpg",
-                url: "monster-survivors.html"
-            },
-            {
-                title: "Classic Solitaire", 
-                description: "The ultimate card game! Perfect for relaxation and brain training.",
-                image: "../img/solitaire.jpg",
-                url: "solitaire.html"
-            },
-            {
-                title: "Loot Island - Treasure Digger",
-                description: "Dig for treasure and discover amazing rewards on this mysterious island!",
-                image: "../img/loot-island-treasure-digger.jpg",
-                url: "loot-island-treasure-digger.html"
-            },
-            {
-                title: "Little Shop",
-                description: "Manage your own shop and serve customers in this fun simulation game!",
-                image: "../img/little-shop.jpg",
-                url: "little-shop.html"
-            },
-            {
-                title: "Rolling Balls Space Race",
-                description: "Race through space with rolling balls in this exciting arcade game!",
-                image: "../img/rolling-balls-space-race.jpg",
-                url: "rolling-balls-space-race.html"
-            },
-            {
-                title: "Love Tester",
-                description: "Test your compatibility and find your perfect match!",
-                image: "../img/love-tester.jpg",
-                url: "love-tester.html"
-            }
-        ];
-
-        // Fullscreen functionality
-        function toggleFullscreen() {
-            const gameContainer = document.getElementById('gameContainer');
-            
-            if (!document.fullscreenElement) {
-                gameContainer.requestFullscreen().then(() => {
-                    gameContainer.classList.add('fullscreen-active');
-                }).catch(err => {
-                    console.log('Error attempting to enable fullscreen:', err);
-                });
+        const fullscreenBtn = document.getElementById('fullscreen-btn');
+        const gameFrame = document.getElementById('game-frame');
+        
+        fullscreenBtn.addEventListener('click', () => {
+            if (gameFrame.classList.contains('fullscreen-active')) {
+                exitFullscreen();
             } else {
-                document.exitFullscreen().then(() => {
-                    gameContainer.classList.remove('fullscreen-active');
-                });
-            }
-        }
-
-        // Handle fullscreen change events
-        document.addEventListener('fullscreenchange', function() {
-            const gameContainer = document.getElementById('gameContainer');
-            if (!document.fullscreenElement) {
-                gameContainer.classList.remove('fullscreen-active');
+                enterFullscreen();
             }
         });
-
-        // Load related games
-        function loadRelatedGames() {
-            const relatedGamesContainer = document.getElementById('relatedGames');
-            const currentPage = window.location.pathname.split('/').pop();
+        
+        function enterFullscreen() {
+            gameFrame.classList.add('fullscreen-active');
+            fullscreenBtn.querySelector('span').textContent = 'Exit Fullscreen';
             
-            // Filter out current game and get random 3 games
-            const otherGames = allGames.filter(game => game.url !== currentPage);
-            const shuffled = otherGames.sort(() => 0.5 - Math.random());
-            const selectedGames = shuffled.slice(0, 3);
-            
-            relatedGamesContainer.innerHTML = '';
-            
-            selectedGames.forEach(game => {
-                const gameCard = document.createElement('div');
-                gameCard.className = 'game-card';
-                gameCard.innerHTML = `
-                    <img src="${game.image}" alt="${game.title}" class="game-image">
-                    <div class="game-content">
-                        <h3 class="game-card-title">${game.title}</h3>
-                        <p class="game-card-description">${game.description}</p>
-                        <a href="${game.url}" class="play-button">
-                            🎮 Play Now
-                        </a>
-                    </div>
-                `;
-                relatedGamesContainer.appendChild(gameCard);
-            });
+            if (gameFrame.requestFullscreen) {
+                gameFrame.requestFullscreen();
+            }
         }
-
-        // Initialize page
-        document.addEventListener('DOMContentLoaded', function() {
-            loadRelatedGames();
-        });
+        
+        function exitFullscreen() {
+            gameFrame.classList.remove('fullscreen-active');
+            fullscreenBtn.querySelector('span').textContent = 'Fullscreen';
+            
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            }
+        }
     </script>
 </body>
 </html> 

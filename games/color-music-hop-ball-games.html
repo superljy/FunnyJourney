@@ -6,28 +6,28 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Color Music Hop Ball Games - Music Games Online 2025 | Play Free Online | FunnyJourney</title>
-    <meta name="description" content="Play Color Music Hop Ball Games free online! Colorful music adventure where you hop to the beat in rhythm game. No downloads, instant play. Join 500K+ players in 2025!">
-    <meta name="keywords" content="color music hop ball,free online games 2025,browser games,no download games,instant play,music games online,rhythm games,ball games,summer break games,work break games">
+    <title>Color Music Hop Ball - Music Rhythm Games Online 2025 | Play Free Online | FunnyJourney</title>
+    <meta name="description" content="Play Color Music Hop Ball free online! Hop to the beat and match colors in this exciting music rhythm game. No downloads, instant play. Join 500K+ players in 2025!">
+    <meta name="keywords" content="color music hop ball,music games,rhythm games,free online games 2025,browser games,no download games,instant play,ball games online,music hop games,color matching games,summer break games,work break games">
     
     <!-- Open Graph tags -->
-    <meta property="og:title" content="Color Music Hop Ball Games - Free Online Music Game 2025">
-    <meta property="og:description" content="Play Color Music Hop Ball Games free online! Colorful music adventure where you hop to the beat in rhythm game. No downloads required.">
+    <meta property="og:title" content="Color Music Hop Ball - Free Online Music Rhythm Game 2025">
+    <meta property="og:description" content="Play Color Music Hop Ball free online! Hop to the beat and match colors in this exciting music rhythm game. No downloads required.">
     <meta property="og:url" content="https://funnyjourneys.github.io/games/color-music-hop-ball-games.html">
     <meta property="og:type" content="website">
     
     <!-- Twitter Card tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="🎮 Color Music Hop Ball Games - Play Free Online Now!">
-    <meta name="twitter:description" content="Colorful music adventure where you hop to the beat in rhythm game. Play instantly!">
+    <meta name="twitter:title" content="🎵 Color Music Hop Ball - Play Free Online Now!">
+    <meta name="twitter:description" content="Hop to the beat and match colors in this exciting music rhythm game. Play instantly!">
     
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Game",
-      "name": "Color Music Hop Ball Games",
-      "description": "Colorful music adventure where you hop to the beat in rhythm game",
+      "name": "Color Music Hop Ball",
+      "description": "Hop to the beat and match colors in this exciting music rhythm game",
       "url": "https://funnyjourneys.github.io/games/color-music-hop-ball-games.html",
       "gameLocation": "Online",
       "applicationCategory": "Game",
@@ -41,10 +41,10 @@
       },
       "aggregateRating": {
         "@type": "AggregateRating",
-        "ratingValue": "4.5",
+        "ratingValue": "4.6",
         "bestRating": "5",
         "worstRating": "1",
-        "ratingCount": "1000"
+        "ratingCount": "1200"
       },
       "publisher": {
         "@type": "Organization",
@@ -54,583 +54,203 @@
     }
     </script>
     
-    <!-- Unified Styles - Same as homepage -->
+    <!-- Add main stylesheet for consistent styling -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- Light theme override for game pages -->
+    <link rel="stylesheet" href="../css/light-theme.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'game-dark': '#0f0f23',
+                        'game-purple': '#6366f1',
+                        'game-blue': '#3b82f6',
+                    }
+                }
+            }
+        }
+    </script>
+    
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f8fafc;
+            background: linear-gradient(135deg, #0f0f23 0%, #1e1b4b 50%, #312e81 100%);
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
         }
         
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header */
-        .header {
-            background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-        }
-        
-        .nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #667eea;
-            text-decoration: none;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-        
-        .nav-links a {
-            text-decoration: none;
-            color: #4a5568;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: #667eea;
-        }
-        
-        .more-games-btn {
-            background: #667eea;
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border: none;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-        }
-        
-        .more-games-btn:hover {
-            background: #5a67d8;
-        }
-        
-        /* Game Section */
-        .game-section {
-            padding: 120px 0 40px;
-            background: white;
-        }
-        
-        .game-header {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        
-        .game-title {
-            font-size: 2.5rem;
-            color: #2d3748;
-            margin-bottom: 1rem;
-        }
-        
-        .game-description {
-            font-size: 1.2rem;
-            color: #718096;
-            max-width: 600px;
-            margin: 0 auto 2rem;
-        }
-        
-        .back-button {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border: none;
-            border-radius: 25px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 2rem;
-        }
-        
-        .back-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-        
-        /* Game Container */
         .game-container {
-            background: white;
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 3rem;
-            position: relative;
+            min-height: 100vh;
+            background: rgba(15, 15, 35, 0.95);
         }
         
-        .game-iframe {
-            width: 100%;
-            height: 600px;
-            border: none;
-            border-radius: 10px;
-            background: #f8fafc;
+        .game-frame {
+            border: 2px solid rgba(99, 102, 241, 0.3);
+            border-radius: 12px;
+            box-shadow: 0 0 30px rgba(99, 102, 241, 0.2);
         }
         
         .fullscreen-btn {
-            position: absolute;
-            bottom: 30px;
-            right: 30px;
-            background: rgba(102, 126, 234, 0.9);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            padding: 10px 15px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 600;
+            background: linear-gradient(45deg, #6366f1, #8b5cf6);
             transition: all 0.3s ease;
-            z-index: 10;
         }
         
         .fullscreen-btn:hover {
-            background: rgba(102, 126, 234, 1);
+            background: linear-gradient(45deg, #5855eb, #7c3aed);
+            transform: translateY(-1px);
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
+        }
+        
+        .back-btn {
+            background: rgba(55, 65, 81, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(75, 85, 99, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .back-btn:hover {
+            background: rgba(75, 85, 99, 0.9);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        
+        .feature-card {
+            background: rgba(30, 27, 75, 0.6);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            border-color: rgba(99, 102, 241, 0.4);
             transform: translateY(-2px);
-        }
-        
-        /* Game Info Section */
-        .game-info {
-            background: #f8fafc;
-            padding: 60px 0;
-        }
-        
-        .info-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .info-card {
-            background: white;
-            border-radius: 15px;
-            padding: 2.5rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            width: 100%;
-        }
-        
-        .info-card h3 {
-            color: #667eea;
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            font-weight: 600;
-        }
-        
-        .info-card p {
-            color: #4a5568;
-            line-height: 1.8;
-            font-size: 1.1rem;
-        }
-        
-        .info-card ul {
-            color: #4a5568;
-            margin-left: 1.5rem;
-            font-size: 1.1rem;
-        }
-        
-        .info-card li {
-            margin-bottom: 0.8rem;
-            line-height: 1.6;
-        }
-        
-        /* Related Games Section */
-        .related-games {
-            padding: 60px 0;
-            background: white;
-        }
-        
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #2d3748;
-        }
-        
-        .games-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .game-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .game-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-        }
-        
-        .game-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        
-        .game-content {
-            padding: 1.5rem;
-        }
-        
-        .game-card-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: #2d3748;
-        }
-        
-        .game-card-description {
-            color: #718096;
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
-        }
-        
-        .play-button {
-            background: #667eea;
-            color: white;
-            border: none;
-            padding: 0.8rem 1.5rem;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.3s ease;
-            width: 100%;
-            text-decoration: none;
-            display: inline-block;
-            text-align: center;
-        }
-        
-        .play-button:hover {
-            background: #5a67d8;
-        }
-        
-        /* Footer */
-        .footer {
-            background: #2d3748;
-            color: white;
-            padding: 40px 0 20px;
-            text-align: center;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-        
-        .footer-section h3 {
-            margin-bottom: 1rem;
-            color: #667eea;
-        }
-        
-        .footer-section a {
-            color: #a0aec0;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-section a:hover {
-            color: white;
-        }
-        
-        .footer-bottom {
-            border-top: 1px solid #4a5568;
-            padding-top: 1rem;
-            color: #a0aec0;
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .game-title {
-                font-size: 2rem;
-            }
-            
-            .nav-links {
-                display: none;
-            }
-            
-            .game-iframe {
-                height: 400px;
-            }
-            
-            .games-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .fullscreen-btn {
-                bottom: 15px;
-                right: 15px;
-                padding: 8px 12px;
-                font-size: 14px;
-            }
-        }
-        
-        /* Fullscreen styles */
-        .fullscreen-active {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: 9999;
-            border-radius: 0;
-        }
-        
-        .fullscreen-active .game-iframe {
-            width: 100%;
-            height: 100%;
-            border-radius: 0;
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.1);
         }
     </style>
 </head>
-<body>
+<body class="game-container">
     <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <nav class="nav">
-                <a href="../index.html" class="logo">🎮 FunnyJourney</a>
-                <ul class="nav-links">
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="index.html" class="active">Games</a></li>
-                    <li><a href="../about/index.html">About</a></li>
-                </ul>
-                <a href="index.html" class="more-games-btn">🎮 More Games</a>
-            </nav>
+    <header class="bg-black bg-opacity-50 backdrop-blur-md border-b border-gray-800">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg flex items-center justify-center">
+                    <span class="text-white font-bold text-sm">FJ</span>
+                </div>
+                <h1 class="text-white text-xl font-bold">FunnyJourney</h1>
+            </div>
+            <button onclick="goHome()" class="back-btn text-gray-300 hover:text-white px-4 py-2 rounded-lg transition-all duration-300">
+                ← Back to Games
+            </button>
         </div>
     </header>
 
-    <!-- Game Section -->
-    <section class="game-section">
-        <div class="container">
-            <a href="../index.html" class="back-button">
-                ← Back to Home
-            </a>
-            
-            <div class="game-header">
-                <h1 class="game-title">🎵 Color Music Hop Ball Games</h1>
-                <p class="game-description">Hop to the beat in this colorful music adventure! Guide your ball through musical platforms and rhythmic challenges.</p>
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <div class="max-w-6xl mx-auto">
+            <!-- Game Title -->
+            <div class="text-center mb-8">
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
+                    🎵 Color Music Hop Ball Games
+                </h1>
+                <p class="text-gray-300 text-lg max-w-2xl mx-auto">
+                    Hop to the beat in this colorful music adventure! Guide your ball through vibrant levels while following the rhythm. Experience the perfect blend of music, colors, and exciting gameplay in this mesmerizing ball-hopping journey.
+                </p>
             </div>
-            
-            <div class="game-container" id="gameContainer">
-                <iframe 
-                    src="https://cloud.onlinegames.io/games/2025/html/color-music-hop-ball-games/index-og.html" 
-                    class="game-iframe"
-                    allowfullscreen
-                    allow="gamepad; microphone; camera">
-                </iframe>
-                <button class="fullscreen-btn" onclick="toggleFullscreen()">
-                    ⛶ Fullscreen
-                </button>
-            </div>
-        </div>
-    </section>
 
-    <!-- Game Info Section -->
-    <section class="game-info">
-        <div class="container">
-            <div class="info-grid">
-                <div class="info-card">
-                    <h3>🎮 How to Play</h3>
-                    <p>Tap to make the ball hop on colored platforms in rhythm with the music. Match the beat and avoid missing platforms.</p>
+            <!-- Game Frame -->
+            <div class="bg-black bg-opacity-30 rounded-2xl p-6 mb-8">
+                <div class="relative">
+                    <iframe 
+                        id="gameFrame"
+                        src="https://www.crazygames.com/embed/color-music-hop-ball-games"
+                        class="game-frame w-full h-96 md:h-[600px]"
+                        allowfullscreen
+                        allow="gamepad; microphone; camera">
+                    </iframe>
+                    
+                    <!-- Fullscreen Button -->
+                    <button 
+                        onclick="toggleFullscreen()"
+                        class="fullscreen-btn absolute top-4 right-4 text-white px-4 py-2 rounded-lg font-medium">
+                        ⛶ Fullscreen
+                    </button>
+                </div>
+            </div>
+
+            <!-- Game Features -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <div class="feature-card p-6 rounded-xl">
+                    <div class="text-3xl mb-3">🎵</div>
+                    <h3 class="text-white font-semibold mb-2">Musical Rhythm</h3>
+                    <p class="text-gray-400 text-sm">Follow the beat and hop to amazing music tracks and melodies</p>
                 </div>
                 
-                <div class="info-card">
-                    <h3>🎯 Game Features</h3>
-                    <ul>
-                        <li>Music-rhythm gameplay</li>
-                        <li>Colorful visual effects</li>
-                        <li>Beat-matching mechanics</li>
-                        <li>Multiple music tracks</li>
-                        <li>Rhythm-based scoring</li>
-                    </ul>
+                <div class="feature-card p-6 rounded-xl">
+                    <div class="text-3xl mb-3">🌈</div>
+                    <h3 class="text-white font-semibold mb-2">Colorful Visuals</h3>
+                    <p class="text-gray-400 text-sm">Enjoy vibrant colors and stunning visual effects that sync with music</p>
                 </div>
                 
-                <div class="info-card">
-                    <h3>💡 Tips & Tricks</h3>
-                    <p>Listen to the music rhythm carefully. Watch for color patterns on platforms. Stay in sync with the beat. Practice timing to improve your performance.</p>
+                <div class="feature-card p-6 rounded-xl">
+                    <div class="text-3xl mb-3">⚽</div>
+                    <h3 class="text-white font-semibold mb-2">Ball Control</h3>
+                    <p class="text-gray-400 text-sm">Master precise ball movement and timing for perfect hops</p>
+                </div>
+                
+                <div class="feature-card p-6 rounded-xl">
+                    <div class="text-3xl mb-3">🎯</div>
+                    <h3 class="text-white font-semibold mb-2">Challenging Levels</h3>
+                    <p class="text-gray-400 text-sm">Navigate through increasingly complex musical obstacle courses</p>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Related Games Section -->
-    <section class="related-games">
-        <div class="container">
-            <h2 class="section-title">🎯 More Amazing Games</h2>
-            <div class="games-grid" id="relatedGames">
-                <!-- Related games will be loaded dynamically -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>🎮 FunnyJourney</h3>
-                    <p>The ultimate destination for free, instant browser games. No downloads, no limits, just pure gaming fun!</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul style="list-style: none;">
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="index.html">All Games</a></li>
-                        <li><a href="../about/index.html">About Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Legal</h3>
-                    <ul style="list-style: none;">
-                        <li><a href="../about/index.html#privacy">Privacy Policy</a></li>
-                        <li><a href="../about/index.html#terms">Terms of Service</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 FunnyJourney.com. All rights reserved. | 🎮 Play more, stress less!</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- JavaScript -->
-    <script>
-        // Related games data (same as homepage)
-        const allGames = [
-            {
-                title: "Monster Survivors",
-                description: "Epic monster battles! Upgrade your hero and survive endless waves.",
-                image: "../img/Monster-survivors.jpg",
-                url: "monster-survivors.html"
-            },
-            {
-                title: "Classic Solitaire", 
-                description: "The ultimate card game! Perfect for relaxation and brain training.",
-                image: "../img/solitaire.jpg",
-                url: "solitaire.html"
-            },
-            {
-                title: "Loot Island - Treasure Digger",
-                description: "Dig for treasure and discover amazing rewards on this mysterious island!",
-                image: "../img/loot-island-treasure-digger.jpg",
-                url: "loot-island-treasure-digger.html"
-            },
-            {
-                title: "Little Shop",
-                description: "Manage your own shop and serve customers in this fun simulation game!",
-                image: "../img/little-shop.jpg",
-                url: "little-shop.html"
-            },
-            {
-                title: "Rolling Balls Space Race",
-                description: "Race through space with rolling balls in this exciting arcade game!",
-                image: "../img/rolling-balls-space-race.jpg",
-                url: "rolling-balls-space-race.html"
-            },
-            {
-                title: "Love Tester",
-                description: "Test your compatibility and find your perfect match!",
-                image: "../img/love-tester.jpg",
-                url: "love-tester.html"
-            }
-        ];
-
-        // Fullscreen functionality
-        function toggleFullscreen() {
-            const gameContainer = document.getElementById('gameContainer');
-            
-            if (!document.fullscreenElement) {
-                gameContainer.requestFullscreen().then(() => {
-                    gameContainer.classList.add('fullscreen-active');
-                }).catch(err => {
-                    console.log('Error attempting to enable fullscreen:', err);
-                });
-            } else {
-                document.exitFullscreen().then(() => {
-                    gameContainer.classList.remove('fullscreen-active');
-                });
-            }
-        }
-
-        // Handle fullscreen change events
-        document.addEventListener('fullscreenchange', function() {
-            const gameContainer = document.getElementById('gameContainer');
-            if (!document.fullscreenElement) {
-                gameContainer.classList.remove('fullscreen-active');
-            }
-        });
-
-        // Load related games
-        function loadRelatedGames() {
-            const relatedGamesContainer = document.getElementById('relatedGames');
-            const currentPage = window.location.pathname.split('/').pop();
-            
-            // Filter out current game and get random 3 games
-            const otherGames = allGames.filter(game => game.url !== currentPage);
-            const shuffled = otherGames.sort(() => 0.5 - Math.random());
-            const selectedGames = shuffled.slice(0, 3);
-            
-            relatedGamesContainer.innerHTML = '';
-            
-            selectedGames.forEach(game => {
-                const gameCard = document.createElement('div');
-                gameCard.className = 'game-card';
-                gameCard.innerHTML = `
-                    <img src="${game.image}" alt="${game.title}" class="game-image">
-                    <div class="game-content">
-                        <h3 class="game-card-title">${game.title}</h3>
-                        <p class="game-card-description">${game.description}</p>
-                        <a href="${game.url}" class="play-button">
-                            🎮 Play Now
-                        </a>
+            <!-- Game Instructions -->
+            <div class="bg-black bg-opacity-30 rounded-2xl p-6">
+                <h3 class="text-white text-xl font-semibold mb-4">🎮 How to Play</h3>
+                <div class="grid md:grid-cols-2 gap-6 text-gray-300">
+                    <div>
+                        <h4 class="font-medium mb-2 text-purple-400">Controls:</h4>
+                        <ul class="space-y-1 text-sm">
+                            <li>• Click or tap to make the ball hop</li>
+                            <li>• Hold for longer hops</li>
+                            <li>• Follow the rhythm of the music</li>
+                        </ul>
                     </div>
-                `;
-                relatedGamesContainer.appendChild(gameCard);
-            });
+                    <div>
+                        <h4 class="font-medium mb-2 text-purple-400">Objective:</h4>
+                        <ul class="space-y-1 text-sm">
+                            <li>• Hop on the correct colored platforms</li>
+                            <li>• Stay in sync with the music beat</li>
+                            <li>• Avoid falling off the platforms</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/common-head.js"></script>
+    <script>
+        function toggleFullscreen() {
+            const iframe = document.getElementById('gameFrame');
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.webkitRequestFullscreen) {
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) {
+                iframe.msRequestFullscreen();
+            }
+        }
+        
+        function goHome() {
+            window.location.href = '../index.html';
         }
 
-        // Initialize page
-        document.addEventListener('DOMContentLoaded', function() {
-            loadRelatedGames();
-        });
+        // Initialize game page with tracking
+        if (typeof initGamePage !== 'undefined') {
+            initGamePage('Color Music Hop Ball Games', 'https://www.crazygames.com/embed/color-music-hop-ball-games');
+        }
     </script>
 </body>
 </html> 
