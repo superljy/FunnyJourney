@@ -33,6 +33,15 @@
         </div>
         
         <div class="footer-section">
+          <h3>Partner Sites</h3>
+          <ul>
+            <li><a href="https://www.inspirationstudio.net/" target="_blank" rel="noopener noreferrer">⭐ Horoscope</a></li>
+            <li><a href="https://tarot.inspirationstudio.net/" target="_blank" rel="noopener noreferrer">💕 Love Tarot</a></li>
+            <li><a href="https://www.getartiflow.com/" target="_blank" rel="noopener noreferrer">🎨 AI Image Generation</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
           <h3>Legal</h3>
           <ul>
             <li><a href="about/index.html#privacy">Privacy Policy</a></li>
@@ -66,9 +75,15 @@ export default {
 
 .footer-content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
   margin-bottom: 2rem;
+}
+
+@media (min-width: 1200px) {
+  .footer-content {
+    grid-template-columns: repeat(5, 1fr);
+  }
 }
 
 .footer-section h3 {

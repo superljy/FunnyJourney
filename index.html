@@ -269,9 +269,15 @@
         
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
             margin-bottom: 2rem;
+        }
+        
+        @media (min-width: 1200px) {
+            .footer-content {
+                grid-template-columns: repeat(5, 1fr);
+            }
         }
         
         .footer-section h3 {
@@ -400,6 +406,23 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="games/index.html">All Games</a></li>
                     <li><a href="about/index.html">About Us</a></li>
+                </ul>
+            </div>
+                <div class="footer-section">
+                    <h3>Game Categories</h3>
+                    <ul style="list-style: none;">
+                    <li><a href="games/index.html#puzzle">Puzzle Games</a></li>
+                    <li><a href="games/index.html#arcade">Arcade Games</a></li>
+                    <li><a href="games/index.html#card">Card Games</a></li>
+                    <li><a href="games/index.html#action">Action Games</a></li>
+                </ul>
+            </div>
+                <div class="footer-section">
+                    <h3>Partner Sites</h3>
+                    <ul style="list-style: none;">
+                    <li><a href="https://www.inspirationstudio.net/" target="_blank" rel="noopener noreferrer">⭐ Horoscope</a></li>
+                    <li><a href="https://tarot.inspirationstudio.net/" target="_blank" rel="noopener noreferrer">💕 Love Tarot</a></li>
+                    <li><a href="https://www.getartiflow.com/" target="_blank" rel="noopener noreferrer">🎨 AI Image Generation</a></li>
                 </ul>
             </div>
                 <div class="footer-section">
