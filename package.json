@@ -1,0 +1,32 @@
+{
+  "name": "funnyjourney-games",
+  "version": "1.0.0",
+  "description": "Free online games platform with SEO optimization",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .vue,.js,.jsx,.ts,.tsx --fix",
+    "serve": "vite preview --port 3000"
+  },
+  "dependencies": {
+    "vue": "^3.4.0",
+    "@vue/runtime-dom": "^3.4.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.0",
+    "vite": "^5.0.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-vue": "^9.20.0"
+  },
+  "keywords": [
+    "free online games",
+    "browser games", 
+    "no download games",
+    "h5 games",
+    "instant play games"
+  ],
+  "author": "FunnyJourney",
+  "license": "MIT"
+}
