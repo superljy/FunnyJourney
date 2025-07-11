@@ -1,10 +1,13 @@
 <template>
   <div class="game-card" @click="playGame" :class="{ 'featured': game.featured }">
     <div class="game-image-container">
-      <img 
+      <OptimizedImage
         :src="game.image" 
         :alt="`${game.title} - Free Online Game | Play Instantly on FunnyJourney`"
-        :loading="lazy ? 'lazy' : 'eager'"
+        :lazy="lazy"
+        :priority="game.featured"
+        :width="300"
+        :height="200"
         class="game-image"
         @error="handleImageError"
       />
@@ -41,9 +44,13 @@
 
 <script>
 import { analytics } from '../utils/analytics.js'
+import OptimizedImage from './OptimizedImage.vue'
 
 export default {
   name: 'GameCard',
+  components: {
+    OptimizedImage
+  },
   props: {
     game: {
       type: Object,

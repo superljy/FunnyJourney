@@ -833,7 +833,7 @@ export const GAMES_DATABASE = [
       keywords: ['happy block game', 'colorful puzzle game', 'block fitting game', 'family puzzle game']
     }
   },
-  // === 新增高质量游戏 ===
+  // === 新增游戏 (50个) ===
   {
     id: 'fps-strike',
     title: 'FPS Strike',
@@ -874,6 +874,318 @@ export const GAMES_DATABASE = [
     }
   },
   {
+    id: 'mech-shooter',
+    title: 'Mech Shooter',
+    description: 'Mech Shooter is a 3D robot shooting game where you, in the shoes of Humanoid Mech, will deal with many robots trying to destroy you and your team. The game map can be a factory or somewhere in the city. No matter where you are, you will be with your teammates. Use your Minigun and eliminate all enemy forces in one of the most thrilling action games on Online Games!',
+    category: GAME_CATEGORIES.ACTION,
+    image: 'https://www.onlinegames.io/media/posts/649/responsive/Mech-Shooter-xs.jpg',
+    url: 'games/mech-shooter.html',
+    iframeUrl: 'https://www.onlinegames.io/games/2022/unity/mech-shooter/index.html',
+    keywords: ["3d","action","armor","battle","crazy","destroy"],
+    featured: false,
+    difficulty: 'hard',
+    playTime: '30+ minutes',
+    instructions: [
+      "Use WASD keys to move your character",
+      "Click mouse or spacebar to attack",
+      "Collect health and ammo pickups",
+      "Defeat enemies to progress",
+      "Watch out for boss battles"
+    ],
+    features: [
+      "Intense combat system",
+      "Multiple weapon types",
+      "Progressive difficulty",
+      "Special abilities",
+      "Engaging storyline"
+    ],
+    tips: [
+      "Keep moving to avoid enemy fire",
+      "Use cover when reloading",
+      "Aim for weak points on enemies",
+      "Manage your resources carefully",
+      "Learn enemy attack patterns"
+    ],
+    seoMeta: {
+      title: 'Mech Shooter - Free Online Game | Play Now',
+      description: 'Play Mech Shooter free online! Mech Shooter is a 3D robot shooting game where you, in the shoes of Humanoid Mech, will deal with ma... No download required!',
+      keywords: ["3d","action","armor","battle"]
+    }
+  },
+  {
+    id: 'legends-arena',
+    title: 'Legends Arena',
+    description: 'Legends Arena is an online shooting game where you battle with your enemies as a team. There are many game options. You can play in 2v2, 3v3 and 5v5 modes. The 5v5 option is exclusively on the Battle Stage map.',
+    category: GAME_CATEGORIES.ACTION,
+    image: 'https://www.onlinegames.io/media/posts/608/responsive/Legends-Arena-xs.jpg',
+    url: 'games/legends-arena.html',
+    iframeUrl: 'https://www.onlinegames.io/games/2023/unity2/legends-arena/index.html',
+    keywords: ["3d","action","arena","armor","battle","free"],
+    featured: false,
+    difficulty: 'hard',
+    playTime: '30+ minutes',
+    instructions: [
+      "Use WASD keys to move your character",
+      "Click mouse or spacebar to attack",
+      "Collect health and ammo pickups",
+      "Defeat enemies to progress",
+      "Watch out for boss battles"
+    ],
+    features: [
+      "Intense combat system",
+      "Multiple weapon types",
+      "Progressive difficulty",
+      "Special abilities",
+      "Engaging storyline"
+    ],
+    tips: [
+      "Keep moving to avoid enemy fire",
+      "Use cover when reloading",
+      "Aim for weak points on enemies",
+      "Manage your resources carefully",
+      "Learn enemy attack patterns"
+    ],
+    seoMeta: {
+      title: 'Legends Arena - Free Online Game | Play Now',
+      description: 'Play Legends Arena free online! Legends Arena is an online shooting game where you battle with your enemies as a team. There are ma... No download required!',
+      keywords: ["3d","action","arena","armor"]
+    }
+  },
+  {
+    id: 'cobrazio-classic',
+    title: 'CobraZ.io Classic',
+    description: 'CobraZ.io Classic is one of the most advanced FPS games where the player can customize his soldier and prepare himself for war with the best items. There are 4 game modes, each with unique features. It offers you Team Deathmatch, Free For All, Capture The Flag and Gun Game mode options.',
+    category: GAME_CATEGORIES.ACTION,
+    image: 'https://www.onlinegames.io/media/posts/546/responsive/Cobraz.io-Classic-xs.jpg',
+    url: 'games/cobrazio-classic.html',
+    iframeUrl: 'https://www.onlinegames.io/games/2022/unity/cobraz-io-classic/index.html',
+    keywords: ["3d","action","battle","first-person-shooter","free","gun"],
+    featured: false,
+    difficulty: 'hard',
+    playTime: '30+ minutes',
+    instructions: [
+      "Use WASD keys to move your character",
+      "Click mouse or spacebar to attack",
+      "Collect health and ammo pickups",
+      "Defeat enemies to progress",
+      "Watch out for boss battles"
+    ],
+    features: [
+      "Intense combat system",
+      "Multiple weapon types",
+      "Progressive difficulty",
+      "Special abilities",
+      "Engaging storyline"
+    ],
+    tips: [
+      "Keep moving to avoid enemy fire",
+      "Use cover when reloading",
+      "Aim for weak points on enemies",
+      "Manage your resources carefully",
+      "Learn enemy attack patterns"
+    ],
+    seoMeta: {
+      title: 'CobraZ.io Classic - Free Online Game | Play Now',
+      description: 'Play CobraZ.io Classic free online! CobraZ.io Classic is one of the most advanced FPS games where the player can customize his soldier ... No download required!',
+      keywords: ["3d","action","battle","first-person-shooter"]
+    }
+  },
+  {
+    id: 'bandits-multiplayer-pvp',
+    title: 'Bandits Multiplayer PvP',
+    description: 'There are no rules or order here. All the cowboys on the west side are fighting each other. Bandits Multiplayer PvP is a 3D action game where you, as the most dangerous bandit in the Wild West, try to survive among other bandits across the world or fight against zombies. The only thing you have is a warhorse that is loyal to you.',
+    category: GAME_CATEGORIES.ACTION,
+    image: 'https://www.onlinegames.io/media/posts/487/responsive/Bandits-Multiplayer-PvP-xs.jpg',
+    url: 'games/bandits-multiplayer-pvp.html',
+    iframeUrl: 'https://www.onlinegames.io/games/2021/unity2/bandits-multiplayer-pvp/index.html',
+    keywords: ["3d","action","animal","archery","battle","battle-royale"],
+    featured: false,
+    difficulty: 'hard',
+    playTime: '30+ minutes',
+    instructions: [
+      "Use WASD keys to move your character",
+      "Click mouse or spacebar to attack",
+      "Collect health and ammo pickups",
+      "Defeat enemies to progress",
+      "Watch out for boss battles"
+    ],
+    features: [
+      "Intense combat system",
+      "Multiple weapon types",
+      "Progressive difficulty",
+      "Special abilities",
+      "Engaging storyline"
+    ],
+    tips: [
+      "Keep moving to avoid enemy fire",
+      "Use cover when reloading",
+      "Aim for weak points on enemies",
+      "Manage your resources carefully",
+      "Learn enemy attack patterns"
+    ],
+    seoMeta: {
+      title: 'Bandits Multiplayer PvP - Free Online Game | Play Now',
+      description: 'Play Bandits Multiplayer PvP free online! There are no rules or order here. All the cowboys on the west side are fighting each other. Bandit... No download required!',
+      keywords: ["3d","action","animal","archery"]
+    }
+  },
+  {
+    id: 'cs-online',
+    title: 'CS Online',
+    description: 'Everyone knows the famous Counter Strike game, 2000\'s online battle arena with online players. CS Online, inspired by Counter-Strike, is a multiplayer shooting game where terrorists and counter-terrorists combat and kill each other with multiple weapon options. It is the online and free version of the original game, and you can access the CS Online on your web browser without downloading or purchasing anything.',
+    category: GAME_CATEGORIES.ACTION,
+    image: 'https://www.onlinegames.io/media/posts/434/responsive/CS-Online-xs.jpg',
+    url: 'games/cs-online.html',
+    iframeUrl: 'https://www.onlinegames.io/games/2023/unity2/cs-online/index.html',
+    keywords: ["3d","action","battle","battle-royale","first-person-shooter","free"],
+    featured: false,
+    difficulty: 'hard',
+    playTime: '30+ minutes',
+    instructions: [
+      "Use WASD keys to move your character",
+      "Click mouse or spacebar to attack",
+      "Collect health and ammo pickups",
+      "Defeat enemies to progress",
+      "Watch out for boss battles"
+    ],
+    features: [
+      "Intense combat system",
+      "Multiple weapon types",
+      "Progressive difficulty",
+      "Special abilities",
+      "Engaging storyline"
+    ],
+    tips: [
+      "Keep moving to avoid enemy fire",
+      "Use cover when reloading",
+      "Aim for weak points on enemies",
+      "Manage your resources carefully",
+      "Learn enemy attack patterns"
+    ],
+    seoMeta: {
+      title: 'CS Online - Free Online Game | Play Now',
+      description: 'Play CS Online free online! Everyone knows the famous Counter Strike game, 2000\'s online battle arena with online players. CS O... No download required!',
+      keywords: ["3d","action","battle","battle-royale"]
+    }
+  },
+  {
+    id: 'masked-special-forces',
+    title: 'Masked Special Forces',
+    description: 'Masked Special Forces is a multiplayer first-person shooter game with a myriad of customization options. The game puts you in the shoes of a commander in the battle arena. As a talented warrior, team up, strategize, and take down the opponents one by one. Access to an array of upgradable weapons, armory, kill messages, and victory dances on the main menu.',
+    category: GAME_CATEGORIES.ACTION,
+    image: 'https://www.onlinegames.io/media/posts/310/responsive/Masked-Special-Forces-FPS-xs.jpg',
+    url: 'games/masked-special-forces.html',
+    iframeUrl: 'https://www.onlinegames.io/games/2022/unity2/masked-special-forces/index.html',
+    keywords: ["3d","action","armor","battle-royale","first-person-shooter","free"],
+    featured: false,
+    difficulty: 'hard',
+    playTime: '30+ minutes',
+    instructions: [
+      "Use WASD keys to move your character",
+      "Click mouse or spacebar to attack",
+      "Collect health and ammo pickups",
+      "Defeat enemies to progress",
+      "Watch out for boss battles"
+    ],
+    features: [
+      "Intense combat system",
+      "Multiple weapon types",
+      "Progressive difficulty",
+      "Special abilities",
+      "Engaging storyline"
+    ],
+    tips: [
+      "Keep moving to avoid enemy fire",
+      "Use cover when reloading",
+      "Aim for weak points on enemies",
+      "Manage your resources carefully",
+      "Learn enemy attack patterns"
+    ],
+    seoMeta: {
+      title: 'Masked Special Forces - Free Online Game | Play Now',
+      description: 'Play Masked Special Forces free online! Masked Special Forces is a multiplayer first-person shooter game with a myriad of customization opti... No download required!',
+      keywords: ["3d","action","armor","battle-royale"]
+    }
+  },
+  {
+    id: 'armedforcesio',
+    title: 'ArmedForces.io',
+    description: 'Prepare for epic battles! ArmedForces.io is a 3D action game where you will combat enemy forces on various game maps with multiple game mode choices. Arrange your loadouts from eight unique weapons at your disposal.',
+    category: GAME_CATEGORIES.ACTION,
+    image: 'https://www.onlinegames.io/media/posts/234/responsive/Armed-Forces-io-xs.jpg',
+    url: 'games/armedforcesio.html',
+    iframeUrl: 'https://www.onlinegames.io/games/2021/unity3/armedforces-io/index.html',
+    keywords: ["3d","action","armor","army","battle","battle-royale"],
+    featured: false,
+    difficulty: 'hard',
+    playTime: '30+ minutes',
+    instructions: [
+      "Use WASD keys to move your character",
+      "Click mouse or spacebar to attack",
+      "Collect health and ammo pickups",
+      "Defeat enemies to progress",
+      "Watch out for boss battles"
+    ],
+    features: [
+      "Intense combat system",
+      "Multiple weapon types",
+      "Progressive difficulty",
+      "Special abilities",
+      "Engaging storyline"
+    ],
+    tips: [
+      "Keep moving to avoid enemy fire",
+      "Use cover when reloading",
+      "Aim for weak points on enemies",
+      "Manage your resources carefully",
+      "Learn enemy attack patterns"
+    ],
+    seoMeta: {
+      title: 'ArmedForces.io - Free Online Game | Play Now',
+      description: 'Play ArmedForces.io free online! Prepare for epic battles! ArmedForces.io is a 3D action game where you will combat enemy forces on... No download required!',
+      keywords: ["3d","action","armor","army"]
+    }
+  },
+  {
+    id: 'toonz-io',
+    title: 'ToonZ io',
+    description: 'Bullets and swords are whizzing through the air! ToonZ io is a multiplayer shooting game with a vivid killing experience. ToonZ io provides you three distinct game modes and four particular map choices; thus, it enables you to have a diverse game environment with other online players.',
+    category: GAME_CATEGORIES.ACTION,
+    image: 'https://www.onlinegames.io/media/posts/230/responsive/Toonz-io-Game-xs.jpg',
+    url: 'games/toonz-io.html',
+    iframeUrl: 'https://www.onlinegames.io/games/2021/unity3/toonz-io/index.html',
+    keywords: ["3d","action","battle","free","gun","io-games"],
+    featured: false,
+    difficulty: 'hard',
+    playTime: '30+ minutes',
+    instructions: [
+      "Use WASD keys to move your character",
+      "Click mouse or spacebar to attack",
+      "Collect health and ammo pickups",
+      "Defeat enemies to progress",
+      "Watch out for boss battles"
+    ],
+    features: [
+      "Intense combat system",
+      "Multiple weapon types",
+      "Progressive difficulty",
+      "Special abilities",
+      "Engaging storyline"
+    ],
+    tips: [
+      "Keep moving to avoid enemy fire",
+      "Use cover when reloading",
+      "Aim for weak points on enemies",
+      "Manage your resources carefully",
+      "Learn enemy attack patterns"
+    ],
+    seoMeta: {
+      title: 'ToonZ io - Free Online Game | Play Now',
+      description: 'Play ToonZ io free online! Bullets and swords are whizzing through the air! ToonZ io is a multiplayer shooting game with a viv... No download required!',
+      keywords: ["3d","action","battle","free"]
+    }
+  },
+  {
     id: 'survival-karts',
     title: 'Survival Karts',
     description: 'Looking for the coolest, most chaotic online racing game? Play Survival Karts on OnlineGames.io! It\'s a survival showdown on an icy, hole-riddled track!',
@@ -911,16 +1223,86 @@ export const GAMES_DATABASE = [
       description: 'Play Survival Karts free online! Looking for the coolest, most chaotic online racing game? Play Survival Karts on OnlineGames.io! ... No download required!',
       keywords: ["3d","battle","battle-royale","crazy"]
     }
-  }
-];
-
-// Helper functions for game management
-export const gameUtils = {
-  // Get all games
-  getAllGames() {
-    return GAMES_DATABASE;
   },
-
+  {
+    id: 'highway-racer-pro',
+    title: 'Highway Racer Pro',
+    description: 'For our community, who have played for hours and loved our Highway Traffic game, we know you\'ve been asking us for an even more advanced version for some time. And we\'re proud to say that we\'ve delivered just that. Ladies and Gentlemen, we are introducing Highway Racer Pro, the ultimate driving-in-traffic game.',
+    category: GAME_CATEGORIES.RACING,
+    image: 'https://www.onlinegames.io/media/posts/822/responsive/Highway-Racer-Pro-xs.jpg',
+    url: 'games/highway-racer-pro.html',
+    iframeUrl: 'https://www.onlinegames.io/games/2024/unity/highway-racer-pro/index.html',
+    keywords: ["3d","car","crash","crazy","driving","endless"],
+    featured: false,
+    difficulty: 'hard',
+    playTime: '10-30 minutes',
+    instructions: [
+      "Use arrow keys or WASD to control your vehicle",
+      "Press spacebar for handbrake or boost",
+      "Follow the track and avoid obstacles",
+      "Collect power-ups along the way",
+      "Complete laps to win the race"
+    ],
+    features: [
+      "Realistic driving physics",
+      "Multiple vehicle options",
+      "Dynamic racing tracks",
+      "Speed boost mechanics",
+      "Competitive gameplay"
+    ],
+    tips: [
+      "Learn the track layout for better lap times",
+      "Use brakes strategically on turns",
+      "Collect boost items for speed advantage",
+      "Stay on the optimal racing line",
+      "Practice makes perfect"
+    ],
+    seoMeta: {
+      title: 'Highway Racer Pro - Free Online Game | Play Now',
+      description: 'Play Highway Racer Pro free online! For our community, who have played for hours and loved our Highway Traffic game, we know you\'ve been... No download required!',
+      keywords: ["3d","car","crash","crazy"]
+    }
+  },
+  {
+    id: 'drift-hunters-pro',
+    title: 'Drift Hunters Pro',
+    description: 'Can you hear the engine moaning? Drift Hunters Pro is a thrilling 3D game with high-quality graphics for those who are fond of drifting & racing. You can play solely, or you can play on the servers with other players. In this game, you have 6 different tracks and 10 upgradable vehicles.',
+    category: GAME_CATEGORIES.RACING,
+    image: 'https://www.onlinegames.io/media/posts/397/responsive/Drift-Hunters-Pro-xs.jpg',
+    url: 'games/drift-hunters-pro.html',
+    iframeUrl: 'https://www.onlinegames.io/games/2023/unity/drift-hunters-pro/index.html',
+    keywords: ["3d","car","crash","drift","driving","free"],
+    featured: false,
+    difficulty: 'hard',
+    playTime: '10-30 minutes',
+    instructions: [
+      "Use arrow keys or WASD to control your vehicle",
+      "Press spacebar for handbrake or boost",
+      "Follow the track and avoid obstacles",
+      "Collect power-ups along the way",
+      "Complete laps to win the race"
+    ],
+    features: [
+      "Realistic driving physics",
+      "Multiple vehicle options",
+      "Dynamic racing tracks",
+      "Speed boost mechanics",
+      "Competitive gameplay"
+    ],
+    tips: [
+      "Learn the track layout for better lap times",
+      "Use brakes strategically on turns",
+      "Collect boost items for speed advantage",
+      "Stay on the optimal racing line",
+      "Practice makes perfect"
+    ],
+    seoMeta: {
+      title: 'Drift Hunters Pro - Free Online Game | Play Now',
+      description: 'Play Drift Hunters Pro free online! Can you hear the engine moaning? Drift Hunters Pro is a thrilling 3D game with high-quality graphic... No download required!',
+      keywords: ["3d","car","crash","drift"]
+    }
+  }// Helper functions for game management
+export const gameUtils = {
   // Get games by category
   getGamesByCategory(category) {
     return GAMES_DATABASE.filter(game => game.category === category);
@@ -938,10 +1320,385 @@ export const gameUtils = {
   },
 
   // Search games
-  searchGames(query, games = null) {
+  searchGames(query) {
     const searchTerm = query.toLowerCase();
-    const gamesArray = games || GAMES_DATABASE;
-    return gamesArray.filter(game => 
+    return GAMES_DATABASE.filter(game => 
+      game.title.toLowerCase().includes(searchTerm) ||
+      game.description.toLowerCase().includes(searchTerm) ||
+      game.keywords.some(keyword => keyword.toLowerCase().includes(searchTerm))
+    );
+  },
+
+  // Get game by ID
+  getGameById(id) {
+    return GAMES_DATABASE.find(game => game.id === id);
+  },
+
+  // Get all categories
+  getAllCategories() {
+    return Object.values(GAME_CATEGORIES);
+  },
+
+  // Get games count by category
+  getCategoryStats() {
+    const stats = {};
+    Object.values(GAME_CATEGORIES).forEach(category => {
+      stats[category] = this.getGamesByCategory(category).length;
+    });
+    return stats;
+
+];
+
+// Helper functions for game management
+export const gameUtils = {
+  // Get games by category
+  getGamesByCategory(category) {
+    return GAMES_DATABASE.filter(game => game.category === category);
+  },
+
+  // Get featured games
+  getFeaturedGames() {
+    return GAMES_DATABASE.filter(game => game.featured);
+  },
+
+  // Get random games
+  getRandomGames(count = 6) {
+    const shuffled = [...GAMES_DATABASE].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, count);
+  },
+
+  // Search games
+  searchGames(query) {
+    const searchTerm = query.toLowerCase();
+    return GAMES_DATABASE.filter(game => 
+      game.title.toLowerCase().includes(searchTerm) ||
+      game.description.toLowerCase().includes(searchTerm) ||
+      game.keywords.some(keyword => keyword.toLowerCase().includes(searchTerm))
+    );
+  },
+
+  // Get game by ID
+  getGameById(id) {
+    return GAMES_DATABASE.find(game => game.id === id);
+  },
+
+  // Get all categories
+  getAllCategories() {
+    return Object.values(GAME_CATEGORIES);
+  },
+
+  // Get games count by category
+  getCategoryStats() {
+    const stats = {};
+    Object.values(GAME_CATEGORIES).forEach(category => {
+      stats[category] = this.getGamesByCategory(category).length;
+    });
+    return stats;
+
+// Helper functions for game management
+export const gameUtils = {
+  // Get games by category
+  getGamesByCategory(category) {
+    return GAMES_DATABASE.filter(game => game.category === category);
+  },
+
+  // Get featured games
+  getFeaturedGames() {
+    return GAMES_DATABASE.filter(game => game.featured);
+  },
+
+  // Get random games
+  getRandomGames(count = 6) {
+    const shuffled = [...GAMES_DATABASE].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, count);
+  },
+
+  // Search games
+  searchGames(query) {
+    const searchTerm = query.toLowerCase();
+    return GAMES_DATABASE.filter(game => 
+      game.title.toLowerCase().includes(searchTerm) ||
+      game.description.toLowerCase().includes(searchTerm) ||
+      game.keywords.some(keyword => keyword.toLowerCase().includes(searchTerm))
+    );
+  },
+
+  // Get game by ID
+  getGameById(id) {
+    return GAMES_DATABASE.find(game => game.id === id);
+  },
+
+  // Get all categories
+  getAllCategories() {
+    return Object.values(GAME_CATEGORIES);
+  },
+
+  // Get games count by category
+  getCategoryStats() {
+    const stats = {};
+    Object.values(GAME_CATEGORIES).forEach(category => {
+      stats[category] = this.getGamesByCategory(category).length;
+    });
+    return stats;
+  },
+  {
+    id: 'masked-forces-zombie-survival',
+    title: 'Masked Forces Zombie Survival',
+    description: 'Get ready to survive the invasion of zombies in Masked Forces Zombie Survival. In a post-apocalyptic world run by zombies, even a short hesitation to shoot them away causes you to end up like them.',
+    category: GAME_CATEGORIES.ACTION,
+    image: 'https://www.onlinegames.io/media/posts/225/responsive/Masked-Forces-Zombie-Survival-Online-xs.jpg',
+    url: 'games/masked-forces-zombie-survival.html',
+    iframeUrl: 'https://www.onlinegames.io/games/2021/unity3/masked-forces-zombie-survival/index.html',
+    keywords: ["3d","action","armor","battle","battle-royale","co-op"],
+    featured: false,
+    difficulty: 'hard',
+    playTime: '30+ minutes',
+    instructions: [
+      "Use WASD keys to move your character",
+      "Click mouse or spacebar to attack",
+      "Collect health and ammo pickups",
+      "Defeat enemies to progress",
+      "Watch out for boss battles"
+],
+    features: [
+      "Intense combat system",
+      "Multiple weapon types",
+      "Progressive difficulty",
+      "Special abilities",
+      "Engaging storyline"
+],
+    tips: [
+      "Keep moving to avoid enemy fire",
+      "Use cover when reloading",
+      "Aim for weak points on enemies",
+      "Manage your resources carefully",
+      "Learn enemy attack patterns"
+],
+    seoMeta: {
+      title: 'Masked Forces Zombie Survival - Free Online Game | Play Now',
+      description: 'Play Masked Forces Zombie Survival free online! Get ready to survive the invasion of zombies in Masked Forces Zombie Survival. In a post-apocalypti... No download required!',
+      keywords: ["3d","action","armor","battle"]
+    }
+  },
+  {
+    id: 'wasteland-shooters',
+    title: 'Wasteland Shooters',
+    description: 'Wasteland Shooters is a game where you make your own way to the journey of shooters. Your mission is to keep the coordination right and be vigilant as you shoot the enemies.',
+    category: GAME_CATEGORIES.ACTION,
+    image: 'https://www.onlinegames.io/media/posts/218/responsive/Wasteland-Shooters-xs.jpg',
+    url: 'games/wasteland-shooters.html',
+    iframeUrl: 'https://www.onlinegames.io/games/2021/unity2/wasteland-shooters/index.html',
+    keywords: ["3d","action","battle","first-person-shooter","free","gun"],
+    featured: false,
+    difficulty: 'hard',
+    playTime: '30+ minutes',
+    instructions: [
+      "Use WASD keys to move your character",
+      "Click mouse or spacebar to attack",
+      "Collect health and ammo pickups",
+      "Defeat enemies to progress",
+      "Watch out for boss battles"
+],
+    features: [
+      "Intense combat system",
+      "Multiple weapon types",
+      "Progressive difficulty",
+      "Special abilities",
+      "Engaging storyline"
+],
+    tips: [
+      "Keep moving to avoid enemy fire",
+      "Use cover when reloading",
+      "Aim for weak points on enemies",
+      "Manage your resources carefully",
+      "Learn enemy attack patterns"
+],
+    seoMeta: {
+      title: 'Wasteland Shooters - Free Online Game | Play Now',
+      description: 'Play Wasteland Shooters free online! Wasteland Shooters is a game where you make your own way to the journey of shooters. Your mission is... No download required!',
+      keywords: ["3d","action","battle","first-person-shooter"]
+    }
+  },
+  {
+    id: 'skateboard-marathon',
+    title: 'Skateboard Marathon',
+    description: 'Skateboard Marathon is a 3D racing game where you slide with your board on a platform. Maximize your gaming pleasure by making your skater perform eccentric movements and maneuvers.',
+    category: GAME_CATEGORIES.RACING,
+    image: 'https://www.onlinegames.io/media/posts/518/responsive/Skateboard-Marathon-xs.jpg',
+    url: 'games/skateboard-marathon.html',
+    iframeUrl: 'https://www.onlinegames.io/games/2022/unity3/skateboard-marathon/index.html',
+    keywords: ["3d","free","fun","multiplayer","pixel","racing"],
+    featured: false,
+    difficulty: 'hard',
+    playTime: '10-30 minutes',
+    instructions: [
+      "Use arrow keys or WASD to control your vehicle",
+      "Press spacebar for handbrake or boost",
+      "Follow the track and avoid obstacles",
+      "Collect power-ups along the way",
+      "Complete laps to win the race"
+],
+    features: [
+      "Realistic driving physics",
+      "Multiple vehicle options",
+      "Dynamic racing tracks",
+      "Speed boost mechanics",
+      "Competitive gameplay"
+],
+    tips: [
+      "Learn the track layout for better lap times",
+      "Use brakes strategically on turns",
+      "Collect boost items for speed advantage",
+      "Stay on the optimal racing line",
+      "Practice makes perfect"
+],
+    seoMeta: {
+      title: 'Skateboard Marathon - Free Online Game | Play Now',
+      description: 'Play Skateboard Marathon free online! Skateboard Marathon is a 3D racing game where you slide with your board on a platform. Maximize you... No download required!',
+      keywords: ["3d","free","fun","multiplayer"]
+    }
+  },
+  {
+    id: 'highway-racer-2',
+    title: 'Highway Racer 2',
+    description: 'Are you ready to raise clouds of dust on the highway? Highway Racer 2 is a 3D car driving game where your main goal is passing by sharp maneuvers as close as possible to the sides of cars on the highway.',
+    category: GAME_CATEGORIES.RACING,
+    image: 'https://www.onlinegames.io/media/posts/323/responsive/Highway-Racer-2-xs.jpg',
+    url: 'games/highway-racer-2.html',
+    iframeUrl: 'https://www.onlinegames.io/games/2022/unity2/highway-racer-2/index.html',
+    keywords: ["3d","car","crazy","driving","free","multiplayer"],
+    featured: false,
+    difficulty: 'hard',
+    playTime: '10-30 minutes',
+    instructions: [
+      "Use arrow keys or WASD to control your vehicle",
+      "Press spacebar for handbrake or boost",
+      "Follow the track and avoid obstacles",
+      "Collect power-ups along the way",
+      "Complete laps to win the race"
+],
+    features: [
+      "Realistic driving physics",
+      "Multiple vehicle options",
+      "Dynamic racing tracks",
+      "Speed boost mechanics",
+      "Competitive gameplay"
+],
+    tips: [
+      "Learn the track layout for better lap times",
+      "Use brakes strategically on turns",
+      "Collect boost items for speed advantage",
+      "Stay on the optimal racing line",
+      "Practice makes perfect"
+],
+    seoMeta: {
+      title: 'Highway Racer 2 - Free Online Game | Play Now',
+      description: 'Play Highway Racer 2 free online! Are you ready to raise clouds of dust on the highway? Highway Racer 2 is a 3D car driving game wher... No download required!',
+      keywords: ["3d","car","crazy","driving"]
+    }
+  },
+  {
+    id: 'nova-billiard',
+    title: 'Nova Billiard',
+    description: 'Welcome to Nova Billiard! Nova Billiard is a 3D pool game where you try to show off your aiming skills with a cue. Like in shooting games, aiming well and sending the ball into the hole in billiards is essential.',
+    category: GAME_CATEGORIES.STRATEGY,
+    image: 'https://www.onlinegames.io/media/posts/456/responsive/Nova-Billiard-Game-xs.jpg',
+    url: 'games/nova-billiard.html',
+    iframeUrl: 'https://www.onlinegames.io/games/2021/unity2/nova-billiard/index.html',
+    keywords: ["3d","ball","free","mouse","multiplayer","pool"],
+    featured: false,
+    difficulty: 'hard',
+    playTime: '30+ minutes',
+    instructions: [
+      "Click and drag to aim your cue stick",
+      "Control power by adjusting drag distance",
+      "Plan your shots strategically",
+      "Use spin for advanced ball control",
+      "Complete objectives to win"
+],
+    features: [
+      "Realistic pool physics",
+      "Multiple game modes",
+      "3D graphics and animations",
+      "Online multiplayer support",
+      "Challenging AI opponents"
+],
+    tips: [
+      "Plan several shots ahead",
+      "Use the guideline for better accuracy",
+      "Master spin techniques",
+      "Control your shot power carefully",
+      "Study the table layout before shooting"
+],
+    seoMeta: {
+      title: 'Nova Billiard - Free Online Game | Play Now',
+      description: 'Play Nova Billiard free online! Welcome to Nova Billiard! Nova Billiard is a 3D pool game where you try to show off your aiming ski... No download required!',
+      keywords: ["3d","ball","free","mouse"]
+    }
+  },
+  {
+    id: 'war-of-ships-io',
+    title: 'War of Ships io',
+    description: 'Dominate the open seas at the helm of your ship! War of Ships IO is a 3D pirate game where you steer your ship and try to avoid getting hit by other ships!',
+    category: GAME_CATEGORIES.CASUAL,
+    image: 'https://www.onlinegames.io/media/posts/509/responsive/War-of-Ships-io-xs.jpg',
+    url: 'games/war-of-ships-io.html',
+    iframeUrl: 'https://www.onlinegames.io/games/2022/unity3/war-of-ships-io/index.html',
+    keywords: ["3d","arena","battle","battle-royale","boat","defense"],
+    featured: false,
+    difficulty: 'medium',
+    playTime: '5-15 minutes',
+    instructions: [
+      "Use arrow keys or WASD to steer your ship",
+      "Click to fire cannons at enemies",
+      "Avoid enemy fire and obstacles",
+      "Collect power-ups for advantages",
+      "Survive and dominate the arena"
+],
+    features: [
+      "Naval combat mechanics",
+      "Multiple ship types",
+      "Dynamic ocean environments",
+      "Real-time multiplayer battles",
+      "Power-up collection system"
+],
+    tips: [
+      "Keep moving to avoid enemy fire",
+      "Use islands as cover",
+      "Aim ahead of moving targets",
+      "Collect health and weapon upgrades",
+      "Control the center of the map"
+],
+    seoMeta: {
+      title: 'War of Ships io - Free Online Game | Play Now',
+      description: 'Play War of Ships io free online! Dominate the open seas at the helm of your ship! War of Ships IO is a 3D pirate game where you stee... No download required!',
+      keywords: ["3d","arena","battle","battle-royale"]
+    }
+  }
+];
+
+// Helper functions for game management
+export const gameUtils = {
+  // Get games by category
+  getGamesByCategory(category) {
+    return GAMES_DATABASE.filter(game => game.category === category);
+  },
+
+  // Get featured games
+  getFeaturedGames() {
+    return GAMES_DATABASE.filter(game => game.featured);
+  },
+
+  // Get random games
+  getRandomGames(count = 6) {
+    const shuffled = [...GAMES_DATABASE].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, count);
+  },
+
+  // Search games
+  searchGames(query) {
+    const searchTerm = query.toLowerCase();
+    return GAMES_DATABASE.filter(game => 
       game.title.toLowerCase().includes(searchTerm) ||
       game.description.toLowerCase().includes(searchTerm) ||
       game.keywords.some(keyword => keyword.toLowerCase().includes(searchTerm))

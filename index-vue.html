@@ -77,13 +77,29 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
     
-    <!-- Theme Color -->
+    <!-- Favicon and App Icons -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/icon-192x192.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="icons/icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="icons/icon-128x128.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="icons/icon-96x96.png">
+    
+    <!-- Theme Colors -->
     <meta name="theme-color" content="#6366f1">
     <meta name="msapplication-TileColor" content="#6366f1">
+    <meta name="msapplication-TileImage" content="icons/icon-144x144.png">
+    
+    <!-- iOS Web App Configuration -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="FunnyJourney">
+    
+    <!-- Windows Tiles -->
+    <meta name="msapplication-config" content="browserconfig.xml">
     
     <!-- Robots -->
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -154,6 +170,143 @@
     
     <!-- Vue.js Development Build -->
     <script type="module" src="src/main.js"></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+        // Register Service Worker for PWA functionality
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', async () => {
+                try {
+                    const registration = await navigator.serviceWorker.register('/sw.js', {
+                        scope: '/'
+                    })
+                    
+                    console.log('🔧 Service Worker registered successfully:', registration.scope)
+                    
+                    // Handle updates
+                    registration.addEventListener('updatefound', () => {
+                        const newWorker = registration.installing
+                        newWorker.addEventListener('statechange', () => {
+                            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                // New content available, show update notification
+                                showUpdateNotification()
+                            }
+                        })
+                    })
+                    
+                    // Check for updates periodically
+                    setInterval(() => {
+                        registration.update()
+                    }, 60000) // Check every minute
+                    
+                } catch (error) {
+                    console.warn('Service Worker registration failed:', error)
+                }
+            })
+        }
+        
+        // PWA Install Prompt
+        let deferredPrompt
+        window.addEventListener('beforeinstallprompt', (e) => {
+            // Prevent the mini-infobar from appearing on mobile
+            e.preventDefault()
+            deferredPrompt = e
+            showInstallPromotion()
+        })
+        
+        function showInstallPromotion() {
+            // Create install button
+            const installBtn = document.createElement('button')
+            installBtn.innerHTML = '📱 Install App'
+            installBtn.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background: #6366f1;
+                color: white;
+                border: none;
+                padding: 12px 24px;
+                border-radius: 25px;
+                font-weight: 600;
+                cursor: pointer;
+                box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+                z-index: 10000;
+                transition: all 0.3s ease;
+            `
+            
+            installBtn.onmouseover = () => {
+                installBtn.style.transform = 'translateY(-2px)'
+                installBtn.style.boxShadow = '0 6px 20px rgba(99, 102, 241, 0.6)'
+            }
+            
+            installBtn.onmouseout = () => {
+                installBtn.style.transform = 'translateY(0)'
+                installBtn.style.boxShadow = '0 4px 12px rgba(99, 102, 241, 0.4)'
+            }
+            
+            installBtn.onclick = async () => {
+                if (deferredPrompt) {
+                    deferredPrompt.prompt()
+                    const { outcome } = await deferredPrompt.userChoice
+                    console.log(`User response to install prompt: ${outcome}`)
+                    deferredPrompt = null
+                    installBtn.remove()
+                }
+            }
+            
+            document.body.appendChild(installBtn)
+            
+            // Auto-hide after 30 seconds
+            setTimeout(() => {
+                if (installBtn.parentNode) {
+                    installBtn.remove()
+                }
+            }, 30000)
+        }
+        
+        function showUpdateNotification() {
+            const notification = document.createElement('div')
+            notification.innerHTML = `
+                <div style="
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    background: white;
+                    padding: 16px 20px;
+                    border-radius: 12px;
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+                    z-index: 10000;
+                    max-width: 300px;
+                    border-left: 4px solid #10b981;
+                ">
+                    <div style="font-weight: 600; margin-bottom: 8px;">🆕 Update Available!</div>
+                    <div style="font-size: 14px; color: #6b7280; margin-bottom: 12px;">
+                        New features and improvements are ready.
+                    </div>
+                    <button onclick="window.location.reload()" style="
+                        background: #10b981;
+                        color: white;
+                        border: none;
+                        padding: 8px 16px;
+                        border-radius: 6px;
+                        cursor: pointer;
+                        font-size: 14px;
+                        margin-right: 8px;
+                    ">Update Now</button>
+                    <button onclick="this.parentNode.parentNode.remove()" style="
+                        background: transparent;
+                        color: #6b7280;
+                        border: 1px solid #d1d5db;
+                        padding: 8px 16px;
+                        border-radius: 6px;
+                        cursor: pointer;
+                        font-size: 14px;
+                    ">Later</button>
+                </div>
+            `
+            document.body.appendChild(notification)
+        }
+    </script>
     
     <!-- Performance monitoring -->
     <script>

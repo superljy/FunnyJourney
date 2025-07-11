@@ -1,12 +1,19 @@
 import { createApp } from 'vue'
+import { createHead } from '@vueuse/head'
 import App from './App.vue'
+import router from './router'
 
 // Import global utilities
-import { analytics } from './utils/analytics.js'
+import { analytics } from './utils/analyticsOptimized.js'
 import { seoManager } from './utils/seo.js'
 
 // Create Vue app
 const app = createApp(App)
+const head = createHead()
+
+// Use router and head
+app.use(router)
+app.use(head)
 
 // Global properties for utilities
 app.config.globalProperties.$analytics = analytics

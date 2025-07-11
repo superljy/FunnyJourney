@@ -31,7 +31,7 @@ class AnalyticsManager {
 
     // Initialize dataLayer and gtag
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag(){window.dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-TGVJVCTQBE', {
       page_title: document.title,
@@ -63,6 +63,26 @@ class AnalyticsManager {
   }
 
   // Track game interactions
+  trackGameView(gameName) {
+    if (!window.gtag) return;
+    
+    window.gtag('event', 'game_view', {
+      game_name: gameName,
+      event_category: 'Games',
+      event_label: `${gameName}_view`
+    });
+  }
+
+  trackGameClick(gameName) {
+    if (!window.gtag) return;
+    
+    window.gtag('event', 'game_click', {
+      game_name: gameName,
+      event_category: 'Games',
+      event_label: `${gameName}_click`
+    });
+  }
+
   trackGameStart(gameName) {
     this.gameStartTime = Date.now();
     
@@ -73,6 +93,35 @@ class AnalyticsManager {
       timestamp: new Date().toISOString(),
       event_category: 'Games',
       event_label: gameName
+    });
+  }
+
+  trackGameLoaded(gameName, loadTime = null) {
+    if (!window.gtag) return;
+    
+    const eventData = {
+      game_name: gameName,
+      event_category: 'Games',
+      event_label: `${gameName}_loaded`
+    };
+    
+    if (loadTime) {
+      eventData.load_time = loadTime;
+      eventData.value = loadTime;
+    }
+    
+    window.gtag('event', 'game_loaded', eventData);
+  }
+
+  trackGameError(gameName, errorType = 'unknown', errorMessage = '') {
+    if (!window.gtag) return;
+    
+    window.gtag('event', 'game_error', {
+      game_name: gameName,
+      error_type: errorType,
+      error_message: errorMessage,
+      event_category: 'Games',
+      event_label: `${gameName}_error`
     });
   }
 
@@ -95,6 +144,32 @@ class AnalyticsManager {
       game_name: gameName,
       event_category: 'Games',
       event_label: `${gameName}_fullscreen`
+    });
+  }
+
+  trackGameShare(gameName, shareMethod = 'unknown') {
+    if (!window.gtag) return;
+    
+    window.gtag('event', 'share', {
+      method: shareMethod,
+      content_type: 'game',
+      item_id: gameName,
+      game_name: gameName,
+      event_category: 'Games',
+      event_label: `${gameName}_share_${shareMethod}`
+    });
+  }
+
+  trackGameRelated(gameName, relatedGameName) {
+    if (!window.gtag) return;
+    
+    window.gtag('event', 'select_content', {
+      content_type: 'related_game',
+      content_id: relatedGameName,
+      source_game: gameName,
+      game_name: relatedGameName,
+      event_category: 'Games',
+      event_label: `${gameName}_related_${relatedGameName}`
     });
   }
 
@@ -156,7 +231,7 @@ class AnalyticsManager {
     }
 
     try {
-      (adsbygoogle = window.adsbygoogle || []).push({});
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
     } catch (e) {
       console.error('Error displaying ad:', e);
     }

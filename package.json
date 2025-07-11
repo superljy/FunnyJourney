@@ -12,12 +12,15 @@
   },
   "dependencies": {
     "@vue/runtime-dom": "^3.4.0",
-    "vue": "^3.4.0"
+    "@vueuse/head": "^2.0.0",
+    "vue": "^3.4.0",
+    "vue-router": "^4.5.1"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.0",
     "eslint": "^8.57.0",
     "eslint-plugin-vue": "^9.20.0",
+    "terser": "^5.43.1",
     "vite": "^5.4.19"
   },
   "keywords": [
