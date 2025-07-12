@@ -226,15 +226,75 @@ export default {
     },
     
     toggleFullscreen() {
-      this.isFullscreen = !this.isFullscreen
-      
-      if (this.isFullscreen) {
-        this.$refs.gameContainer.requestFullscreen?.()
+      if (!this.isFullscreen) {
+        // 进入全屏
+        this.requestFullscreen()
       } else {
-        document.exitFullscreen?.()
+        // 退出全屏
+        this.exitFullscreen()
       }
+    },
+    
+    async requestFullscreen() {
+      try {
+        const element = this.$refs.gameContainer
+        if (element) {
+          // 检查不同的fullscreen API
+          if (element.requestFullscreen) {
+            await element.requestFullscreen()
+          } else if (element.webkitRequestFullscreen) {
+            await element.webkitRequestFullscreen()
+          } else if (element.msRequestFullscreen) {
+            await element.msRequestFullscreen()
+          } else if (element.mozRequestFullScreen) {
+            await element.mozRequestFullScreen()
+          }
+          
+          this.isFullscreen = true
+          analytics.trackGameFullscreen(this.game.title, true)
+        }
+      } catch (error) {
+        console.error('Error entering fullscreen:', error)
+        // 如果全屏失败，可以显示提示
+        this.$emit('fullscreen-error', 'Unable to enter fullscreen mode')
+      }
+    },
+    
+    async exitFullscreen() {
+      try {
+        // 检查不同的退出全屏API
+        if (document.exitFullscreen) {
+          await document.exitFullscreen()
+        } else if (document.webkitExitFullscreen) {
+          await document.webkitExitFullscreen()
+        } else if (document.msExitFullscreen) {
+          await document.msExitFullscreen()
+        } else if (document.mozCancelFullScreen) {
+          await document.mozCancelFullScreen()
+        }
+        
+        this.isFullscreen = false
+        analytics.trackGameFullscreen(this.game.title, false)
+      } catch (error) {
+        console.error('Error exiting fullscreen:', error)
+      }
+    },
+    
+    handleFullscreenChange() {
+      // 检测全屏状态变化
+      const isCurrentlyFullscreen = !!(
+        document.fullscreenElement ||
+        document.webkitFullscreenElement ||
+        document.msFullscreenElement ||
+        document.mozFullScreenElement
+      )
       
-      analytics.trackGameFullscreen(this.game.title, this.isFullscreen)
+      this.isFullscreen = isCurrentlyFullscreen
+      
+      if (!isCurrentlyFullscreen) {
+        // 用户通过ESC键退出全屏
+        analytics.trackGameFullscreen(this.game.title, false)
+      }
     },
     
     shareGame() {
@@ -264,6 +324,27 @@ export default {
     
     handleImageError(event) {
       event.target.src = '/img/default-game.jpg' // Fallback image
+    }
+  },
+  
+  mounted() {
+    // 监听全屏状态变化
+    document.addEventListener('fullscreenchange', this.handleFullscreenChange)
+    document.addEventListener('webkitfullscreenchange', this.handleFullscreenChange)
+    document.addEventListener('msfullscreenchange', this.handleFullscreenChange)
+    document.addEventListener('mozfullscreenchange', this.handleFullscreenChange)
+  },
+  
+  beforeUnmount() {
+    // 清理事件监听器
+    document.removeEventListener('fullscreenchange', this.handleFullscreenChange)
+    document.removeEventListener('webkitfullscreenchange', this.handleFullscreenChange)
+    document.removeEventListener('msfullscreenchange', this.handleFullscreenChange)
+    document.removeEventListener('mozfullscreenchange', this.handleFullscreenChange)
+    
+    // 如果组件销毁时还在全屏状态，退出全屏
+    if (this.isFullscreen) {
+      this.exitFullscreen()
     }
   }
 }

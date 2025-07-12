@@ -9,6 +9,7 @@ const HomeView = () => import(/* webpackChunkName: "home" */ '../views/HomeView.
 const GameDetailView = () => import(/* webpackChunkName: "game-detail" */ '../views/GameDetailView.vue')
 const GamesListView = () => import(/* webpackChunkName: "games-list" */ '../views/GamesListView.vue')
 const CategoryView = () => import(/* webpackChunkName: "category" */ '../views/CategoryView.vue')
+const AboutView = () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
 
 const routes = [
   {
@@ -58,6 +59,27 @@ const routes = [
     props: true,
     meta: {
       requiresCategoryData: true
+    }
+  },
+  {
+    path: '/about',
+    name: 'About',
+    component: AboutView,
+    meta: {
+      title: 'About FunnyJourney - Free Online Games Platform | 500+ Browser Games',
+      description: 'Learn about FunnyJourney, your ultimate destination for free online games. Discover our mission, 500+ game collection, and commitment to providing the best browser gaming experience.',
+      keywords: [
+        'about FunnyJourney',
+        'free online games platform',
+        'browser games website',
+        'online gaming community',
+        'free games collection',
+        'instant play games',
+        'no download games',
+        'gaming platform',
+        'web games',
+        'casual games'
+      ]
     }
   },
   // Legacy redirects for existing HTML pages

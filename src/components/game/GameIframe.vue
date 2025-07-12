@@ -19,6 +19,7 @@
         frameborder="0"
         allowfullscreen
         scrolling="no"
+        allow="gamepad; microphone; camera"
         @load="handleFrameLoad"
         @error="handleFrameError"
       ></iframe>
@@ -26,6 +27,16 @@
       <div v-if="loading" class="loading-overlay">
         <div class="spinner"></div>
         <p>Loading {{ game.title }}...</p>
+      </div>
+      
+      <div v-if="error" class="error-overlay">
+        <div class="error-content">
+          <h3>⚠️ Game Loading Error</h3>
+          <p>{{ error }}</p>
+          <button @click="retryGame" class="retry-button">
+            🔄 Retry
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -51,6 +62,7 @@ export default {
   data() {
     return {
       loading: false,
+      error: null,
       gameUrl: ''
     }
   },
@@ -64,33 +76,70 @@ export default {
   methods: {
     startGame() {
       this.$emit('game-start')
-      this.$parent.$emit('game-start')
     },
     
     initializeGame() {
       this.loading = true
+      this.error = null
       this.gameUrl = this.getGameUrl()
+      
+      // Track game initialization
+      if (window.analytics) {
+        window.analytics.trackGameStart(this.game.id, this.game.title)
+      }
     },
     
     getGameUrl() {
-      // Convert the existing game.url to iframe-compatible URL
-      // For now, use the existing URL structure
+      // Prioritize iframeUrl over url for direct game content
       if (this.game.iframeUrl) {
-        return this.game.iframeUrl
+        // Check if it's already a full URL
+        if (this.game.iframeUrl.startsWith('http')) {
+          return this.game.iframeUrl
+        }
+        // Convert relative path to absolute path
+        return `/${this.game.iframeUrl.replace(/^\/+/, '')}`
       }
       
-      // Fallback to existing URL structure
-      return this.game.url
+      // Fallback to url property
+      if (this.game.url) {
+        // Check if it's already a full URL
+        if (this.game.url.startsWith('http')) {
+          return this.game.url
+        }
+        // Convert relative path to absolute path
+        return `/${this.game.url.replace(/^\/+/, '')}`
+      }
+      
+      // Error case
+      console.error('No valid game URL found for game:', this.game.id)
+      return ''
     },
     
     handleFrameLoad() {
       this.loading = false
+      this.error = null
       this.$emit('game-loaded')
+      
+      // Track successful game load
+      if (window.analytics) {
+        window.analytics.trackGameLoaded(this.game.id, this.game.title)
+      }
     },
     
     handleFrameError(error) {
       this.loading = false
+      this.error = `Failed to load ${this.game.title}. Please try again.`
       this.$emit('game-error', error)
+      
+      // Track game load error
+      if (window.analytics) {
+        window.analytics.trackGameError(this.game.id, this.game.title, error)
+      }
+    },
+    
+    retryGame() {
+      this.error = null
+      this.initializeGame()
     }
   }
 }
@@ -99,12 +148,14 @@ export default {
 <style scoped>
 .game-iframe-container {
   position: relative;
-  width: 100%;
-  height: 500px;
+  width: 900px;
+  max-width: 90vw;
+  height: 650px;
   background: #000;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  margin: 2rem auto;
 }
 
 .game-iframe-container.fullscreen {
@@ -115,6 +166,7 @@ export default {
   height: 100vh;
   z-index: 9999;
   border-radius: 0;
+  margin: 0;
 }
 
 .game-preview {
@@ -202,6 +254,7 @@ export default {
   background: rgba(0, 0, 0, 0.8);
   color: white;
   gap: 1rem;
+  z-index: 10;
 }
 
 .spinner {
@@ -213,6 +266,54 @@ export default {
   animation: spin 1s linear infinite;
 }
 
+.error-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  z-index: 10;
+}
+
+.error-content {
+  text-align: center;
+  padding: 2rem;
+}
+
+.error-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #ef4444;
+}
+
+.error-content p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: #d1d5db;
+}
+
+.retry-button {
+  background: linear-gradient(45deg, #3b82f6, #1d4ed8);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.retry-button:hover {
+  background: linear-gradient(45deg, #1d4ed8, #1e40af);
+  transform: translateY(-2px);
+}
+
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
@@ -221,7 +322,9 @@ export default {
 /* Responsive Design */
 @media (max-width: 768px) {
   .game-iframe-container {
+    width: 95vw;
     height: 400px;
+    margin: 1rem auto;
   }
   
   .play-button {
@@ -236,11 +339,13 @@ export default {
 
 @media (max-width: 480px) {
   .game-iframe-container {
-    height: 300px;
+    width: 95vw;
+    height: 350px;
+    margin: 0.5rem auto;
   }
   
   .play-button {
-    padding: 0.8rem 1.5rem;
+    padding: 0.75rem 1.5rem;
     font-size: 0.9rem;
   }
 }

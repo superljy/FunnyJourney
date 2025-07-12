@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TGVJVCTQBE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-TGVJVCTQBE');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Slither Sim - Free Multiplayer Snake Game Online | FunnyJourney.com</title>
+    <meta name="description" content="Play Neon Slither Sim online! Grow your neon snake, collect orbs, and compete with players worldwide. Free multiplayer snake game!">
+    <link rel="canonical" href="https://funnyjourney.com/neon-slither-sim">
+    <link rel="stylesheet" href="game-styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gaming: {
+                            dark: '#1a1a1a',
+                            darker: '#0a0a0a',
+                            blue: '#00d4ff',
+                            purple: '#9d4edd',
+                            green: '#39ff14',
+                            pink: '#ff10f0'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- Use the main header from index.html -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="../index-vue.html" class="site-logo">🎮 FunnyJourney</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index-vue.html">Home</a></li>
+                    <li><a href="../games" class="active">All Games</a></li>
+                    <li><a href="../about">About</a></li>
+                </ul>
+            </nav>
+            <button class="play-now-btn" onclick="window.location.href='../index-vue.html#/games'">
+                <i class="fas fa-gamepad"></i> MORE GAMES
+            </button>
+        </div>
+    </header>
+
+    <main class="content-container py-8">
+        <a href="../games" class="back-button">
+            <i class="fas fa-arrow-left"></i> Back to Games
+        </a>
+        
+        <section class="mb-12 text-center">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-4">🐍 Neon Slither Sim</h1>
+            <p class="text-xl sm:text-2xl text-gaming-blue font-medium mb-8">Grow your neon snake in this exciting multiplayer simulation! Collect orbs, avoid other snakes, and become the longest slither.</p>
+            
+            <div class="mb-12">
+                <div class="game-container" id="gameContainer">
+                    <iframe src="https://cloud.onlinegames.io/games/2022/construct/157/neon-slither-sim/index-og.html" 
+                            id="gameFrame"
+                            class="game-iframe" 
+                            frameborder="0" 
+                            allow="fullscreen; gamepad; microphone; camera" 
+                            allowfullscreen></iframe>
+                    <button id="fullscreen-btn" class="fullscreen-btn" onclick="toggleFullscreen()" aria-label="Toggle fullscreen">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+                        </svg>
+                        <span>Fullscreen</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="game-content">
+            <h2 class="section-heading">Game Description</h2>
+            <div class="prose max-w-none text-white">
+                <p class="mb-4">
+                    <strong>Neon Slither Sim</strong> is an exciting multiplayer snake game with vibrant neon graphics! Control your glowing snake as you navigate through a colorful arena filled with orbs and other players. Your goal is simple: eat orbs to grow longer while avoiding collisions with other snakes.
+                </p>
+                <p>
+                    With its smooth gameplay, stunning visual effects, and competitive multiplayer action, Neon Slither Sim offers endless entertainment as you try to become the longest snake on the server!
+                </p>
+            </div>
+        </section>
+
+        <section class="game-content">
+            <h2 class="section-heading">How to Play</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-xl font-semibold mb-2 text-gaming-pink">Controls</h3>
+                    <ul class="list-disc pl-5 mb-4 text-white">
+                        <li>Use <strong>mouse</strong> to control your snake's direction</li>
+                        <li>Collect <strong>colorful orbs</strong> to grow longer</li>
+                        <li>Avoid hitting <strong>other snakes</strong> or walls</li>
+                        <li>Cut off other snakes to eliminate them</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold mb-2 text-gaming-green">Strategy Tips</h3>
+                    <ul class="list-disc pl-5 mb-4 text-white">
+                        <li>Stay away from larger snakes early on</li>
+                        <li>Use your body to trap smaller snakes</li>
+                        <li>Collect orbs in less crowded areas</li>
+                        <li>Be patient and strategic with your moves</li>
+                        <li>Watch for opportunities to cut off opponents</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="game-content">
+            <h2 class="section-heading">Game Features</h2>
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="text-center p-4 bg-gaming-blue bg-opacity-10 rounded-lg border border-gaming-blue border-opacity-30">
+                    <div class="text-3xl mb-2">🌈</div>
+                    <h4 class="font-semibold text-gaming-blue">Neon Graphics</h4>
+                    <p class="text-sm text-white">Vibrant neon graphics and stunning visual effects</p>
+                </div>
+                
+                <div class="text-center p-4 bg-gaming-purple bg-opacity-10 rounded-lg border border-gaming-purple border-opacity-30">
+                    <div class="text-3xl mb-2">👥</div>
+                    <h4 class="font-semibold text-gaming-purple">Multiplayer</h4>
+                    <p class="text-sm text-white">Compete with players from around the world</p>
+                </div>
+                
+                <div class="text-center p-4 bg-gaming-green bg-opacity-10 rounded-lg border border-gaming-green border-opacity-30">
+                    <div class="text-3xl mb-2">🏆</div>
+                    <h4 class="font-semibold text-gaming-green">Leaderboard</h4>
+                    <p class="text-sm text-white">Real-time ranking system and score tracking</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="text-center mt-12">
+            <h2 class="section-heading">More Games You Might Like</h2>
+            <div class="grid md:grid-cols-3 gap-6 mt-6">
+                <a href="flappy-bird.html" class="game-content hover:bg-opacity-20 transition-all duration-300 text-center block">
+                    <h3 class="font-semibold text-gaming-blue">Flappy Bird</h3>
+                    <p class="text-sm text-white">Classic flying game with simple controls</p>
+                </a>
+                
+                <a href="monster-survivors.html" class="game-content hover:bg-opacity-20 transition-all duration-300 text-center block">
+                    <h3 class="font-semibold text-gaming-purple">Monster Survivors</h3>
+                    <p class="text-sm text-white">Epic survival action with endless waves</p>
+                </a>
+                
+                <a href="highway-traffic.html" class="game-content hover:bg-opacity-20 transition-all duration-300 text-center block">
+                    <h3 class="font-semibold text-gaming-green">Highway Traffic</h3>
+                    <p class="text-sm text-white">Navigate through busy highway traffic</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Improved fullscreen functionality
+        function toggleFullscreen() {
+            const gameContainer = document.getElementById('gameContainer');
+            const gameIframe = gameContainer.querySelector('.game-iframe');
+            
+            if (!document.fullscreenElement) {
+                // 进入全屏
+                gameContainer.requestFullscreen().then(() => {
+                    gameContainer.classList.add('fullscreen-active');
+                    console.log('Entered fullscreen mode');
+                }).catch(err => {
+                    console.log('Error attempting to enable fullscreen:', err);
+                });
+            } else {
+                // 退出全屏
+                document.exitFullscreen().then(() => {
+                    gameContainer.classList.remove('fullscreen-active');
+                    console.log('Exited fullscreen mode');
+                });
+            }
+        }
+
+        // Handle fullscreen change events
+        document.addEventListener('fullscreenchange', function() {
+            const gameContainer = document.getElementById('gameContainer');
+            const gameIframe = gameContainer.querySelector('.game-iframe');
+            
+            if (!document.fullscreenElement) {
+                // 确保退出全屏时移除类名和内联样式
+                gameContainer.classList.remove('fullscreen-active');
+                gameContainer.style.cssText = '';
+                if (gameIframe) {
+                    gameIframe.style.cssText = '';
+                }
+                console.log('Fullscreen change: exited');
+            } else {
+                console.log('Fullscreen change: entered');
+            }
+        });
+
+        // Handle escape key for fullscreen exit
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && document.fullscreenElement) {
+                const gameContainer = document.getElementById('gameContainer');
+                gameContainer.classList.remove('fullscreen-active');
+            }
+        });
+
+        function goHome() {
+            window.location.href = '../index-vue.html';
+        }
+
+        // Initialize game page with tracking
+        if (typeof initGamePage !== 'undefined') {
+            initGamePage('Neon Slither Sim', 'https://cloud.onlinegames.io/games/2022/construct/157/neon-slither-sim/index-og.html');
+        }
+    </script>
+</body>
+</html> 

@@ -8,12 +8,8 @@
     <meta name="keywords" content="leap and avoid,jumping game,platformer,obstacle course,reflexes,adventure">
     
     <!-- Analytics -->
-    <script src="../js/analytics.js"></script>
-    
-    <!-- Add main stylesheet for consistent styling -->
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="game-styles.css">
     <!-- Light theme override for game pages -->
-    <link rel="stylesheet" href="../css/light-theme.css">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -186,27 +182,125 @@
         </div>
     </main>
 
-    <script src="../js/common-head.js"></script>
-    <script>
-        function toggleFullscreen() {
-            const iframe = document.getElementById('gameFrame');
-            if (iframe.requestFullscreen) {
-                iframe.requestFullscreen();
-            } else if (iframe.webkitRequestFullscreen) {
-                iframe.webkitRequestFullscreen();
-            } else if (iframe.msRequestFullscreen) {
-                iframe.msRequestFullscreen();
+    <script>} else {
+                // 退出全屏
+                document.exitFullscreen().then(() => {
+                    gameContainer.classList.remove('fullscreen-active');
+                    console.log('Exited fullscreen mode');
+                });
             }
         }
+
         
+                
+
+        // Handle escape key for fullscreen exit
+        
+
         function goHome() {
-            window.location.href = '../index.html';
+            window.location.href = '../index-vue.html';
         }
 
         // Initialize game page with tracking
         if (typeof initGamePage !== 'undefined') {
             initGamePage('Leap and Avoid 2', 'https://www.crazygames.com/embed/leap-and-avoid-2');
         }
-    </script>
+
+        
+                
+            } else {
+                // 退出全屏
+                document.exitFullscreen().then(() => {
+                    gameContainer.classList.remove('fullscreen-active');
+                    console.log('Exited fullscreen mode');
+                });
+            }
+        }
+
+        
+                
+
+        // Handle escape key for fullscreen exit
+
+        
+                
+            } else {
+                // 退出全屏
+                document.exitFullscreen().then(() => {
+                    gameContainer.classList.remove('fullscreen-active');
+                    console.log('Exited fullscreen mode');
+                });
+            }
+        }
+
+        
+                
+
+        // Handle escape key for fullscreen exit
+
+        
+                
+            } else {
+                // 退出全屏
+                document.exitFullscreen().then(() => {
+                    gameContainer.classList.remove('fullscreen-active');
+                    console.log('Exited fullscreen mode');
+                });
+            }
+        }
+
+        
+                
+
+        // Handle escape key for fullscreen exit
+
+        // Improved fullscreen functionality
+        function toggleFullscreen() {
+            const gameContainer = document.getElementById('gameContainer');
+            const gameIframe = gameContainer.querySelector('.game-iframe');
+            
+            if (!document.fullscreenElement) {
+                // 进入全屏
+                gameContainer.requestFullscreen().then(() => {
+                    gameContainer.classList.add('fullscreen-active');
+                    console.log('Entered fullscreen mode');
+                }).catch(err => {
+                    console.log('Error attempting to enable fullscreen:', err);
+                });
+            } else {
+                // 退出全屏
+                document.exitFullscreen().then(() => {
+                    gameContainer.classList.remove('fullscreen-active');
+                    console.log('Exited fullscreen mode');
+                });
+            }
+        }
+
+        // Handle fullscreen change events
+        document.addEventListener('fullscreenchange', function() {
+            const gameContainer = document.getElementById('gameContainer');
+            const gameIframe = gameContainer.querySelector('.game-iframe');
+            
+            if (!document.fullscreenElement) {
+                // 确保退出全屏时移除类名和内联样式
+                gameContainer.classList.remove('fullscreen-active');
+                gameContainer.style.cssText = '';
+                if (gameIframe) {
+                    gameIframe.style.cssText = '';
+                }
+                console.log('Fullscreen change: exited');
+            } else {
+                console.log('Fullscreen change: entered');
+            }
+        });
+
+        // Handle escape key for fullscreen exit
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && document.fullscreenElement) {
+                const gameContainer = document.getElementById('gameContainer');
+                gameContainer.classList.remove('fullscreen-active');
+            }
+        });
+</script>
 </body>
 </html> 

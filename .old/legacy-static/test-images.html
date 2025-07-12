@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Test</title>
+    <style>
+        body {
+            background: #1a1a1a;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .test-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .test-item {
+            border: 2px solid #00d4ff;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+        }
+        .test-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid #666;
+        }
+        .test-info {
+            margin-top: 10px;
+        }
+        .status {
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .success { background: #28a745; }
+        .error { background: #dc3545; }
+    </style>
+</head>
+<body>
+    <h1>🖼️ Image Test for 3 Games</h1>
+    <p>Testing if the uploaded game images are displaying correctly:</p>
+    
+    <div class="test-container">
+        <!-- Little Shop Test -->
+        <div class="test-item">
+            <h3>Little Shop</h3>
+            <img src="img/little-shop.jpg" alt="Little Shop" class="test-image" 
+                 onload="showStatus(this, 'success')" 
+                 onerror="showStatus(this, 'error')">
+            <div class="test-info">
+                <p><strong>File:</strong> img/little-shop.jpg</p>
+                <div class="status" id="status-1">Loading...</div>
+            </div>
+        </div>
+        
+        <!-- Rolling Balls Space Race Test -->
+        <div class="test-item">
+            <h3>Rolling Balls Space Race</h3>
+            <img src="img/rolling-balls-space-race.jpg" alt="Rolling Balls Space Race" class="test-image"
+                 onload="showStatus(this, 'success')" 
+                 onerror="showStatus(this, 'error')">
+            <div class="test-info">
+                <p><strong>File:</strong> img/rolling-balls-space-race.jpg</p>
+                <div class="status" id="status-2">Loading...</div>
+            </div>
+        </div>
+        
+        <!-- Loot Island Treasure Digger Test -->
+        <div class="test-item">
+            <h3>Loot Island Treasure Digger</h3>
+            <img src="img/loot-island-treasure-digger.jpg" alt="Loot Island Treasure Digger" class="test-image"
+                 onload="showStatus(this, 'success')" 
+                 onerror="showStatus(this, 'error')">
+            <div class="test-info">
+                <p><strong>File:</strong> img/loot-island-treasure-digger.jpg</p>
+                <div class="status" id="status-3">Loading...</div>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top: 40px; padding: 20px; background: rgba(0, 212, 255, 0.1); border-radius: 10px;">
+        <h3>📋 Test Instructions</h3>
+        <ol>
+            <li>Open this file in a browser</li>
+            <li>Check if all 3 images load successfully</li>
+            <li>If any image shows "ERROR", there's a problem with that specific file</li>
+            <li>If all show "SUCCESS", the images are working correctly</li>
+        </ol>
+        
+        <p><strong>Next step:</strong> If images work here but not in games/index.html, the issue is with the relative path "../img/" in the games folder.</p>
+    </div>
+
+    <script>
+        function showStatus(img, status) {
+            const statusDiv = img.parentElement.querySelector('.status');
+            if (status === 'success') {
+                statusDiv.textContent = '✅ SUCCESS - Image loaded!';
+                statusDiv.className = 'status success';
+            } else {
+                statusDiv.textContent = '❌ ERROR - Image failed to load!';
+                statusDiv.className = 'status error';
+            }
+        }
+        
+        // Log image loading for debugging
+        document.querySelectorAll('.test-image').forEach((img, index) => {
+            img.addEventListener('load', () => {
+                console.log(`Image ${index + 1} loaded successfully:`, img.src);
+            });
+            
+            img.addEventListener('error', () => {
+                console.error(`Image ${index + 1} failed to load:`, img.src);
+            });
+        });
+    </script>
+</body>
+</html> 

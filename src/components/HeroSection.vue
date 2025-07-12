@@ -29,9 +29,9 @@
         </div>
         
         <div class="hero-buttons">
-          <a href="games/index.html" class="cta-button primary" aria-label="Start playing free online games">
+          <router-link to="/games" class="cta-button primary" aria-label="Start playing free online games">
             🎮 Start Playing Now
-          </a>
+          </router-link>
           <button @click="scrollToGames" class="cta-button secondary" aria-label="Browse featured games">
             Browse Games
           </button>

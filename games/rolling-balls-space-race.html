@@ -63,11 +63,8 @@
       }
     }
     </script>
-    
-    <!-- Add main stylesheet for consistent styling -->
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="game-styles.css">
     <!-- Light theme override for game pages -->
-    <link rel="stylesheet" href="../css/light-theme.css">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -213,22 +210,22 @@
     <!-- Use the main header from index.html -->
     <header class="site-header">
         <div class="container header-container">
-            <a href="../index.html" class="site-logo">🎮 FunnyJourney</a>
+            <a href="../index-vue.html" class="site-logo">🎮 FunnyJourney</a>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="index.html" class="active">All Games</a></li>
-                    <li><a href="../about/index.html">About</a></li>
+                    <li><a href="../index-vue.html">Home</a></li>
+                    <li><a href="../games" class="active">All Games</a></li>
+                    <li><a href="../about">About</a></li>
                 </ul>
             </nav>
-            <button class="play-now-btn" onclick="window.location.href='index.html'">
+            <button class="play-now-btn" onclick="window.location.href='../index-vue.html#/games'">
                 <i class="fas fa-gamepad"></i> MORE GAMES
             </button>
         </div>
     </header>
 
     <main class="content-container py-8">
-        <a href="index.html" class="back-button">
+        <a href="../games" class="back-button">
             <i class="fas fa-arrow-left"></i> Back to Games
         </a>
         
@@ -313,8 +310,7 @@
         </section>
     </main>
 
-    <script>
-        const fullscreenBtn = document.getElementById('fullscreen-btn');
+    <script>const fullscreenBtn = document.getElementById('fullscreen-btn');
         const gameFrame = document.getElementById('game-frame');
         
         fullscreenBtn.addEventListener('click', () => {
@@ -342,6 +338,102 @@
                 document.exitFullscreen();
             }
         }
-    </script>
+
+        
+                
+            } else {
+                // 退出全屏
+                document.exitFullscreen().then(() => {
+                    gameContainer.classList.remove('fullscreen-active');
+                    console.log('Exited fullscreen mode');
+                });
+            }
+        }
+
+        
+                
+
+        // Handle escape key for fullscreen exit
+
+        
+                
+            } else {
+                // 退出全屏
+                document.exitFullscreen().then(() => {
+                    gameContainer.classList.remove('fullscreen-active');
+                    console.log('Exited fullscreen mode');
+                });
+            }
+        }
+
+        
+                
+
+        // Handle escape key for fullscreen exit
+
+        
+                
+            } else {
+                // 退出全屏
+                document.exitFullscreen().then(() => {
+                    gameContainer.classList.remove('fullscreen-active');
+                    console.log('Exited fullscreen mode');
+                });
+            }
+        }
+
+        
+                
+
+        // Handle escape key for fullscreen exit
+
+        // Improved fullscreen functionality
+        function toggleFullscreen() {
+            const gameContainer = document.getElementById('gameContainer');
+            const gameIframe = gameContainer.querySelector('.game-iframe');
+            
+            if (!document.fullscreenElement) {
+                // 进入全屏
+                gameContainer.requestFullscreen().then(() => {
+                    gameContainer.classList.add('fullscreen-active');
+                    console.log('Entered fullscreen mode');
+                }).catch(err => {
+                    console.log('Error attempting to enable fullscreen:', err);
+                });
+            } else {
+                // 退出全屏
+                document.exitFullscreen().then(() => {
+                    gameContainer.classList.remove('fullscreen-active');
+                    console.log('Exited fullscreen mode');
+                });
+            }
+        }
+
+        // Handle fullscreen change events
+        document.addEventListener('fullscreenchange', function() {
+            const gameContainer = document.getElementById('gameContainer');
+            const gameIframe = gameContainer.querySelector('.game-iframe');
+            
+            if (!document.fullscreenElement) {
+                // 确保退出全屏时移除类名和内联样式
+                gameContainer.classList.remove('fullscreen-active');
+                gameContainer.style.cssText = '';
+                if (gameIframe) {
+                    gameIframe.style.cssText = '';
+                }
+                console.log('Fullscreen change: exited');
+            } else {
+                console.log('Fullscreen change: entered');
+            }
+        });
+
+        // Handle escape key for fullscreen exit
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && document.fullscreenElement) {
+                const gameContainer = document.getElementById('gameContainer');
+                gameContainer.classList.remove('fullscreen-active');
+            }
+        });
+</script>
 </body>
 </html> 

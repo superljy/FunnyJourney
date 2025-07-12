@@ -24,17 +24,17 @@
         </div>
         
         <ul class="nav-links" :class="{ 'mobile-open': mobileMenuOpen }">
-          <li><a href="#home" @click="scrollToSection('home')">Home</a></li>
-          <li><a href="games/index.html">All Games</a></li>
+          <li><router-link to="/" @click="closeMobileMenu">Home</router-link></li>
+          <li><router-link to="/games" @click="closeMobileMenu">All Games</router-link></li>
           <li class="dropdown" @mouseenter="showCategories = true" @mouseleave="showCategories = false">
             <a href="#" @click.prevent>Categories ▼</a>
             <div class="dropdown-menu" v-show="showCategories">
-              <a v-for="category in categories" :key="category" @click="filterByCategory(category)">
+              <router-link v-for="category in categories" :key="category" :to="`/category/${category}`" @click="closeMobileMenu">
                 {{ formatCategory(category) }}
-              </a>
+              </router-link>
             </div>
           </li>
-          <li><a href="about/index.html">About</a></li>
+          <li><router-link to="/about" @click="closeMobileMenu">About</router-link></li>
         </ul>
         
         <button 
@@ -95,10 +95,13 @@ export default {
     },
     
     goHome() {
-      if (window.location.pathname === '/' || window.location.pathname.endsWith('index.html')) {
-        this.scrollToSection('home')
+      this.closeMobileMenu()
+      if (this.$route.path === '/') {
+        // Already on home page, scroll to top
+        window.scrollTo({ top: 0, behavior: 'smooth' })
       } else {
-        window.location.href = '../index.html'
+        // Navigate to home page using Vue Router
+        this.$router.push('/')
       }
     },
     
@@ -120,8 +123,15 @@ export default {
     performSearch() {
       if (this.searchQuery.trim()) {
         analytics.trackSearchQuery(this.searchQuery)
-        // Emit search event to parent component
-        this.$emit('search', this.searchQuery.trim())
+        
+        // Navigate to games list with search query
+        this.$router.push({
+          path: '/games',
+          query: { search: this.searchQuery.trim() }
+        })
+        
+        // Clear search input and close mobile menu
+        this.searchQuery = ''
         this.mobileMenuOpen = false
       }
     },
@@ -131,6 +141,11 @@ export default {
       this.$emit('category-filter', category)
       this.showCategories = false
       this.mobileMenuOpen = false
+    },
+    
+    closeMobileMenu() {
+      this.mobileMenuOpen = false
+      this.showCategories = false
     },
     
     formatCategory(category) {
@@ -243,7 +258,8 @@ export default {
   padding: 0;
 }
 
-.nav-links a {
+.nav-links a,
+.nav-links router-link {
   text-decoration: none;
   color: #4a5568;
   font-weight: 500;
@@ -251,8 +267,14 @@ export default {
   padding: 0.5rem 0;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links router-link:hover {
   color: #6366f1;
+}
+
+.nav-links router-link.router-link-active {
+  color: #6366f1;
+  font-weight: 600;
 }
 
 .dropdown {
@@ -271,7 +293,8 @@ export default {
   margin-top: 0.5rem;
 }
 
-.dropdown-menu a {
+.dropdown-menu a,
+.dropdown-menu router-link {
   display: block;
   padding: 0.75rem 1rem;
   color: #4a5568;
@@ -279,7 +302,8 @@ export default {
   transition: background 0.3s ease;
 }
 
-.dropdown-menu a:hover {
+.dropdown-menu a:hover,
+.dropdown-menu router-link:hover {
   background: #f7fafc;
   color: #6366f1;
 }

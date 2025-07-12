@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TGVJVCTQBE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-TGVJVCTQBE');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motorbike Stunt Simulator - Free 3D Racing Game Online | FunnyJourney.com</title>
+    <meta name="description" content="Master amazing motorbike stunts in this realistic simulator! Perform gravity-defying tricks and jumps. Play free online now!">
+    <link rel="canonical" href="https://funnyjourney.com/motorbike-stunt-simulator">
+    <link rel="stylesheet" href="game-styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gaming: {
+                            dark: '#1a1a1a',
+                            darker: '#0a0a0a',
+                            blue: '#00d4ff',
+                            purple: '#9d4edd',
+                            green: '#39ff14',
+                            pink: '#ff10f0'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- Use the main header from index.html -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="../index-vue.html" class="site-logo">🎮 FunnyJourney</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index-vue.html">Home</a></li>
+                    <li><a href="../games" class="active">All Games</a></li>
+                    <li><a href="../about">About</a></li>
+                </ul>
+            </nav>
+            <button class="play-now-btn" onclick="window.location.href='../index-vue.html#/games'">
+                <i class="fas fa-gamepad"></i> MORE GAMES
+            </button>
+        </div>
+    </header>
+
+    <main class="content-container py-8">
+        <a href="../games" class="back-button">
+            <i class="fas fa-arrow-left"></i> Back to Games
+        </a>
+        
+        <section class="mb-12 text-center">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-4">🏍️ Motorbike Stunt Simulator</h1>
+            <p class="text-xl sm:text-2xl text-gaming-blue font-medium mb-8">Perform amazing stunts and tricks on your motorbike! Master gravity-defying jumps and become the ultimate stunt rider.</p>
+            
+            <div class="mb-12">
+                <div class="game-container" id="gameContainer">
+                    <iframe src="https://cloud.onlinegames.io/games/2021/unity/motorbike-stunt-simulator/index-og.html" 
+                            id="gameFrame"
+                            class="game-iframe" 
+                            frameborder="0" 
+                            allow="fullscreen; gamepad; microphone; camera" 
+                            allowfullscreen></iframe>
+                    <button id="fullscreen-btn" class="fullscreen-btn" onclick="toggleFullscreen()" aria-label="Toggle fullscreen">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+                        </svg>
+                        <span>Fullscreen</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="game-content">
+            <h2 class="section-heading">Game Description</h2>
+            <div class="prose max-w-none text-white">
+                <p class="mb-4">
+                    <strong>Motorbike Stunt Simulator</strong> is a thrilling 3D racing game that puts you in control of powerful motorcycles on challenging stunt tracks. Perform incredible jumps, tricks, and stunts while mastering the art of motorcycle control and balance.
+                </p>
+                <p>
+                    With realistic physics, multiple bike models, and exciting stunt courses, this simulator offers an authentic motorbike experience that will test your skills and reflexes!
+                </p>
+            </div>
+        </section>
+
+        <section class="game-content">
+            <h2 class="section-heading">How to Play</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-xl font-semibold mb-2 text-gaming-pink">Controls</h3>
+                    <ul class="list-disc pl-5 mb-4 text-white">
+                        <li>Use <strong>arrow keys</strong> or <strong>WASD</strong> to control the motorbike</li>
+                        <li>Press <strong>spacebar</strong> for boost and special tricks</li>
+                        <li><strong>Balance</strong> your bike during jumps and landings</li>
+                        <li>Complete <strong>challenging stunt courses</strong></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold mb-2 text-gaming-green">Strategy Tips</h3>
+                    <ul class="list-disc pl-5 mb-4 text-white">
+                        <li>Practice controlling your bike's balance</li>
+                        <li>Use boost strategically for big jumps</li>
+                        <li>Land smoothly to maintain speed</li>
+                        <li>Learn each track's optimal route</li>
+                        <li>Start with easier bikes before advanced ones</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="game-content">
+            <h2 class="section-heading">Game Features</h2>
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="text-center p-4 bg-gaming-blue bg-opacity-10 rounded-lg border border-gaming-blue border-opacity-30">
+                    <div class="text-3xl mb-2">🏍️</div>
+                    <h4 class="font-semibold text-gaming-blue">Realistic Physics</h4>
+                    <p class="text-sm text-white">Authentic motorcycle physics simulation</p>
+                </div>
+                
+                <div class="text-center p-4 bg-gaming-purple bg-opacity-10 rounded-lg border border-gaming-purple border-opacity-30">
+                    <div class="text-3xl mb-2">🛣️</div>
+                    <h4 class="font-semibold text-gaming-purple">Stunt Tracks</h4>
+                    <p class="text-sm text-white">Multiple challenging stunt courses</p>
+                </div>
+                
+                <div class="text-center p-4 bg-gaming-green bg-opacity-10 rounded-lg border border-gaming-green border-opacity-30">
+                    <div class="text-3xl mb-2">🎯</div>
+                    <h4 class="font-semibold text-gaming-green">3D Graphics</h4>
+                    <p class="text-sm text-white">Stunning 3D environments and effects</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="text-center mt-12">
+            <h2 class="section-heading">More Games You Might Like</h2>
+            <div class="grid md:grid-cols-3 gap-6 mt-6">
+                <a href="highway-cars.html" class="game-content hover:bg-opacity-20 transition-all duration-300 text-center block">
+                    <h3 class="font-semibold text-gaming-blue">Highway Cars</h3>
+                    <p class="text-sm text-white">High-speed highway racing action</p>
+                </a>
+                
+                <a href="rolling-balls-space-race.html" class="game-content hover:bg-opacity-20 transition-all duration-300 text-center block">
+                    <h3 class="font-semibold text-gaming-purple">Rolling Balls Space Race</h3>
+                    <p class="text-sm text-white">Race through space with rolling balls</p>
+                </a>
+                
+                <a href="apocalypse-truck.html" class="game-content hover:bg-opacity-20 transition-all duration-300 text-center block">
+                    <h3 class="font-semibold text-gaming-green">Apocalypse Truck</h3>
+                    <p class="text-sm text-white">Drive through the apocalypse</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Improved fullscreen functionality
+        function toggleFullscreen() {
+            const gameContainer = document.getElementById('gameContainer');
+            const gameIframe = gameContainer.querySelector('.game-iframe');
+            
+            if (!document.fullscreenElement) {
+                // 进入全屏
+                gameContainer.requestFullscreen().then(() => {
+                    gameContainer.classList.add('fullscreen-active');
+                    console.log('Entered fullscreen mode');
+                }).catch(err => {
+                    console.log('Error attempting to enable fullscreen:', err);
+                });
+            } else {
+                // 退出全屏
+                document.exitFullscreen().then(() => {
+                    gameContainer.classList.remove('fullscreen-active');
+                    console.log('Exited fullscreen mode');
+                });
+            }
+        }
+
+        // Handle fullscreen change events
+        document.addEventListener('fullscreenchange', function() {
+            const gameContainer = document.getElementById('gameContainer');
+            const gameIframe = gameContainer.querySelector('.game-iframe');
+            
+            if (!document.fullscreenElement) {
+                // 确保退出全屏时移除类名和内联样式
+                gameContainer.classList.remove('fullscreen-active');
+                gameContainer.style.cssText = '';
+                if (gameIframe) {
+                    gameIframe.style.cssText = '';
+                }
+                console.log('Fullscreen change: exited');
+            } else {
+                console.log('Fullscreen change: entered');
+            }
+        });
+
+        // Handle escape key for fullscreen exit
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && document.fullscreenElement) {
+                const gameContainer = document.getElementById('gameContainer');
+                gameContainer.classList.remove('fullscreen-active');
+            }
+        });
+
+        function goHome() {
+            window.location.href = '../index-vue.html';
+        }
+
+        // Initialize game page with tracking
+        if (typeof initGamePage !== 'undefined') {
+            initGamePage('Motorbike Stunt Simulator', 'https://cloud.onlinegames.io/games/2021/unity/motorbike-stunt-simulator/index-og.html');
+        }
+    </script>
+</body>
+</html> 

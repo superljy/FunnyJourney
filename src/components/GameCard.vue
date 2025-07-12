@@ -71,8 +71,8 @@ export default {
       analytics.trackGameStart(this.game.title);
       analytics.trackGameCategory(this.game.category);
       
-      // Navigate to game
-      window.location.href = this.game.url;
+      // Navigate to game using Vue Router
+      this.$router.push(`/game/${this.game.id}`);
     },
     
     handleImageError(event) {

@@ -1,0 +1,609 @@
+---
+alwaysApply: true
+---
+# 🎮 FunnyJourney 项目开发规则与规范
+
+## 📋 目录
+1. [项目概述](#项目概述)
+2. [核心原则](#核心原则)
+3. [开发规范](#开发规范)
+4. [代码质量标准](#代码质量标准)
+5. [SEO优化指南](#seo优化指南)
+6. [性能要求](#性能要求)
+7. [安全规范](#安全规范)
+8. [文件结构规范](#文件结构规范)
+9. [游戏数据管理](#游戏数据管理)
+10. [测试规范](#测试规范)
+11. [部署流程](#部署流程)
+12. [维护指南](#维护指南)
+
+---
+
+## 📖 项目概述
+
+FunnyJourney 是一个现代化的免费在线游戏平台，致力于为全球用户提供500+高质量的浏览器游戏。项目采用Vue.js 3技术栈，注重SEO优化、用户体验和性能表现。
+
+### 技术栈
+- **前端**: Vue.js 3.4+, Vue Router 4.5+, Vite 5.4+
+- **构建**: Vite + Terser (生产优化)
+- **分析**: Google Analytics 4 + 自定义事件跟踪
+- **货币化**: Google AdSense (ca-pub-9114241331557514)
+- **SEO**: JSON-LD 结构化数据, 动态元标签
+
+---
+
+## 🎯 核心原则
+
+### 1. 用户体验优先 (User Experience First)
+- 所有功能设计必须以用户体验为中心
+- 确保游戏加载速度快（< 3秒）
+- 提供直观的导航和搜索功能
+- 支持多设备响应式设计
+
+### 2. 性能优化 (Performance Optimization)
+- 页面加载时间目标：< 3秒
+- 图片懒加载和优化
+- 代码分割和懒加载
+- 资源压缩和缓存策略
+
+### 3. SEO最佳实践 (SEO Best Practices)
+- 遵循搜索引擎优化标准
+- 结构化数据标记
+- 语义化HTML和清晰的URL结构
+- 持续优化关键词和内容
+
+### 4. 代码质量 (Code Quality)
+- 保持高质量、可维护的代码
+- 遵循ESLint规则和Vue.js最佳实践
+- 完善的注释和文档
+- 模块化设计和组件重用
+- 每一次都需要 use context7 保证最新的代码
+- 每次更新或修改后，填写开发日志
+
+### 5. 安全性 (Security)
+- 确保用户数据和隐私安全
+- 实施CSP和安全头部
+- 防止XSS和其他安全威胁
+- 定期安全审计
+
+---
+
+## 💻 开发规范
+
+### 3.1 代码风格
+```javascript
+// ✅ 正确：使用const/let，避免var
+const gameData = {
+  title: 'Monster Survivors',
+  category: 'action'
+}
+
+// ✅ 正确：函数命名使用驼峰式
+function handleGameStart(gameId) {
+  analytics.trackGameStart(gameId)
+}
+
+// ✅ 正确：Vue组件使用PascalCase
+import GameCard from './GameCard.vue'
+```
+
+### 3.2 Vue.js 规范
+```vue
+<!-- ✅ 正确：组件结构 -->
+<template>
+  <div class="game-card" @click="handleClick">
+    <h3>{{ game.title }}</h3>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'GameCard', // 必须包含组件名
+  props: {
+    game: {
+      type: Object,
+      required: true
+    }
+  },
+  methods: {
+    handleClick() {
+      // 处理点击事件
+      this.$emit('game-selected', this.game)
+    }
+  }
+}
+</script>
+
+<style scoped>
+.game-card {
+  /* 使用scoped避免样式冲突 */
+}
+</style>
+```
+
+### 3.3 Git 提交规范
+```bash
+# 提交格式：type(scope): description
+feat(games): add new game card component
+fix(seo): correct meta tags for game pages
+docs(readme): update installation instructions
+style(css): improve responsive design
+refactor(utils): optimize analytics tracking
+perf(images): implement lazy loading
+test(unit): add tests for game search
+```
+
+---
+
+## 🔧 代码质量标准
+
+### 4.1 ESLint 规则
+```javascript
+// .eslintrc.js
+module.exports = {
+  extends: [
+    'eslint:recommended',
+    'plugin:vue/vue3-essential'
+  ],
+  rules: {
+    'no-console': 'warn',
+    'no-unused-vars': 'error',
+    'vue/multi-word-component-names': 'error'
+  }
+}
+```
+
+### 4.2 代码注释规范
+```javascript
+/**
+ * 游戏数据工具类
+ * 提供游戏搜索、分类、统计等功能
+ */
+export class GameUtils {
+  /**
+   * 搜索游戏
+   * @param {string} query - 搜索关键词
+   * @param {Array} games - 游戏数组，可选
+   * @returns {Array} 匹配的游戏列表
+   */
+  searchGames(query, games = null) {
+    // 实现搜索逻辑
+  }
+}
+```
+
+### 4.3 错误处理
+```javascript
+// ✅ 正确：完善的错误处理
+async function loadGameData(gameId) {
+  try {
+    const response = await fetch(`/api/games/${gameId}`)
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`)
+    }
+    return await response.json()
+  } catch (error) {
+    console.error('Failed to load game data:', error)
+    // 发送错误到分析工具
+    analytics.trackError('game_load_failed', { gameId, error: error.message })
+    throw error
+  }
+}
+```
+
+---
+
+## 🔍 SEO优化指南
+
+### 5.1 核心关键词
+```javascript
+// 主要关键词（必须在所有页面中使用）
+const PRIMARY_KEYWORDS = [
+  'free online games',
+  'no download games',
+  'browser games',
+  'h5 games',
+  'instant play games'
+]
+
+// 长尾关键词
+const LONG_TAIL_KEYWORDS = [
+  'free online casual games',
+  'play free games online no download',
+  'multiplayer browser games',
+  'online puzzle games no download'
+]
+```
+
+### 5.2 页面标题规范
+```javascript
+// ✅ 游戏页面标题格式
+`${gameName} - Free Online ${category} Game | Play Instantly`
+
+// ✅ 分类页面标题格式  
+`Free Online ${category} Games - Play ${count}+ Games Instantly`
+
+// ✅ 首页标题
+'Free Online Games 2025 - Play 500+ Browser Games Instantly'
+```
+
+### 5.3 元描述规范
+```javascript
+// 长度：150-160字符
+// 包含主要关键词
+// 包含CTA (Call to Action)
+const description = `Play ${gameName} free online! ${gameDescription} No downloads required. Start playing instantly in your browser!`
+```
+
+### 5.4 结构化数据
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "Monster Survivors",
+  "description": "Epic monster battles! Upgrade your hero...",
+  "applicationCategory": "Game",
+  "operatingSystem": "Any",
+  "genre": "Action",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+```
+
+---
+
+## ⚡ 性能要求
+
+### 6.1 加载时间标准
+| 指标 | 目标 | 最大值 |
+|------|------|--------|
+| 首次内容绘制 (FCP) | < 1.5s | < 2.5s |
+| 最大内容绘制 (LCP) | < 2.5s | < 4.0s |
+| 首次输入延迟 (FID) | < 100ms | < 300ms |
+| 累积布局偏移 (CLS) | < 0.1 | < 0.25 |
+
+### 6.2 图片优化
+```javascript
+// ✅ 图片懒加载
+<OptimizedImage
+  :src="game.image"
+  :alt="`${game.title} - Free Online Game`"
+  :lazy="true"
+  :width="300"
+  :height="200"
+  loading="lazy"
+/>
+
+// ✅ 图片格式和大小
+// - 使用WebP格式（fallback为JPG）
+// - 游戏封面：300x200px
+// - 文件大小：< 50KB
+```
+
+### 6.3 代码分割
+```javascript
+// ✅ 路由懒加载
+const GameDetailView = () => import(/* webpackChunkName: "game-detail" */ '../views/GameDetailView.vue')
+
+// ✅ 组件懒加载
+const HeavyComponent = defineAsyncComponent(() => import('./HeavyComponent.vue'))
+```
+
+---
+
+## 🔒 安全规范
+
+### 7.1 内容安全策略 (CSP)
+```javascript
+// vite.config.js
+const CSP = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline';"
+```
+
+### 7.2 数据验证
+```javascript
+// ✅ 输入验证
+function validateGameData(game) {
+  const errors = []
+  
+  if (!game.title || game.title.length < 3) {
+    errors.push('游戏标题必须至少3个字符')
+  }
+  
+  if (!game.category || !VALID_CATEGORIES.includes(game.category)) {
+    errors.push('游戏分类无效')
+  }
+  
+  return errors
+}
+```
+
+### 7.3 XSS防护
+```javascript
+// ✅ 内容转义
+function escapeHtml(unsafe) {
+  return unsafe
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;")
+}
+```
+
+---
+
+## 📁 文件结构规范
+
+### 8.1 目录结构
+```
+src/
+├── components/          # 可重用组件
+│   ├── game/           # 游戏相关组件
+│   │   ├── GameCard.vue
+│   │   ├── GameIframe.vue
+│   │   └── RelatedGames.vue
+│   ├── GameCard.vue    # 通用组件
+│   └── HeaderNav.vue
+├── views/              # 页面视图
+│   ├── HomeView.vue
+│   ├── GameDetailView.vue
+│   └── CategoryView.vue
+├── utils/              # 工具函数
+│   ├── analytics.js
+│   ├── seo.js
+│   └── imageOptimization.js
+├── data/               # 数据文件
+│   └── games.js
+└── assets/             # 静态资源
+    ├── css/
+    └── images/
+```
+
+### 8.2 命名规范
+```javascript
+// ✅ 组件文件：PascalCase
+GameCard.vue
+HeaderNav.vue
+OptimizedImage.vue
+
+// ✅ 工具文件：camelCase
+analytics.js
+seoManager.js
+imageOptimization.js
+
+// ✅ 常量：UPPER_SNAKE_CASE
+export const GAME_CATEGORIES = {
+  PUZZLE: 'puzzle',
+  ACTION: 'action'
+}
+```
+
+---
+
+## 🎮 游戏数据管理
+
+### 9.1 游戏数据结构
+```javascript
+// 标准游戏数据格式
+const gameSchema = {
+  id: 'monster-survivors',              // 必需：唯一标识符
+  title: 'Monster Survivors',          // 必需：游戏标题
+  description: 'Epic monster battles...', // 必需：游戏描述
+  category: 'action',                   // 必需：游戏分类
+  image: 'img/monster-survivors.jpg',   // 必需：游戏封面
+  url: 'games/monster-survivors.html',  // 必需：游戏链接
+  keywords: ['action', 'survival'],     // 必需：关键词数组
+  featured: true,                       // 可选：是否精选
+  difficulty: 'medium',                 // 可选：难度级别
+  playTime: '30+ minutes',              // 可选：游戏时长
+  instructions: [...],                  // 可选：游戏说明
+  features: [...],                      // 可选：游戏特色
+  tips: [...],                          // 可选：游戏技巧
+  seoMeta: {                           // 可选：SEO元数据
+    title: 'SEO优化标题',
+    description: 'SEO描述',
+    keywords: ['seo', 'keywords']
+  }
+}
+```
+
+### 9.2 游戏添加流程
+```bash
+# 1. 准备游戏HTML文件
+cp games/template.html games/new-game.html
+
+# 2. 添加游戏封面图片
+cp new-game-image.jpg img/new-game.jpg
+
+# 3. 更新游戏数据
+node scripts/updateGames.js
+
+# 4. 验证数据完整性
+npm run lint
+npm run build
+```
+
+### 9.3 游戏分类标准
+```javascript
+export const GAME_CATEGORIES = {
+  PUZZLE: 'puzzle',     // 益智类：数独、拼图、消除
+  ARCADE: 'arcade',     // 街机类：经典街机游戏
+  CARD: 'card',         // 卡牌类：扑克、纸牌
+  STRATEGY: 'strategy', // 策略类：塔防、经营
+  ACTION: 'action',     // 动作类：射击、格斗
+  CASUAL: 'casual',     // 休闲类：简单轻松
+  CLICKER: 'clicker',   // 点击类：放置、挂机
+  RACING: 'racing',     // 竞速类：赛车、驾驶
+  ADVENTURE: 'adventure' // 冒险类：RPG、探险
+}
+```
+
+---
+
+## 🧪 测试规范
+
+### 10.1 单元测试
+```javascript
+// tests/components/GameCard.test.js
+import { mount } from '@vue/test-utils'
+import GameCard from '@/components/GameCard.vue'
+
+describe('GameCard.vue', () => {
+  const mockGame = {
+    id: 'test-game',
+    title: 'Test Game',
+    description: 'Test description',
+    category: 'puzzle',
+    image: 'test.jpg'
+  }
+
+  test('renders game title correctly', () => {
+    const wrapper = mount(GameCard, {
+      props: { game: mockGame }
+    })
+    expect(wrapper.text()).toContain('Test Game')
+  })
+})
+```
+
+### 10.2 E2E测试
+```javascript
+// tests/e2e/homepage.test.js
+describe('Homepage', () => {
+  test('should load featured games', async () => {
+    await page.goto('/')
+    await expect(page.locator('.featured-games')).toBeVisible()
+    await expect(page.locator('.game-card')).toHaveCount(6)
+  })
+})
+```
+
+### 10.3 性能测试
+```javascript
+// tests/performance/lighthouse.test.js
+const lighthouse = require('lighthouse')
+
+test('Homepage performance', async () => {
+  const result = await lighthouse('http://localhost:3000')
+  expect(result.lhr.categories.performance.score).toBeGreaterThan(0.8)
+})
+```
+
+---
+
+## 🚀 部署流程
+
+### 11.1 构建流程
+```bash
+# 开发环境
+npm run dev
+
+# 生产构建
+npm run build
+
+# 预览构建结果
+npm run preview
+```
+
+### 11.2 部署检查清单
+- [ ] 构建成功无错误
+- [ ] 所有图片资源正常加载
+- [ ] SEO元标签正确设置
+- [ ] 分析代码正常工作
+- [ ] 广告位置正确显示
+- [ ] 移动端响应式正常
+- [ ] 页面加载速度 < 3秒
+- [ ] 所有游戏链接有效
+
+### 11.3 回滚策略
+```bash
+# 如果部署出现问题，立即回滚
+git revert HEAD
+git push origin main
+```
+
+---
+
+## 🔧 维护指南
+
+### 12.1 日常维护任务
+- **每日**: 检查错误日志和性能指标
+- **每周**: 更新游戏数据，检查死链接
+- **每月**: 安全更新，依赖升级
+- **每季**: 全面性能审计，SEO检查
+
+### 12.2 性能监控
+```javascript
+// 关键指标监控
+const monitorPerformance = () => {
+  // 页面加载时间
+  const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart
+  
+  // 发送到分析工具
+  analytics.trackPerformance('page_load_time', loadTime)
+}
+```
+
+### 12.3 错误处理
+```javascript
+// 全局错误处理
+window.addEventListener('error', (event) => {
+  console.error('Global error:', event.error)
+  analytics.trackError('global_error', {
+    message: event.error.message,
+    stack: event.error.stack,
+    url: window.location.href
+  })
+})
+```
+
+### 12.4 日志记录
+```javascript
+// 使用console.log的替代方案
+const logger = {
+  info: (message, data) => {
+    if (process.env.NODE_ENV === 'development') {
+      console.log(`[INFO] ${message}`, data)
+    }
+  },
+  error: (message, error) => {
+    console.error(`[ERROR] ${message}`, error)
+    analytics.trackError(message, error)
+  }
+}
+```
+
+---
+
+## 🎯 质量保证
+
+### 代码审查要点
+1. **功能性**: 代码是否实现了预期功能
+2. **性能**: 是否存在性能瓶颈
+3. **安全性**: 是否存在安全漏洞
+4. **可维护性**: 代码是否易于理解和修改
+5. **SEO**: 是否遵循SEO最佳实践
+
+### 发布前检查
+1. **构建测试**: 确保构建成功
+2. **功能测试**: 验证所有功能正常
+3. **性能测试**: 检查加载速度
+4. **SEO验证**: 确认元标签和结构化数据
+5. **移动端测试**: 验证响应式设计
+
+---
+
+## 📞 联系方式
+
+- **项目维护**: 产品经理和工程师团队
+- **技术支持**: 通过GitHub Issues提交问题
+- **文档更新**: 发现问题请及时更新此文档
+
+---
+
+**最后更新**: 2025年1月 | **版本**: 1.0.0
+
+这些规则是项目成功的基石，请所有开发者严格遵循。如有疑问或建议，请及时沟通！ 

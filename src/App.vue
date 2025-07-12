@@ -7,14 +7,12 @@
     </main>
     
     <FooterSection />
-    <PerformanceDashboard />
   </div>
 </template>
 
 <script>
 import HeaderNav from './components/HeaderNav.vue'
 import FooterSection from './components/FooterSection.vue'
-import PerformanceDashboard from './components/PerformanceDashboard.vue'
 
 import { analytics } from './utils/analyticsOptimized.js'
 
@@ -22,8 +20,7 @@ export default {
   name: 'App',
   components: {
     HeaderNav,
-    FooterSection,
-    PerformanceDashboard
+    FooterSection
   },
   methods: {
     handleSearch(query) {

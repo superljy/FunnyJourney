@@ -14,14 +14,7 @@ class OptimizedAnalyticsManager {
       totalGameTime: 0
     }
     
-    // Performance monitoring
-    this.performanceMetrics = {
-      initTime: null,
-      firstContentfulPaint: null,
-      largestContentfulPaint: null,
-      firstInputDelay: null,
-      cumulativeLayoutShift: 0
-    }
+    // Performance monitoring removed as per user request
     
     // Lazy initialization flag
     this.shouldInit = false
@@ -68,7 +61,7 @@ class OptimizedAnalyticsManager {
     // Wait for browser idle time
     await this.waitForIdle()
     
-    this.performanceMetrics.initTime = performance.now()
+    const initStartTime = performance.now()
     
     try {
       // Initialize in chunks to avoid blocking
@@ -76,14 +69,13 @@ class OptimizedAnalyticsManager {
       await this.sleep(100)
       await this.initGoogleAds()
       await this.sleep(100)
-      await this.initPerformanceMonitoring()
       
       this.initialized = true
       
       // Process any pending events
       this.processPendingEvents()
       
-      console.log('Optimized Analytics initialized at', this.performanceMetrics.initTime, 'ms')
+      console.log('Optimized Analytics initialized at', initStartTime, 'ms')
     } catch (error) {
       console.warn('Analytics initialization failed:', error)
     }
@@ -155,36 +147,7 @@ class OptimizedAnalyticsManager {
     })
   }
 
-  // Initialize performance monitoring
-  initPerformanceMonitoring() {
-    if (!('PerformanceObserver' in window)) return
-
-    // Monitor Largest Contentful Paint
-    try {
-      const lcpObserver = new PerformanceObserver((entryList) => {
-        const entries = entryList.getEntries()
-        const lastEntry = entries[entries.length - 1]
-        this.performanceMetrics.largestContentfulPaint = lastEntry.startTime
-      })
-      lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] })
-    } catch (e) {
-      console.warn('LCP monitoring failed:', e)
-    }
-
-    // Monitor Cumulative Layout Shift
-    try {
-      const clsObserver = new PerformanceObserver((entryList) => {
-        for (const entry of entryList.getEntries()) {
-          if (!entry.hadRecentInput) {
-            this.performanceMetrics.cumulativeLayoutShift += entry.value
-          }
-        }
-      })
-      clsObserver.observe({ entryTypes: ['layout-shift'] })
-    } catch (e) {
-      console.warn('CLS monitoring failed:', e)
-    }
-  }
+  // Performance monitoring removed as per user request
 
   // Debounced event tracking
   trackEventDebounced(eventName, parameters = {}, delay = 300) {
@@ -315,23 +278,7 @@ class OptimizedAnalyticsManager {
     }, 1000)
   }
 
-  // Performance metrics tracking
-  trackPerformanceMetrics() {
-    if (!this.initialized) return
-
-    const metrics = { ...this.performanceMetrics }
-    
-    // Add navigation timing metrics
-    if ('performance' in window && performance.getEntriesByType) {
-      const navigation = performance.getEntriesByType('navigation')[0]
-      if (navigation) {
-        metrics.loadTime = navigation.loadEventEnd - navigation.loadEventStart
-        metrics.domContentLoaded = navigation.domContentLoadedEventEnd - navigation.domContentLoadedEventStart
-      }
-    }
-
-    this.trackEvent('performance_metrics', metrics)
-  }
+  // Performance metrics tracking removed as per user request
 
   // Session summary tracking
   trackSessionSummary() {

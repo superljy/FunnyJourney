@@ -108,7 +108,7 @@ export class SEOManager {
         "publisher": {
           "@type": "Organization",
           "name": "FunnyJourney",
-          "url": "https://funnyjourneys.github.io/"
+          "url": "https://www.funnyjourney.com/"
         }
       };
 
@@ -122,11 +122,11 @@ export class SEOManager {
         "@type": "WebSite",
         "name": name,
         "alternateName": "Free Online Games 2025",
-        "url": "https://funnyjourneys.github.io/",
+        "url": "https://www.funnyjourney.com/",
         "description": description,
         "potentialAction": {
           "@type": "SearchAction",
-          "target": "https://funnyjourneys.github.io/?q={search_term_string}",
+          "target": "https://www.funnyjourney.com/?q={search_term_string}",
           "query-input": "required name=search_term_string"
         },
         "mainEntity": {

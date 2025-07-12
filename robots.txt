@@ -33,7 +33,7 @@ Allow: /img/*.gif
 Allow: /img/*.webp
 
 # Sitemap location
-Sitemap: https://funnyjourneys.github.io/sitemap.xml
+Sitemap: https://www.funnyjourney.com/sitemap.xml
 
 # Crawl-delay for respectful crawling
 Crawl-delay: 1

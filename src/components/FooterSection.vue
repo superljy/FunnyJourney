@@ -16,19 +16,19 @@
         <div class="footer-section">
           <h3>Quick Links</h3>
           <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="games/index.html">All Games</a></li>
-            <li><a href="about/index.html">About Us</a></li>
+            <li><router-link to="/">Home</router-link></li>
+            <li><router-link to="/games">All Games</router-link></li>
+            <li><router-link to="/about">About Us</router-link></li>
           </ul>
         </div>
         
         <div class="footer-section">
           <h3>Game Categories</h3>
           <ul>
-            <li><a href="#" @click="$emit('category-filter', 'puzzle')">Puzzle Games</a></li>
-            <li><a href="#" @click="$emit('category-filter', 'arcade')">Arcade Games</a></li>
-            <li><a href="#" @click="$emit('category-filter', 'card')">Card Games</a></li>
-            <li><a href="#" @click="$emit('category-filter', 'action')">Action Games</a></li>
+            <li><router-link to="/category/puzzle">Puzzle Games</router-link></li>
+            <li><router-link to="/category/arcade">Arcade Games</router-link></li>
+            <li><router-link to="/category/card">Card Games</router-link></li>
+            <li><router-link to="/category/action">Action Games</router-link></li>
           </ul>
         </div>
         
@@ -44,8 +44,8 @@
         <div class="footer-section">
           <h3>Legal</h3>
           <ul>
-            <li><a href="about/index.html#privacy">Privacy Policy</a></li>
-            <li><a href="about/index.html#terms">Terms of Service</a></li>
+            <li><router-link to="/about#privacy">Privacy Policy</router-link></li>
+            <li><router-link to="/about#terms">Terms of Service</router-link></li>
           </ul>
         </div>
       </div>

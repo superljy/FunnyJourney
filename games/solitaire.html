@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <!-- Analytics -->
-    <script src="../js/analytics.js"></script>
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -53,11 +52,8 @@
       }
     }
     </script>
-    
-    <!-- Add main stylesheet for consistent styling -->
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="game-styles.css">
     <!-- Light theme override for game pages -->
-    <link rel="stylesheet" href="../css/light-theme.css">
     
     <style>
         /* Game-specific styles */
@@ -189,13 +185,16 @@
             border-radius: 15px;
             padding: 2rem;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 3rem;
+            margin: 2rem auto;
             position: relative;
+            width: fit-content;
+            max-width: 95%;
         }
         
         .game-iframe {
-            width: 100%;
-            height: 600px;
+            width: 900px;
+            max-width: 90vw;
+            height: 650px;
             border: none;
             border-radius: 10px;
             background: #f8fafc;
@@ -441,13 +440,13 @@
     <header class="header">
         <div class="container">
             <nav class="nav">
-                <a href="../index.html" class="logo">🎮 FunnyJourney</a>
+                <a href="../index-vue.html" class="logo">🎮 FunnyJourney</a>
                 <ul class="nav-links">
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="index.html" class="active">Games</a></li>
-                    <li><a href="../about/index.html">About</a></li>
+                    <li><a href="../index-vue.html">Home</a></li>
+                    <li><a href="../games" class="active">Games</a></li>
+                    <li><a href="../about">About</a></li>
                 </ul>
-                <a href="index.html" class="more-games-btn">🎮 More Games</a>
+                <a href="../games" class="more-games-btn">🎮 More Games</a>
             </nav>
         </div>
     </header>
@@ -455,7 +454,7 @@
     <!-- Game Section -->
     <section class="game-section">
         <div class="container">
-            <a href="../index.html" class="back-button">
+            <a href="../index-vue.html" class="back-button">
                 ← Back to Home
             </a>
             
@@ -527,16 +526,16 @@
                 <div class="footer-section">
                     <h3>Quick Links</h3>
                     <ul style="list-style: none;">
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="index.html">All Games</a></li>
-                        <li><a href="../about/index.html">About Us</a></li>
+                        <li><a href="../index-vue.html">Home</a></li>
+                        <li><a href="../games">All Games</a></li>
+                        <li><a href="../about">About Us</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h3>Legal</h3>
                     <ul style="list-style: none;">
-                        <li><a href="../about/index.html#privacy">Privacy Policy</a></li>
-                        <li><a href="../about/index.html#terms">Terms of Service</a></li>
+                        <li><a href="../about#privacy">Privacy Policy</a></li>
+                        <li><a href="../about#terms">Terms of Service</a></li>
                     </ul>
                 </div>
             </div>
@@ -546,7 +545,7 @@
         </div>
     </footer>
 
-    <!-- JavaScript -->
+        <!-- JavaScript -->
     <script>
         // Related games data (same as homepage)
         const allGames = [
@@ -588,19 +587,24 @@
             }
         ];
 
-        // Fullscreen functionality
+        // Improved fullscreen functionality
         function toggleFullscreen() {
             const gameContainer = document.getElementById('gameContainer');
+            const gameIframe = gameContainer.querySelector('.game-iframe');
             
             if (!document.fullscreenElement) {
+                // 进入全屏
                 gameContainer.requestFullscreen().then(() => {
                     gameContainer.classList.add('fullscreen-active');
+                    console.log('Entered fullscreen mode');
                 }).catch(err => {
                     console.log('Error attempting to enable fullscreen:', err);
                 });
             } else {
+                // 退出全屏
                 document.exitFullscreen().then(() => {
                     gameContainer.classList.remove('fullscreen-active');
+                    console.log('Exited fullscreen mode');
                 });
             }
         }
@@ -608,7 +612,25 @@
         // Handle fullscreen change events
         document.addEventListener('fullscreenchange', function() {
             const gameContainer = document.getElementById('gameContainer');
+            const gameIframe = gameContainer.querySelector('.game-iframe');
+            
             if (!document.fullscreenElement) {
+                // 确保退出全屏时移除类名和内联样式
+                gameContainer.classList.remove('fullscreen-active');
+                gameContainer.style.cssText = '';
+                if (gameIframe) {
+                    gameIframe.style.cssText = '';
+                }
+                console.log('Fullscreen change: exited');
+            } else {
+                console.log('Fullscreen change: entered');
+            }
+        });
+
+        // Handle escape key for fullscreen exit
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && document.fullscreenElement) {
+                const gameContainer = document.getElementById('gameContainer');
                 gameContainer.classList.remove('fullscreen-active');
             }
         });

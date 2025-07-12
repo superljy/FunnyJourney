@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Free online games platform with SEO optimization",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "dev": "npx vite",
     "build": "vite build",

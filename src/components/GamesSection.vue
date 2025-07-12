@@ -13,9 +13,9 @@
       </div>
       
       <div v-if="showAllLink" class="view-all-container">
-        <a href="games/index.html" class="btn btn-primary">
+        <router-link to="/games" class="btn btn-primary">
           View All Games
-        </a>
+        </router-link>
       </div>
     </div>
   </section>
