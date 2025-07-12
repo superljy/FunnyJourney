@@ -3,11 +3,42 @@
 /**
  * Vercel部署构建脚本
  * 确保所有必要的文件都被正确包含在构建输出中
+ * 跨平台兼容 (Windows/Linux/macOS)
  */
 
 const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
+
+/**
+ * 递归复制目录
+ * @param {string} src 源目录
+ * @param {string} dest 目标目录
+ */
+function copyDirectoryRecursive(src, dest) {
+  // 确保目标目录存在
+  if (!fs.existsSync(dest)) {
+    fs.mkdirSync(dest, { recursive: true });
+  }
+
+  // 读取源目录
+  const items = fs.readdirSync(src);
+
+  items.forEach(item => {
+    const srcPath = path.join(src, item);
+    const destPath = path.join(dest, item);
+
+    const stat = fs.statSync(srcPath);
+
+    if (stat.isDirectory()) {
+      // 递归复制子目录
+      copyDirectoryRecursive(srcPath, destPath);
+    } else {
+      // 复制文件
+      fs.copyFileSync(srcPath, destPath);
+    }
+  });
+}
 
 console.log('🚀 开始Vercel专用构建...\n');
 
@@ -20,7 +51,8 @@ try {
   const gamesDistPath = path.join('dist', 'games');
   if (!fs.existsSync(gamesDistPath)) {
     console.log('📁 复制games目录到dist...');
-    execSync('xcopy /E /I /Y games dist\\games', { stdio: 'inherit' });
+    copyDirectoryRecursive('games', gamesDistPath);
+    console.log('✅ games目录复制完成');
   }
 
   // 3. 确保其他必要文件存在
