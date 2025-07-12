@@ -41,6 +41,7 @@ export default defineConfig({
     }
   ],
   base: '/',
+  publicDir: 'public', // Ensure public directory is copied
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
@@ -52,9 +53,10 @@ export default defineConfig({
         drop_debugger: true // Remove debugger statements
       }
     },
+    copyPublicDir: true, // Ensure public directory is copied
     rollupOptions: {
       input: {
-        main: 'index-vue.html'
+        main: 'index.html'
       },
       output: {
         manualChunks(id) {
