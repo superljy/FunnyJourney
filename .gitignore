@@ -164,6 +164,7 @@ $RECYCLE.BIN/
 
 #old index.html
 index_old.html
+.old/
 
 # Game style update tools and backups
 games-backup*/
